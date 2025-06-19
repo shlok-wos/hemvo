@@ -1,0 +1,116 @@
+.sliderContainer {
+  position: relative;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  padding: 20px;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  text-align: left;
+}
+
+.stars {
+  --star-size: 28px;
+  margin-bottom: 10px;
+}
+.star {
+  height: var(--star-size);
+  width: var(--star-size);
+  background-color: #dcdce6;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.star.orange {
+  background-color: #ff8622;
+}
+.star.green {
+  background-color: #00b67a;
+}
+.star.theme {
+  background-color: var(--clr-theme);
+}
+.star.red {
+  background-color: #ff3722;
+}
+.star.greenyellow {
+  background-color: #73cf11;
+}
+.star svg {
+  width: calc(var(--star-size) - 8px);
+  height: calc(var(--star-size) - 8px);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.byline {
+  font-size: 12px;
+  color: #666;
+}
+
+.logo {
+  width: 120px;
+  margin-top: 10px;
+}
+
+.navBtnWrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 100%;
+}
+.navBtn {
+  --btn-size: 40px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  color: var(--g2);
+  border-radius: 50%;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.navBtnPrev {
+  margin-left: calc((var(--btn-size) + 10px) * -1);
+}
+.navBtnNext {
+  margin-right: calc((var(--btn-size) + 10px) * -1);
+}
+.navBtn:hover {
+  background-color: var(--clr-theme);
+  color: #ffffff;
+  border-color: var(--clr-theme);
+}
+@media (max-width: 1199px) {
+  .navBtnPrev {
+    margin-left: calc((var(--btn-size) / 2) * -1);
+  }
+  .navBtnNext {
+    margin-right: calc((var(--btn-size) / 2) * -1);
+  }
+}
+@media (max-width: 991px) {
+  .navBtn {
+    --btn-size: 30px;
+  }
+}

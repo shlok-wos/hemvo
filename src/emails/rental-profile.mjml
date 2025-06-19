@@ -1,0 +1,130 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-text font-family="Arial" align="left" padding="0" color="#1D1D1F" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F6F4FF">
+    <mj-section text-align="center">
+      <mj-column padding="0 10px">
+        <mj-image
+          src="../assets/images/icons/flatquest.png"
+          alt="FlatQuest"
+          width="150px"
+        />
+        <mj-spacer height="40px" />
+        <mj-text
+          font-size="24px"
+          font-weight="700"
+          color="rgba(57, 62, 64, 1)"
+          align="center"
+        >
+          Hyresprofil för din lägenhet
+        </mj-text>
+        <mj-divider
+          border-width="1px"
+          border-style="solid"
+          border-color="#E3E5E5"
+          padding="32px 0"
+        />
+        <mj-text padding-bottom="30px" font-size="20px"
+          >Vänligen kontrollera informationen om lägenheten nedan:
+        </mj-text>
+
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Namn</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px" color="#C60BFC"
+          >Arthur Morgan</mj-text
+        >
+
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >E-post</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px" color="#C60BFC"
+          >ArthurM@email.com</mj-text
+        >
+
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Telefonnummer</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px" color="#C60BFC"
+          >+1 1800 000 000</mj-text
+        >
+
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Medlemsstatus</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px" color="#C60BFC"
+          >Active / Inactive</mj-text
+        >
+
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Medlemskapsplan</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px" color="#C60BFC"
+          >Basic / Premium / Premium Plus</mj-text
+        >
+
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Vad för typ av lägenhet är du intresserad av?</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px">Välj stad</mj-text>
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Förstahandskontrakt</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px"> No</mj-text>
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Andrahandskontrakt</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px">No</mj-text>
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Personliga önskemål</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px" line-height="28px"
+          >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+          nam excepturi iure obcaecati voluptates aspernatur atque repudiandae,
+          quo corporis suscipit adipisci magni quibusdam sed omnis veniam
+          temporibus. Velit, sed quos?</mj-text
+        >
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Antal rum</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="10px"
+          >Minimun : 2 rum</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px"
+          >Maximun : 5 rum</mj-text
+        >
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Storlek</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="10px"
+          >Minimun : 20 kvm</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px"
+          >Maximun : 50 kvm</mj-text
+        >
+        <mj-text font-size="16px" padding-bottom="10px" color="#59595B"
+          >Hyra</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="10px"
+          >Minimun : 12000 kr</mj-text
+        >
+        <mj-text font-size="20px" padding-bottom="25px"
+          >Maximun : 23000 kr</mj-text
+        >
+        <mj-divider
+          border-width="1px"
+          border-style="solid"
+          border-color="#E3E5E5"
+          padding="32px 0"
+        />
+        <mj-text font-size="16px" align="center"
+          ><span style="font-weight: 700">FlatQuest.se</span> All rights
+          reserved.</mj-text
+        >
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

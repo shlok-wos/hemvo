@@ -1,0 +1,264 @@
+.bubble-1 {
+  top: 15%;
+  left: 10%;
+  max-width: 72px;
+  max-height: 72px;
+}
+
+.bubble-2 {
+  top: 35%;
+  left: 20%;
+  max-width: 128px;
+  max-height: 128px;
+}
+
+.bubble-3 {
+  top: 45%;
+  left: 0;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.bubble-4 {
+  left: 29%;
+  bottom: 20%;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.bubble-5 {
+  bottom: 10%;
+  left: 14%;
+  max-width: 111px;
+  max-height: 111px;
+}
+
+.bubble-6 {
+  top: 124px;
+  right: 239px;
+  max-width: 128px;
+  max-height: 128px;
+}
+
+.bubble-7 {
+  top: 35%;
+  right: 0;
+  max-width: 72px;
+  max-height: 72px;
+}
+
+.bubble-8 {
+  right: 32%;
+  top: 40%;
+  max-width: 78px;
+  max-height: 78px;
+}
+
+.bubble-9 {
+  top: 55%;
+  right: 5%;
+  max-width: 78px;
+  max-height: 78px;
+}
+
+.bubble-10 {
+  bottom: 25%;
+  right: 20%;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.bubble-11 {
+  right: 31%;
+  bottom: 5%;
+  max-width: 118px;
+  max-height: 118px;
+}
+
+.bubble-12 {
+  bottom: 10%;
+  right: 10%;
+  max-width: 88px;
+  max-height: 88px;
+}
+.bubblesImg {
+  /* max-width: 200px; */
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--lightgray);
+  width: 100%;
+  height: 100%;
+}
+/* responsive css */
+@media (max-width: 1439px) {
+  .bubble-4 {
+    left: 20%;
+  }
+  .bubble-5 {
+    left: 5%;
+  }
+  .bubble-8 {
+    right: 15%;
+  }
+  .bubble-11 {
+    right: 25%;
+  }
+  .bubble-3 {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .bubble-4 {
+    max-width: 130px;
+    max-height: 130px;
+  }
+}
+
+@media (max-width: 991px) {
+  .bubble-2 {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .bubble-3,
+  .bubble-4 {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .bubble-5 {
+    max-width: 90px;
+    max-height: 90px;
+  }
+
+  .bubble-6 {
+    max-width: 100px;
+    max-height: 100px;
+    right: 80px;
+    top: 80px;
+  }
+
+  .bubble-7 {
+    top: 33%;
+  }
+
+  .bubble-8 {
+    top: 37%;
+    max-width: 68px;
+    max-height: 68px;
+  }
+
+  .bubble-9 {
+    top: 50%;
+  }
+
+  .bubble-10 {
+    max-width: 105px;
+    max-height: 105px;
+    bottom: 28%;
+    right: 20%;
+  }
+
+  .bubble-11 {
+    max-width: 100px;
+    max-height: 100px;
+    right: 20%;
+  }
+
+  .bubble-12 {
+    right: 0%;
+  }
+}
+@media (max-width: 767px) {
+  .bubble-2 {
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  .bubble-3 {
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+  .bubble-4 {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .bubble-5 {
+    max-width: 65px;
+    max-height: 65px;
+  }
+
+  .bubble-6 {
+    max-width: 70px;
+    max-height: 70px;
+    right: 80px;
+    top: 80px;
+  }
+
+  .bubble-7 {
+    top: 33%;
+  }
+
+  .bubble-8 {
+    top: 53%;
+    max-width: 58px;
+    max-height: 58px;
+    right: 8%;
+  }
+
+  .bubble-9 {
+    top: 60%;
+    right: -8%;
+  }
+
+  .bubble-10 {
+    max-width: 65px;
+    max-height: 65px;
+    bottom: 38%;
+    right: 23%;
+  }
+
+  .bubble-11 {
+    max-width: 70px;
+    max-height: 70px;
+    right: 20%;
+  }
+
+  .bubble-12 {
+    right: 0%;
+    bottom: 0;
+    max-width: 68px;
+    max-height: 68px;
+  }
+}
+@media (max-width: 575px) {
+  .bubblesImg {
+    max-width: 45px;
+    max-height: 45px;
+  }
+  .bubble-1 {
+    top: 30%;
+    left: 7%;
+  }
+  .bubble-2 {
+    top: 42%;
+  }
+  .bubble-3 {
+    top: 50%;
+  }
+  .bubble-8 {
+    top: 63%;
+    right: 12%;
+  }
+  .bubble-9 {
+    top: 54%;
+    right: -4%;
+  }
+}
+@media (max-width: 399px) {
+  .bubblesImg {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}

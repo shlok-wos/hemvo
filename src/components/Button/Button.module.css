@@ -1,0 +1,127 @@
+/* Base */
+.btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: var(--text-base);
+  border-radius: 30px;
+  font-weight: 700;
+  min-width: 120px;
+  line-height: 1;
+  transition: 0.3s all;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Variants */
+.primary {
+  background-size: 200%;
+  background-position-x: 0;
+  background: var(--clr-theme);
+  color: var(--white);
+  border: 1px solid var(--clr-theme);
+}
+
+.primary:hover {
+  box-shadow: rgb(42, 70, 102) 3px 3px 6px 0px inset,
+    rgba(12, 120, 182, 0.452) -3px -3px 6px 1px inset;
+}
+
+.accent {
+  color: var(--dark);
+  background-color: var(--accent);
+  border: 1px solid transparent;
+}
+
+.accent:hover {
+  border-color: var(--clr-theme);
+}
+
+.danger {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.danger:hover {
+  background-color: #ffd6d6;
+}
+
+/* Size */
+.small {
+  padding: 10px 20px;
+  min-height: var(--component-small);
+}
+
+.large {
+  padding: 10px 24px;
+  min-height: var(--component-large);
+}
+
+.full {
+  width: 100%;
+}
+
+/* Shapes */
+.shape {
+  aspect-ratio: 1 / 1;
+  padding: 8px;
+  min-width: auto;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.shape.small {
+  width: var(--component-small);
+  min-width: auto;
+}
+
+.shape.large {
+  width: var(--component-large);
+  min-width: auto;
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+@media (hover: none) {
+  .accent:active {
+    background-color: #d0bfff;
+  }
+
+  .primary:active {
+    box-shadow: 0px 0 48px 0 #7f37fd8f;
+    background-position-x: 100%;
+  }
+
+  .danger:active {
+    background-color: #ffd6d6;
+  }
+}
+
+/* responsive css */
+@media (max-width: 1199px) {
+  .btn {
+    min-width: 100px;
+  }
+  .small {
+    padding: 5px 15px;
+  }
+
+  .large {
+    padding: 5px 20px;
+    min-height: calc(var(--component-large) - 5px);
+  }
+}
+@media (max-width: 349px) {
+  .large {
+    padding: 5px 15px;
+  }
+}

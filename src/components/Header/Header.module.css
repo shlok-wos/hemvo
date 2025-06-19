@@ -1,0 +1,106 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  /* border-bottom: px solid #e8e8f0; */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background-color: var(--inkwell-inception);
+}
+.toggleIconWrap {
+  position: absolute;
+  top: 50%;
+  right: calc((100vw - var(--container-size)) / 2 * 2);
+  padding: 0;
+  border: none;
+  transform: translateY(-50%);
+  grid-gap: 5px;
+  z-index: 1000;
+}
+.toggleIconWrap span {
+  width: 30px;
+  height: 3px;
+  background-image: linear-gradient(90deg, #0b5ffc, #5d7be0, #19519b);
+  transition: all 0.3s;
+}
+.toggleIconWrap span:nth-child(2) {
+  transform: translateX(-5px);
+}
+/* .activeIcon span:nth-child(1) {
+  transform: rotate(27deg) translateY(8.5px);
+} */
+.activeIcon span:nth-child(2) {
+  /* transform: translateX(-3px) rotate(-27deg); */
+  transform: translateX(5px);
+}
+/* .activeIcon span:nth-child(3) {
+  transform: translateY(5px) translateX(-3px);
+} */
+.menuSidebarOpen::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  pointer-events: none;
+}
+.HeaderBottom {
+  min-height: 65px;
+  position: sticky;
+  top: var(--header-height);
+  left: 0;
+  z-index: 90;
+}
+.transparentBtn {
+  background-color: transparent;
+}
+.fillBtn {
+  background-color: rgba(249, 249, 249, 0.08);
+  color: var(--white);
+}
+.fillBtn:hover {
+  background-color: rgb(71, 71, 71);
+  border-color: transparent;
+}
+/* responsive css */
+@media (max-width: 991px) {
+  .headerMenu {
+    position: fixed;
+    height: 100vh;
+    background: var(--accent);
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+    right: 0;
+    top: 0;
+    padding: 40px 15px;
+    justify-content: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
+    transform: translateX(100%);
+    transition: all 0.3s;
+    z-index: 1000;
+  }
+  .headerMenuShow {
+    transform: translate(0);
+  }
+}
+@media (max-width: 575px) {
+  .toggleIconWrap {
+    right: calc((100vw - var(--container-size)) / 2 * 3.5);
+  }
+}
+@media (max-width: 399px) {
+  .headerLogo {
+    max-width: 150px;
+  }
+}
+@media (max-width: 349px) {
+  .headerLogo {
+    max-width: 100px;
+  }
+}

@@ -1,0 +1,12 @@
+.copyright {
+  border-top: 1px solid #dedede;
+  padding: 20px 0;
+}
+.footerGtrid {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-gap: 15px;
+}
+/* responsive css */
+/* .footerGtrid {
+  grid-template-columns: repeat(3, 1fr);
+} */

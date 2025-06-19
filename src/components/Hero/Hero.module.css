@@ -1,0 +1,23 @@
+.heroImage {
+  filter: drop-shadow(0px 20px 166px rgba(0, 0, 0, 0.08));
+  -webkit-filter: drop-shadow(0px 20px 166px rgba(0, 0, 0, 0.08));
+  transform: translateZ(0);
+}
+
+.heroLabelList {
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 991px) {
+  .heroImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .heroLabelList {
+    font-size: 12px;
+  }
+}

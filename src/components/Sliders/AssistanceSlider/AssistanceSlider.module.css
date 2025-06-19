@@ -1,0 +1,8 @@
+/* responsive css */
+@media (min-width: 576px) {
+  .assistanceSliderArrowWrap {
+    position: absolute;
+    right: calc((100% - var(--container-size)) / 2);
+    top: calc(var(--space-lg));
+  }
+}

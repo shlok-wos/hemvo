@@ -1,0 +1,61 @@
+.dashboard {
+  --spacing: 32px;
+  --sidebar-width: 336px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: var(--spacing);
+  height: 100vh;
+  height: 100dvh;
+  padding: var(--spacing);
+  background-color: var(--lightgray);
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: var(--spacing);
+}
+
+.welcomeContainer {
+  max-width: 1000px;
+  display: flex;
+  margin: auto;
+}
+
+@media screen and (max-width: 1649px) {
+  .flatQuestCircle {
+    width: 300px;
+  }
+
+  .dashboard {
+    --sidebar-width: 280px;
+    --spacing: 12px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .content {
+    height: auto;
+  }
+
+  .overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.32);
+    animation: 150ms fade-in;
+    z-index: 80;
+  }
+}

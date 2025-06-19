@@ -1,0 +1,84 @@
+.collage {
+  display: grid;
+  grid-template-columns: repeat(3, 230px);
+  grid-template-rows: repeat(6, 100px);
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 24px;
+  overflow: hidden;
+}
+
+.collage > *:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+
+.collage > *:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+
+.collage > *:nth-child(3) {
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+}
+
+.collage > *:nth-child(4) {
+  grid-column: 1 / 2;
+  grid-row: 4 / 6;
+}
+
+.collage > *:nth-child(5) {
+  grid-column: 2 / 3;
+  grid-row: 4 / 7;
+}
+
+.collage > *:nth-child(6) {
+  grid-column: 3 / 4;
+  grid-row: 4 / 6;
+}
+
+.collage > * {
+  width: 100%;
+  height: 100%;
+}
+/* responisve css */
+@media (max-width: 1599px) {
+  .collage {
+    /* grid-template-rows: repeat(3, 1FR); */
+  }
+}
+@media (max-width: 1279px) {
+  .collage {
+    /* grid-template-columns: repeat(3, 210px); */
+  }
+}
+@media (max-width: 767px) {
+  .collage {
+    grid-template-columns: repeat(3, 170px);
+    /* grid-template-rows: repeat(6, 70px); */
+    gap: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .collage {
+    padding: 0 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset;
+
+    gap: 10px;
+  }
+  .collage > *:nth-child(1),
+  .collage > *:nth-child(2),
+  .collage > *:nth-child(3),
+  .collage > *:nth-child(4),
+  .collage > *:nth-child(5),
+  .collage > *:nth-child(6) {
+    grid-column: unset;
+    grid-row: unset;
+  }
+  .collageItem {
+    width: 400px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}

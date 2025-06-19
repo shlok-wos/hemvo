@@ -1,0 +1,108 @@
+.videoSliderInner {
+  position: relative;
+}
+.videoCard {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+.navBtnWrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.navBtn {
+  --btn-size: 40px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  color: var(--g2);
+  border-radius: 50%;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.navBtnPrev {
+  margin-left: calc((var(--btn-size) + 10px) * -1);
+}
+.navBtnNext {
+  margin-right: calc((var(--btn-size) + 10px) * -1);
+}
+.navBtn:hover {
+  background-color: var(--clr-theme);
+  color: #ffffff;
+  border-color: var(--clr-theme);
+}
+.videoWrapper {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.customPoster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.playButton,
+.pauseButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  width: 60px;
+  min-width: 40px;
+  height: 60px;
+  min-height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.playButton:hover,
+.pauseButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.cardBody {
+  padding: 20px;
+}
+@media (max-width: 1199px) {
+  .navBtnWrapper {
+    z-index: 2;
+  }
+  .navBtnPrev {
+    margin-left: calc((var(--btn-size) / 2) * -1);
+  }
+  .navBtnNext {
+    margin-right: calc((var(--btn-size) / 2) * -1);
+  }
+}
+@media (max-width: 767px) {
+  .navBtn {
+    --btn-size: 30px;
+  }
+}

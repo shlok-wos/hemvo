@@ -1,0 +1,30 @@
+.customersIllustration {
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #f6f4ff 102.61%);
+  }
+  
+  .flatQuestRow {
+    gap: 12px;
+  }
+  
+  
+  @media (min-width: 1200px) {
+    .hero {
+      min-height: calc(100vh - var(--header-height));
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .flatQuestRow {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .customersSayImg {
+      max-width: 40%;
+    }
+  }
+  
+  

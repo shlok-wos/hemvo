@@ -1,0 +1,10 @@
+.customersIllustration {
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f4ff 102.61%);
+}
+
+@media (max-width: 991px) {
+  .customersSayImg {
+    max-width: 40%;
+  }
+}

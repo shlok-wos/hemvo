@@ -1,0 +1,49 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 5px;
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.paginationNav,
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid var(--g1);
+  font-size: var(--text-base);
+  color: var(--dark);
+}
+
+.active .btn {
+  background-color: var(--clr-theme);
+  border-color: var(--clr-theme);
+  color: var(--white);
+}
+
+.paginationNav .btn {
+  border: none;
+}
+
+.disabled {
+  background-color: var(--white);
+}
+
+.btn span {
+  display: flex;
+}
+
+.disabled,
+.disabled .btn {
+  cursor: not-allowed;
+  background-color: var(--g1);
+  color: var(--white);
+}

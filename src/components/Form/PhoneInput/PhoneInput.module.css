@@ -1,0 +1,32 @@
+.countryCode {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  z-index: 1;
+}
+
+.phoneInput {
+  padding-left: 140px;
+}
+
+.countryCodeTrigger {
+  background-color: var(--white);
+  height: auto;
+  padding: 4px 10px 4px 4px;
+}
+
+.countryCodeTrigger .countryName {
+  display: none;
+}
+
+.countryList {
+  width: 300px;
+}
+
+@media screen and (max-width: 479px) {
+  .countryList {
+    width: 260px;
+  }
+}

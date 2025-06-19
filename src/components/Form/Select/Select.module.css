@@ -1,0 +1,87 @@
+.label {
+  composes: label from "../Form.module.css";
+}
+
+.select {
+  composes: input from "../Form.module.css";
+  text-align: left;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+  position: absolute;
+  z-index: 90;
+  border-radius: 12px;
+  background-color: var(--white);
+  box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px;
+  min-width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  animation: scaleOut 150ms ease-out;
+  max-height: 400px;
+  overflow: hidden auto;
+}
+
+.menu.open {
+  animation: scaleIn 150ms ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.item {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 14px;
+  transition: 150ms background-color;
+}
+
+.item:hover,
+.item.highlighted {
+  background-color: var(--accent);
+}
+
+.item.selected {
+  background: var(--clr-theme);
+  color: var(--white);
+}
+
+.error {
+  composes: error from "../Form.module.css";
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    visibility: hidden;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+  }
+}

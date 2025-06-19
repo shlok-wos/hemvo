@@ -1,0 +1,92 @@
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  font-size: 16px;
+  height: 45px;
+  border: 2px solid #e7e7eb;
+  background-color: var(--input);
+  /* background-color: red; */
+  font-family: inherit;
+  padding: 8px 15px;
+  border-radius: 40px;
+  transition: 0.3s all;
+  /* outline-offset: 1px; */
+  color: var(--dark);
+  outline: 0;
+  /* transition: all 0.3s ease; */
+}
+
+.input:focus {
+  border-color: var(--clr-theme);
+}
+.input:hover {
+  background-color: var(--sugar-crystal);
+}
+.input.hasIcon {
+  padding-left: 45px;
+}
+
+.input.hasPasswordIcon {
+  padding-right: 45px;
+}
+
+.input::placeholder {
+  color: var(--gray);
+}
+
+textarea.input {
+  height: auto;
+  resize: none;
+  border-radius: 16px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+}
+
+.passwordToggle {
+  padding: 0;
+  left: unset;
+  right: 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.error {
+  font-size: var(--text-sm);
+  margin-top: 5px;
+  color: red;
+  font-weight: 500;
+}
+
+.otpInput {
+  composes: input;
+  padding: 0;
+  width: 100% !important;
+  height: 50px;
+}
+
+.otpInput::-webkit-inner-spin-button,
+.otpInput::-webkit-outer-spin-button {
+  display: none;
+}
+
+/* responsive css */
+@media screen and (max-width: 767px) {
+  .otpInput {
+    height: 45px;
+    border-radius: 5px;
+  }
+}

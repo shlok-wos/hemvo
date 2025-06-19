@@ -1,0 +1,18 @@
+.reviewSlider {
+  --swiper-wrapper-transition-timing-function: linear;
+}
+
+.reviewSlider :global(.swiper-slide-active) .reviewCard {
+  border-color: var(--g2);
+  box-shadow: 0px 24px 48px 0 rgba(77, 255, 86, 0.08);
+}
+
+.rating {
+  background-color: #fefded;
+  border-radius: var(--radius-sm);
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}

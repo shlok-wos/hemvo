@@ -1,0 +1,54 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card {
+  --card-border-spacing: 2px;
+  border-radius: var(--radius-sm);
+  padding: 32px;
+  background-color: var(--white);
+  border: 1px solid #ebebf3;
+  transition: 0.3s all;
+  position: relative;
+}
+
+.card.active {
+  border-color: var(--clr-theme);
+  box-shadow: var(--card-shadow);
+}
+
+/* .shiny::before {
+  content: "";
+  position: absolute;
+  background-image: conic-gradient(from var(--angle), #c60bfc, #7f37fd);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: spin 7s linear infinite;
+  border-radius: 32px;
+  inset: -2px;
+}
+
+@keyframes spin {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+} */
+
+.card.interactive:hover {
+  border-color: var(--clr-theme);
+  box-shadow: var(--card-shadow);
+}
+
+/* responsive css */
+@media (max-width: 1365px) {
+  .card {
+    padding: 20px;
+  }
+}

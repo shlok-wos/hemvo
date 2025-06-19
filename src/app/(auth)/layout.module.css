@@ -1,0 +1,81 @@
+.auth {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  height: 100vh;
+  height: 100dvh;
+}
+
+.banner {
+  padding: 20px calc(10% + 4px);
+}
+
+.content {
+  display: flex;
+}
+
+.authContent {
+  max-width: 710px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 40px;
+}
+
+.bannerText {
+  max-width: 680px;
+}
+
+.noBanner .authContent {
+  box-shadow: 0px 8px 48px 0 rgba(113, 77, 255, 0.08);
+}
+
+.userProfileImage {
+  max-width: calc(40% - 2px);
+}
+
+@media (min-width: 992px) {
+  .fixedLogo {
+    position: fixed;
+    margin-top: var(--space-xs);
+  }
+}
+@media (min-width: 1200px) {
+  .authCard {
+    overflow-y: auto;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .auth {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .authContent,
+  .bannerContent {
+    max-width: 600px;
+  }
+  .authContent {
+    padding: 0;
+  }
+  .authContentBeforeRegister {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .authContentBeforeRegister {
+    margin-top: var(--space-xs);
+    position: relative;
+    z-index: 1;
+  }
+  .authLogo {
+    width: 100%;
+  }
+
+  .authContent {
+    padding: 12px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .authContentBeforeRegister {
+    padding: 20px;
+  }
+}

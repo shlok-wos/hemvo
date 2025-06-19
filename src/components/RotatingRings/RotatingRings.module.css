@@ -1,0 +1,16 @@
+.flatQuestCircle {
+  object-fit: contain;
+  position: relative;
+}
+
+.flatQuestCircle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.flatQuestCircle img {
+  position: absolute;
+  left: calc(50% - 10px);
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,50 @@
+.popularPlan > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricingTitle {
+  flex-basis: 60%;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing, 32px);
+}
+
+.planPrice {
+  font-size: 30px;
+}
+/* responsive css */
+@media (max-width: 1799px) {
+  .adminCardWrap {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1649px) {
+  .pricingGrid {
+    gap: var(--spacing, 12px);
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .dashboardGrid.pricingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .pricingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pricingGrid,
+  .dashboardGrid.pricingGrid {
+    grid-template-columns: 1fr;
+  }
+}

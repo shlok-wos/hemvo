@@ -1,0 +1,126 @@
+@media (min-width: 1200px) {
+  :root {
+    --container-size: 1100px;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --container-size: 1160px;
+  }
+}
+@media (min-width: 1350px) {
+  :root {
+    --container-size: 1240px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --container-size: 1300px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --container-size: 1464px;
+  }
+}
+@media (max-width: 1799px) {
+  :root {
+    /* fonts style */
+    --text-4xl: 42px;
+    --text-3xl: 36px;
+    --text-2xl: 30px;
+  }
+}
+
+@media (max-width: 1599px) {
+  :root {
+    /* fonts style */
+    --text-4xl: 34px;
+    --text-3xl: 32px;
+    --text-2xl: 26px;
+    --text-xl: 22px;
+    --text-lg: 18px;
+    --text-md: 16px;
+    /* space */
+    --space-lg: 100px;
+    --space-md: 52px;
+    --space-sm: 40px;
+    /* radius */
+    --radius-xl: 55px;
+    --radius-lg: 40px;
+    --radius-md: 30px;
+    --radius-sm: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  .w-xl-50 {
+    width: 50%;
+  }
+}
+@media (max-width: 1199px) {
+  :root {
+    /* fonts style */
+    --text-4xl: 32px;
+    --text-3xl: 30px;
+    --text-2xl: 22px;
+    --text-xl: 20px;
+    --text-lg: 16px;
+    --text-md: 15px;
+    --text-base: 14px;
+    /* space */
+    --space-lg: 80px;
+    --space-md: 42px;
+    --space-sm: 30px;
+    /* radius */
+    --radius-xl: 45px;
+    --radius-lg: 30px;
+    --radius-md: 20px;
+    --radius-sm: 14px;
+
+    --header-height: 80px;
+  }
+}
+@media (min-width: 768px) {
+  .w-md-50 {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    /* fonts style */
+    --text-4xl: 30px;
+    --text-3xl: 26px;
+    --text-2xl: 20px;
+    --text-xl: 18px;
+    /* radius */
+    --radius-xl: 30px;
+    --radius-lg: 22px;
+
+    --header-height: 70px;
+  }
+}
+@media (min-width: 576px) {
+  .section-title-right-space {
+    padding-right: calc(var(--component-large) * 2 + 20px);
+  }
+}
+@media (max-width: 575px) {
+  :root {
+    /* fonts style */
+    --text-4xl: 26px;
+    --text-3xl: 20px;
+    --text-md: 14px;
+
+    /* space */
+    --space-lg: 40px;
+    --space-md: 32px;
+    --space-sm: 25px;
+
+    /* radius */
+    --radius-xl: 24px;
+    --radius-lg: 18px;
+    --radius-md: 14px;
+
+    --container-size: calc(100vw - 12px);
+  }
+}

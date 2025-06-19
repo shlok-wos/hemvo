@@ -1,0 +1,45 @@
+.list {
+  border-left: 4px solid var(--accent);
+}
+
+.trigger {
+  text-align: left;
+  border: none;
+  margin-left: -4px;
+  border-left: 4px solid transparent;
+  background: transparent;
+  padding: 22px 40px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.trigger[data-state="active"] {
+  border-left-color: var(--g1);
+}
+
+.trigger:hover {
+  background-color: var(--accent);
+}
+
+.image {
+  max-width: 500px;
+}
+
+/* responisve css */
+@media (max-width: 1599px) {
+  .trigger {
+    padding: 20px;
+  }
+}
+@media (max-width: 1199px) {
+  .trigger[data-state="active"] {
+    background-color: var(--accent);
+  }
+}
+
+@media (max-width: 991px) {
+  .list {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

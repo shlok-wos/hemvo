@@ -1,0 +1,36 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-text font-family="Arial" align="center" padding="0" color="#1d1d1f" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#f6f4ff">
+    <mj-section text-align="center">
+      <mj-column padding="0 10px">
+        <mj-image src="../assets/images/icons/flatquest.png" alt="FlatQuest" width="150px" />
+        <mj-spacer height="40px" />
+
+        <mj-text font-size="24px" font-weight="700" color="rgba(57, 62, 64, 1)" align="center">
+          You have a new enquiry
+        </mj-text>
+
+        <mj-divider border-width="1px" border-style="solid" border-color="#e3e5e5" padding="32px 0" />
+
+        <mj-text padding-bottom="30px" font-size="20px">Please check below details of the user: </mj-text>
+
+        <mj-text font-size="20px" padding-bottom="10px" color="#59595b">Name</mj-text>
+        <mj-text font-size="20px" padding-bottom="25px">Samantha Doe </mj-text>
+
+        <mj-text font-size="20px" padding-bottom="10px" color="#59595b">Email</mj-text>
+        <mj-text font-size="20px" padding-bottom="25px" color="#C60BFC"> samanthad@gmail.com </mj-text>
+
+        <mj-text font-size="20px" padding-bottom="10px" color="#59595b">Preferred Phone No.</mj-text>
+        <mj-text font-size="20px" color="#C60BFC">123-456-7890</mj-text>
+
+        <mj-divider border-width="1px" border-style="solid" border-color="#e3e5e5" padding="32px 0" />
+
+        <mj-text font-size="16px"><span style="font-weight: 700">FlatQuest.se</span> All rights reserved.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

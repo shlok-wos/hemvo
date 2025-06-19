@@ -1,0 +1,50 @@
+{
+  "name": "hemvo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/third-parties": "^14.2.13",
+    "@nextui-org/pagination": "^2.0.35",
+    "@nextui-org/react": "^2.4.6",
+    "@phosphor-icons/react": "^2.1.7",
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-slider": "^1.2.0",
+    "@radix-ui/react-switch": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.4",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "dompurify": "^3.2.6",
+    "downshift": "^9.0.8",
+    "moment": "^2.30.1",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-cookie": "^7.2.0",
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "react-intersection-observer": "^9.16.0",
+    "react-otp-input": "^3.1.1",
+    "react-paginate": "^8.2.0",
+    "react-redux": "^9.1.2",
+    "react-responsive-pagination": "^2.7.0",
+    "sharp": "^0.33.5",
+    "swiper": "^11.1.9",
+    "use-react-countries": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "cookies-next": "^5.1.0",
+    "mjml": "^4.15.3",
+    "typescript": "^5"
+  }
+}
