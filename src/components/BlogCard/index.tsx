@@ -30,7 +30,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           className={clsx(styles.blogImage, "radius-md")}
           height={220}
           width={430}
-          src={imgSrc}
+          src={imgSrc as StaticImageData}
           alt="city-img"
         />
         <div className="d-flex justify-content-between">
