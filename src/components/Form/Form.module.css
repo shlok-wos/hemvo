@@ -1,7 +1,7 @@
 .label {
   display: block;
   margin-bottom: 8px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .input {
@@ -20,7 +20,9 @@
   outline: 0;
   /* transition: all 0.3s ease; */
 }
-
+.secInput {
+  background-color: red !important;
+}
 .input:focus {
   border-color: var(--clr-theme);
 }
@@ -28,11 +30,13 @@
   background-color: var(--sugar-crystal);
 }
 .input.hasIcon {
-  padding-left: 45px;
+  padding-left: 50px;
 }
-
-.input.hasPasswordIcon {
+.input.haspostInput {
   padding-right: 45px;
+}
+.input.hasPasswordIcon {
+  padding-right: 50px;
 }
 
 .input::placeholder {
@@ -44,8 +48,22 @@ textarea.input {
   resize: none;
   border-radius: 16px;
 }
-
-.icon {
+button.postIcon {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+}
+button.icon {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
   position: absolute;
   top: 50%;
   left: 16px;
@@ -62,6 +80,8 @@ textarea.input {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  width: 20px;
+  margin-left: auto;
 }
 
 .error {

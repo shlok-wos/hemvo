@@ -14,7 +14,7 @@ export const CreateAccountForm = () => {
     useUserCreateAccountHook();
   return (
     <div>
-      <h1 className="mb-4 text-2xl">Skapa ett konto</h1>
+      <h1 className="fw-bolder text-5xl space-2xs-mb">Skapa ett konto</h1>
       <form>
         <div className="row gy-2">
           <div className="col-md-6">

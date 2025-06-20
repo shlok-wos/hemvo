@@ -14,7 +14,12 @@ export const AppInfoCard = () => {
             key={`appskf-${appInfoCardIndex}`}
           >
             <div className="img-wrapper pt-3 col-md-6 col-lg-5 mb-sm-2 mb-md-0 d-flex justify-content-center">
-              <img src={appInfoCardItem.appImgae} className="" />
+              <img
+                src={appInfoCardItem.appImgae}
+                width={280}
+                height={430}
+                className=""
+              />
             </div>
             <div className="col-md-6 pt-3 pt-sm-4 pt-md-0">
               <h2 className="text-3xl mb-2 mb-xxl-3">

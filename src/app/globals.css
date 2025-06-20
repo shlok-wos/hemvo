@@ -4,7 +4,7 @@
 :root {
   scroll-behavior: smooth;
   --primary-font: "Manrope";
- 
+
   /* COLOR VARIABLES  */
   --black: #000;
   --white: #fff;
@@ -25,9 +25,17 @@
   --doctor: rgba(249, 249, 249, 0.08);
   --doctor-light: #f9f9f9;
   --errigal-white: #f0f2f5;
+  --lighthouse: #f4f4f4;
+  --shadows: #6a6c6a;
+  --secInput: 68px;
   --gradient: linear-gradient(90deg, var(--g1) 0%, var(--g2) 100%);
   --gradient: linear-gradient(90deg, var(--g1) 0%, var(--g2) 100%);
-
+  --chart-gradient: linear-gradient(
+    141.29deg,
+    rgba(42, 110, 244, 0.8) 25.84%,
+    rgba(42, 110, 244, 0.2) 49.07%,
+    rgba(42, 110, 244, 0.1) 82.34%
+  );
   /* FONTSIZE VARIABLES  */
   --text-5xl: 64px;
   --text-4xl: 52px;
@@ -86,7 +94,7 @@ body {
 .text-accent {
   color: var(--accent);
 }
-.text-green {
+.text-theme {
   color: var(--clr-theme);
 }
 .text-gray {
@@ -108,7 +116,9 @@ body {
 .text-g2 {
   color: var(--g2);
 }
-
+.text-shadow {
+  color: var(--shadows);
+}
 .bg-white {
   background-color: var(--white) !important;
 }
@@ -159,6 +169,13 @@ body {
 }
 .bg-errigal-white {
   background-color: var(--errigal-white);
+}
+.secInput.bg-lighthouse,
+.bg-lighthouse {
+  background-color: var(--lighthouse);
+}
+.bg-dark {
+  background-color: var(--dark);
 }
 /* Typography */
 .text-5xl {
@@ -306,10 +323,28 @@ body {
 .space-2xs-p {
   padding: var(--space-2xs);
 }
+.space-2xs-py {
+  padding-top: var(--space-2xs);
+  padding-bottom: var(--space-2xs);
+}
+.space-2xs-pb {
+  padding-bottom: var(--space-2xs);
+}
+.space-3xs-pt {
+  padding-top: var(--space-3xs);
+}
 .space-2xs-mb {
   margin-bottom: var(--space-2xs);
 }
-
+.space-2xs-mt {
+  margin-top: var(--space-2xs);
+}
+.space-2xs-mt {
+  margin-top: var(--space-2xs);
+}
+.space-2xs-me {
+  margin-right: var(--space-2xs);
+}
 .space-margin-bottom-lg {
   margin-bottom: var(--space-lg);
 }
@@ -348,13 +383,19 @@ body {
 .radius-xs {
   border-radius: var(--radius-xs);
 }
+.secInput.radius-2xs,
 .radius-2xs {
   border-radius: var(--radius-2xs);
 }
 .radius-inherit {
   border-radius: inherit;
 }
-
+.radius-full {
+  border-radius: 50%;
+}
+.secInput.height {
+  min-height: var(--secInput);
+}
 .link {
   color: var(--cosmic-quest);
   transition: 0.3s color;
@@ -452,5 +493,5 @@ body {
 .grid-secondary {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 66px;
+  grid-gap: 40px;
 }

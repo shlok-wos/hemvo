@@ -26,9 +26,9 @@ export const Hero: FC<heroProps> = ({
 }) => {
   return (
     <>
-      <div className="row d-flex align-items-center  hero">
-        <div className="col-lg-6 text-center text-lg-start pb-0 pb-sm-4 pb-lg-0 mt-1 mt-sm-0  pe-xxl-5 test d-flex flex-column align-items-start">
-          <ul className="ms-0 ps-0 d-flex gap-2 flex-wrap justify-content-center justify-content-lg-start mb-4">
+      <div className="d-flex flex-xl-row flex-column align-items-center gap-xs">
+        <div className="d-flex flex-column gap-2xs align-items-center align-items-xl-start">
+          <ul className="ms-0 ps-0 d-flex gap-2 flex-wrap justify-content-center justify-content-lg-start ">
             {heroLabel.map((labelItem: any, labelIndex: number) => {
               return (
                 <li
@@ -43,8 +43,10 @@ export const Hero: FC<heroProps> = ({
               );
             })}
           </ul>
-          <h1 className="text-4xl fw-bold mb-4 text-white">{title}</h1>
-          <p className="text-md text-white lh-base mb-4 ">{description}</p>
+          <h1 className="text-4xl fw-bold  text-white">{title}</h1>
+          <p className="text-md text-center text-xl-start text-white lh-base  ">
+            {description}
+          </p>
           <div
             className={cx(
               styles.heroCard,
@@ -78,18 +80,18 @@ export const Hero: FC<heroProps> = ({
             </div>
           )}
         </div>
-        <div className="col-lg-6 text-center text-lg-end mb-4 mb-sm-0">
+        <div className=" w col-lg-6 text-center text-lg-end mb-4 mb-sm-0">
           <picture
             className={cx(
               styles.heroImage,
-              "object-fit-contain mx-auto ms-lg-auto me-lg-0"
+              "object-fit-contain d-flex justify-content-center "
             )}
           >
             {/* <source media="(min-width:992px)" srcSet={HeroImage.src} /> */}
             <img
               src={heroPhone.src}
               alt={"Flat listings in iPhone"}
-              className="ms-lg-auto"
+              className=""
             />
           </picture>
           <img src={opengraphImage.src} className="opengraph-image d-none" />

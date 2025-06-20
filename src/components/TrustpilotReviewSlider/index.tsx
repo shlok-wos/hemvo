@@ -118,7 +118,7 @@ export const TrustpilotReviewSlider: React.FC<reviewListProps> = ({
             av våra favoriter.
           </p>
 
-          {/* <Image  
+          {/* <Image
             width={120}
             height={40}
             src={trustPilot}

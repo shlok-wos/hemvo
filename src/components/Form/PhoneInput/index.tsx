@@ -6,6 +6,7 @@ import styles from "./PhoneInput.module.css";
 
 export const PhoneInput: React.FC<any> = ({
   id,
+  type,
   label,
   name,
   onChange,
@@ -16,7 +17,9 @@ export const PhoneInput: React.FC<any> = ({
   ...rest
 }: PhoneInputProps) => {
   const { countries } = useCountries();
-  const sortedCountries = countries.sort((a, b) => a.name.localeCompare(b.name));
+  const sortedCountries = countries.sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 
   const defaultCountry = sortedCountries?.find((country) => {
     return country?.countryCallingCode === selectedCountry;
@@ -33,7 +36,9 @@ export const PhoneInput: React.FC<any> = ({
               alt={defaultCountry.name}
               width={20}
               height={20}
-              className={"d-inline-block rounded-circle object-fit-cover flex-shrink-0"}
+              className={
+                "d-inline-block rounded-circle object-fit-cover flex-shrink-0"
+              }
             />
             <span className="mx-2">({defaultCountry.countryCallingCode})</span>
           </div>
@@ -63,27 +68,39 @@ export const PhoneInput: React.FC<any> = ({
                 })
               : undefined
           }
-          options={sortedCountries.map(({ name, flags, countryCallingCode }: any) => {
-            return {
-              id: name,
-              value: countryCallingCode,
-              label: (
-                <div className="d-flex text-sm text-nowrap fw-medium clamp align-items-center">
-                  <img
-                    src={flags.png}
-                    alt={name}
-                    width={20}
-                    height={20}
-                    className={"d-inline-block rounded-circle object-fit-cover flex-shrink-0"}
-                  />
-                  <span className="mx-2">({countryCallingCode})</span>
-                  <span className={styles.countryName}>{name}</span>
-                </div>
-              ),
-            };
-          })}
+          options={sortedCountries.map(
+            ({ name, flags, countryCallingCode }: any) => {
+              return {
+                id: name,
+                value: countryCallingCode,
+                label: (
+                  <div className="d-flex text-sm text-nowrap fw-medium clamp align-items-center">
+                    <img
+                      src={flags.png}
+                      alt={name}
+                      width={20}
+                      height={20}
+                      className={
+                        "d-inline-block rounded-circle object-fit-cover flex-shrink-0"
+                      }
+                    />
+                    <span className="mx-2">({countryCallingCode})</span>
+                    <span className={styles.countryName}>{name}</span>
+                  </div>
+                ),
+              };
+            }
+          )}
         />
-        <Input id={id} onChange={onChange} className={styles.phoneInput} value={value} name={name} {...rest} />
+        <Input
+          type={type}
+          id={id}
+          onChange={onChange}
+          className={styles.phoneInput}
+          value={value}
+          name={name}
+          {...rest}
+        />
       </div>
 
       {errorMessage && <div className={formStyles.error}>{errorMessage}</div>}
@@ -92,6 +109,7 @@ export const PhoneInput: React.FC<any> = ({
 };
 
 interface PhoneInputProps {
+  type?: string;
   id?: string;
   label?: string;
   name?: string;

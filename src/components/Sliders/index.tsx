@@ -31,24 +31,21 @@ export const FQSwiper: React.FC<any> = ({
       </Swiper>
       {isCustomArrow && (
         <div
-          className={cx(
-            isCustomArrowClass,
-            "mt-4 mt-sm-0 text-center text-sm-end"
-          )}
+          className={cx(isCustomArrowClass, " text-center text-sm-end d-flex")}
         >
           <Button
             variant={"accent"}
             icon={<ArrowLeft size={20} weight="duotone" />}
             shape={"round"}
-            className="arrow-right arrow p-1"
+            className="d-flex justify-content-center align-items-center arrow-right arrow p-1"
           />
           <Button
             variant={"accent"}
             icon={<ArrowRight size={20} weight="duotone" />}
             shape={"round"}
-            className="ms-3 arrow-left arrow p-1"
+            className="d-flex justify-content-center align-items-center ms-3 arrow-left arrow p-1"
           />
-        </div>
+        </div>  
       )}
     </>
   );

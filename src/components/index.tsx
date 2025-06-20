@@ -24,3 +24,4 @@ export * from "./TiktokPixel";
 export * from "./TrustpilotReviewSlider";
 export * from "./VideoSlider";
 export * from "./BlogCard";
+export * from "./Dashboard/HowWork";

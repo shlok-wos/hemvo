@@ -4,11 +4,13 @@ export { default as heroPhone } from "./covers/hero-phone.png";
 export { default as WhatCustomersSayAboutUs } from "./covers/iphone-with-girl.png";
 export { default as SquareIPhoneWithGirl } from "./covers/iphone-girl-wallpaper.png";
 export { default as SquareIPhoneWithNews } from "./covers/iphone-with-news.png";
-export { default as SquareIPhoneWithDashboard } from "./covers/dashboard-screenshot.png";
+export { default as SquareIPhoneWithDashboard } from "./covers/dashboard-screenshot.jpg";
 export { default as LivingRoom } from "./covers/living-room.jpg";
 export { default as CityDome } from "./covers/dome-in-a-city.jpg";
+export { default as howWork } from "./covers/how-to-work.png";
 
 export { default as Hemvo } from "./icons/Hemvo.svg";
+export { default as HemvoColored } from "./icons/logo-theme.svg";
 export { default as AuthBanner } from "./covers/couple-looking-at-phone.png";
 export { default as HemvoCircle } from "./covers/Hemvo-circle.png";
 export { default as HowCanWeHelpTab1 } from "./covers/how-can-we-help-t1.jpg";
@@ -50,6 +52,12 @@ export { default as visa } from "./logos/visa.png";
 export { default as masterCard } from "./logos/master-card.png";
 export { default as trustPilot } from "./logos/trustpilot.svg";
 export { default as logoHere } from "./logos/logo-here.png";
+export { default as keyhouse } from "./logos/key.svg";
+export { default as realastate } from "./logos/realestate-home.svg";
+export { default as groupHouse } from "./logos/Group-home.svg";
+export { default as tent } from "./logos/tent.svg";
+export { default as gbHouse } from "./logos/green-blue-home.svg";
+export { default as redHouse } from "./logos/red-home.svg";
 
 // blog card images
 export { default as dockCity } from "./covers/dock-city.jpg";
@@ -58,3 +66,10 @@ export { default as leadyWithLaptop } from "./covers/leady-with-laptop.jpg";
 export { default as personOne } from "./covers/person-1.png";
 export { default as housingQueue } from "./covers/housing-queue.png";
 export { default as glassBack } from "./covers/user-hand-laptop-phone.png";
+export { default as womanOnGrass } from "./covers/woman-laying-grass-with-laptop.png";
+
+// citydetail slider
+export { default as cityOne } from "./covers/city1.jpg";
+export { default as cityTwo } from "./covers/city2.jpg";
+export { default as cityThree } from "./covers/city3.jpg";
+export { default as cityFour } from "./covers/city4.jpg";

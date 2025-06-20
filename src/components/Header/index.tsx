@@ -34,7 +34,7 @@ export const Header: React.FC<any> = () => {
             <div
               className={cx(
                 styles.headerMenu,
-                "d-flex align-items-center gap-4",
+                "d-flex align-items-center gap-4 bg-dark  ",
                 {
                   [styles.headerMenuShow]: show,
                 }
@@ -50,13 +50,13 @@ export const Header: React.FC<any> = () => {
                 Hem
               </Link>
               <Link
-                href={"/"}
+                href={"/about-us"}
                 className={cx("link p-2 text-decoration-none fw-bold", {
                   "link-highlight": pathname === "/about-us",
                 })}
                 onClick={() => setShow(false)}
               >
-                Köer
+                Om oss
               </Link>
               <Link
                 href={"/blog"}
@@ -67,19 +67,20 @@ export const Header: React.FC<any> = () => {
               >
                 Blogg
               </Link>
+
               <Link
-                href={"/about-us"}
+                href={"/city-detail"}
                 className={cx("link p-2 text-decoration-none fw-bold", {
-                  "link-highlight": pathname === "/about-us",
+                  "link-highlight": pathname === "/city-detail",
                 })}
                 onClick={() => setShow(false)}
               >
-                Om oss
+                Köer
               </Link>
               <Link
                 href={"/"}
                 className={cx("link p-2 text-decoration-none fw-bold", {
-                  "link-highlight": pathname === "/about-us",
+                  "link-highlight": pathname === "/family-account",
                 })}
                 onClick={() => setShow(false)}
               >
@@ -98,7 +99,7 @@ export const Header: React.FC<any> = () => {
                 href="/login"
                 variant={"accent"}
                 icon={<SignIn size={20} weight="duotone" />}
-                className="d-md-none"
+                className={clsx(styles.loginBtn, "d-lg-none")}
                 onClick={() => setShow(false)}
               >
                 Logga in
@@ -106,14 +107,14 @@ export const Header: React.FC<any> = () => {
               <Button
                 href="/create-account"
                 icon={<House size={20} weight="duotone" />}
-                className="d-md-none"
+                className={clsx(styles.becomeMember, "d-lg-none")}
                 onClick={() => setShow(false)}
               >
                 Bli medlem
               </Button>
             </div>
 
-            <div className="d-flex align-items-center gap-3 ">
+            <div className="d-lg-flex align-items-center gap-3 d-none ">
               <Button
                 href="/login"
                 variant={"accent"}
@@ -156,7 +157,7 @@ export const Header: React.FC<any> = () => {
           "bg-theme d-flex justify-content-center align-items-center text-white"
         )}
       >
-        <p className="text-md fw-medium">
+        <p className="text-md fw-medium text-center p-2">
           Still dina barni bostadsköra! Kat dina nära och kära med ett par
           klick. Nu finns familjekonton på dibr. Läs mer{" "}
         </p>

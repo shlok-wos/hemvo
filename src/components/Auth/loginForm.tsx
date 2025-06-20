@@ -9,11 +9,13 @@ export const LoginForm = () => {
     useUserLoginHook();
   return (
     <div>
-      <h1 className="text-center text-2xl">Välkommen till Hemvo</h1>
-
-      <Link href={"/"}>
-        <RotatingRings className="my-4 mx-auto" size={320} />
-      </Link>
+      <div className="text-start space-2xs-mb space-2xs-pb">
+        <h1 className=" fw-bolder text-5xl space-2xs-mb ">Logga in</h1>
+        <p className="text-md text-gray fw-medium">
+          För att logga in hos dibz behöver du ett BankID kopplat till ditt
+          personnummer. Om du inte har BankID behöver du kontakta din bank.
+        </p>
+      </div>
 
       <form>
         <Input

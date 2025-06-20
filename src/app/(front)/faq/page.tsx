@@ -56,7 +56,7 @@ export default function faq() {
         <div
           className={clsx(
             styles.bottomMoreInfo,
-            "text-center space-lg-py position-relative "
+            "text-center space-lg-py px-2 position-relative "
           )}
         >
           <p className="text-2xl text-white fw-medium z-1 position-relative">

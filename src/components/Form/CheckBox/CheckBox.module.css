@@ -1,0 +1,43 @@
+.checkboxWrapper {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  --checkbox-bg: #007bff;
+  --checkbox-tick: #fff;
+  --checkbox-size: 20px;
+}
+
+.hiddenCheckbox {
+  display: none;
+}
+
+.customCheckbox {
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  border: 2px solid var(--checkbox-bg);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.hiddenCheckbox:checked + .customCheckbox {
+  background-color: var(--checkbox-bg);
+}
+
+.hiddenCheckbox:checked + .customCheckbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--checkbox-tick);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.labelText {
+  user-select: none;
+}

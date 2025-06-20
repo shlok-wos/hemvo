@@ -5,3 +5,4 @@ export * from "./Switch";
 export * from "./PhoneInput";
 export * from "./OTPInput";
 export * from "./TextArea";
+export * from "./CheckBox";

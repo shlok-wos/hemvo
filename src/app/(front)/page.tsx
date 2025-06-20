@@ -78,7 +78,7 @@ export default function Home() {
         <div
           className={cx(
             styles.heroReviewCards,
-            "bg-white space-xs-p position-relative z-1 radius-md "
+            "grid-secondary bg-white  space-xs-p position-relative z-1 radius-md  "
           )}
         >
           <div className="d-flex  gap-2xs">
@@ -294,14 +294,14 @@ export default function Home() {
       </section>
       <section id="assistance" className="space-top-lg position-relative">
         <div className="container d-flex align-items-center justify-content-between">
-          <div className="section-title-right-space w-100">
+          <div className="section-title-right-space w-100 mb-3 ">
             <h2 className="text-3xl fw-bold mb-2 mb-xxl-3">Hyreshjälpen</h2>
             <p className="text-md text-gray">
               Guider, inspiration, tips och intervjuer för ditt nya hem.
             </p>
           </div>
         </div>
-        <div className="mt-4 mt-sm-5">
+        <div className={clsx(styles.SwiperHeroWrapper, "position-relative ")}>
           <AssistanceSlider blogListData={blogListData} />
         </div>
       </section>
@@ -329,7 +329,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="faq" className="bg-accent space-top-md space-bottom-md">
+      <section id="faq" className=" space-top-md space-bottom-md">
         <div className="container">
           <h2 className="text-3xl fw-bold mb-2 mb-xxl-3">Frågor och svar </h2>
           <p className="text-md text-gray">

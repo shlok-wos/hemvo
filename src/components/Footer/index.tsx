@@ -9,7 +9,7 @@ import styles from "./Footer.module.css";
 
 export const Footer: React.FC<any> = () => {
   return (
-    <footer className="bg-accent">
+    <footer className="bg-inkwell-inception">
       <div className="container">
         <div
           className={cx(
@@ -18,7 +18,7 @@ export const Footer: React.FC<any> = () => {
           )}
         >
           <div className="w-100">
-            <h4 className="text-lg mb-4">Produkt</h4>
+            <h4 className="text-lg mb-4 text-white">Produkt</h4>
 
             <div>
               <Link
@@ -42,7 +42,7 @@ export const Footer: React.FC<any> = () => {
             </div>
           </div>
           <div className="w-100">
-            <h4 className="text-lg mb-4">Företag</h4>
+            <h4 className="text-lg mb-4 text-white">Företag</h4>
 
             <div>
               <Link
@@ -72,7 +72,7 @@ export const Footer: React.FC<any> = () => {
             </div>
           </div>
           <div className="w-100">
-            <h4 className="text-lg mb-4">Information</h4>
+            <h4 className="text-lg mb-4 text-white">Information</h4>
 
             <div>
               <Link
@@ -84,7 +84,7 @@ export const Footer: React.FC<any> = () => {
             </div>
           </div>
           <div className="w-100">
-            <h4 className="text-lg mb-4">Villkor</h4>
+            <h4 className="text-lg mb-4 text-white">Villkor</h4>
 
             <div>
               <Link
@@ -108,7 +108,7 @@ export const Footer: React.FC<any> = () => {
             </div>
           </div>
           <div className="w-100">
-            <h4 className="text-lg mb-4">Sociala medier</h4>
+            <h4 className="text-lg mb-4 text-white">Sociala medier</h4>
 
             <div>
               <Link
@@ -155,8 +155,8 @@ export const Footer: React.FC<any> = () => {
         </div>
 
         <div className={styles.copyright}>
-          <p className="fw-medium justify-content-center d-flex">
-            <strong className="font-primary text-dark mx-1">Hemvo.se</strong>
+          <p className="text-white fw-medium justify-content-center d-flex">
+            <strong className="font-primary  mx-1">Hemvo.se</strong>
              All rights reserved.
           </p>
         </div>

@@ -6,7 +6,7 @@
 
 .card {
   --card-border-spacing: 2px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-2xs);
   padding: 32px;
   background-color: var(--white);
   border: 1px solid #ebebf3;

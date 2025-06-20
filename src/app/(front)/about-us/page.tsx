@@ -1,14 +1,12 @@
+"use client";
 import { about, aboutPartnership } from "@/Const/data";
-import { Icons } from "@/Const/Icons";
-import { Question } from "@phosphor-icons/react";
 import clsx from "clsx";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import styles from "../page.module.css";
-import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "About Us | Hemvo",
-};
+// export const metadata: Metadata = {
+//   title: "About Us | Hemvo",
+// };
 
 export default function About() {
   return (
@@ -72,7 +70,7 @@ export default function About() {
         <div
           className={clsx(
             styles.bottomMoreInfo,
-            "text-center space-lg-py position-relative "
+            "text-center space-lg-py px-2 position-relative "
           )}
         >
           <p className="text-2xl text-white fw-medium z-1 position-relative">

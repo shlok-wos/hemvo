@@ -4,11 +4,11 @@ import { dockCity, logoHere } from "@/assets/images";
 import { Icons } from "@/Const/Icons";
 import clsx from "clsx";
 interface BlogCardProps {
-  imgSrc: string;
+  imgSrc: string | StaticImageData;
   date: string;
   time: string;
   title: string;
-  personImg: string;
+  personImg: string | StaticImageData;
   personName: string;
   personPos: string;
 }
@@ -47,8 +47,8 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         <h4 className="text-xl text-dark fw-bolder">{title}</h4>
         <div className="d-flex gap-3xs">
           <Image height={60} width={60} src={personImg} alt="person-img" />
-          <div className="d-flex flex-column ">
-            <p className="text-lg text-dark fw-bolder mb-1"> {personName} </p>
+          <div className="d-flex flex-column justify-content-center ">
+            <p className="text-lg text-dark fw-bolder"> {personName} </p>
             <p className="text-sm text-gray fw-medium">{personPos}</p>
           </div>
         </div>

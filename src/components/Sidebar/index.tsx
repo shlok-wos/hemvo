@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Hemvo } from "@/assets/images";
+import { HemvoColored } from "@/assets/images";
 import { Card } from "../Card";
 import {
   Crown,
@@ -9,6 +9,8 @@ import {
   HandCoins,
   House,
   Notebook,
+  Play,
+  PlusSquare,
   Question,
   SignOut,
 } from "@phosphor-icons/react";
@@ -21,6 +23,7 @@ import { X } from "@phosphor-icons/react";
 import { deleteCookie } from "cookies-next";
 import { resetData } from "@/reducers/staticData.reducer";
 import { useAppDispatch } from "@/store";
+import { PlayCircle } from "@phosphor-icons/react/dist/ssr";
 
 export function Sidebar({ open, onClose }: SidebarProps) {
   const dispatch = useAppDispatch();
@@ -28,6 +31,14 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const dashboardNavlinks = [
+    {
+      id: 9,
+      name: "Översikt",
+      icon: (
+        <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/overview",
+    },
     {
       id: 1,
       name: "Hem",
@@ -74,6 +85,22 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       ),
       path: "/dashboard/faq",
     },
+    {
+      id: 7,
+      name: "Hur funkar det?",
+      icon: (
+        <PlayCircle weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/how-work",
+    },
+    {
+      id: 8,
+      name: "Lägg till köer",
+      icon: (
+        <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/add-queue",
+    },
   ];
   const handleOnLogout = (event: any) => {
     event?.preventDefault;
@@ -88,10 +115,13 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         [styles.open]: open,
       })}
     >
-      <Card className="h-100" contentClassName={"h-100 d-flex flex-column"}>
-        <div className="d-flex align-items-center justify-content-between gap-2 mb-5">
+      <Card
+        className="h-100"
+        contentClassName={"h-100 d-flex flex-column justify-content-between"}
+      >
+        <div className="d-flex align-items-center justify-content-between gap-2 mb-4">
           <Link href={"/dashboard"} onClick={onClose}>
-            <img src={Hemvo.src} alt="Hemvo" />
+            <img src={HemvoColored.src} alt="Hemvo" />
           </Link>
 
           <Button
@@ -120,14 +150,14 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                     </Link>
                   </li>
 
-                  {link.id === 5 && (
+                  {/* {link.id === 5 && (
                     <hr
                       style={{
                         border: "1px solid var(--lightgray)",
                       }}
                       className="mb-xl-4 mb-3"
                     />
-                  )}
+                  )} */}
                 </Fragment>
               );
             })}
@@ -137,7 +167,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         <Button
           variant={"danger"}
           onClick={handleOnLogout}
-          className="text-center d-flex justify-content-center bg-transparent border-0 align-items-center text-danger d-block mt-auto"
+          className="text-center mt-auto d-flex justify-content-center bg-transparent border-0 align-items-center text-danger d-block mt-4"
         >
           <SignOut weight="duotone" size={22} className="me-2" />
           Logga ut

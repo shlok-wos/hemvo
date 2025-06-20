@@ -20,6 +20,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* FAV ICONS ` */}
+        <link
+          rel="icon"
+          type="image/png"
+          href="../assets/images/favicon/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="../assets/images/favicon/favicon.svg"
+        />
+        <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="../assets/images/favicon/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
+
         {/* SEO + meta */}
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -34,24 +54,36 @@ export default function RootLayout({
         />
 
         {/* OG + Twitter meta */}
-        <meta property="og:title" content="Hemvo | Find Your Perfect Flat to Rent or Buy" />
+        <meta
+          property="og:title"
+          content="Hemvo | Find Your Perfect Flat to Rent or Buy"
+        />
         <meta
           property="og:description"
           content="Discover your ideal flat with Hemvo! Browse a wide selection of flats for rent and sale. Explore listings, neighborhood insights, and expert buying guides to make your search easier."
         />
-        <meta property="og:image" content="https://flatquest.se/_next/static/media/opengraph-image.ae8944c1.jpg" />
+        <meta
+          property="og:image"
+          content="https://flatquest.se/_next/static/media/opengraph-image.ae8944c1.jpg"
+        />
         <meta property="og:url" content="https://flatquest.se" />
         <meta property="og:site_name" content="hemvo" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hemvo | Find Your Perfect Flat to Rent or Buy" />
+        <meta
+          name="twitter:title"
+          content="Hemvo | Find Your Perfect Flat to Rent or Buy"
+        />
         <meta
           name="twitter:description"
           content="Discover your ideal flat with Hemvo! Browse a wide selection of flats for rent and sale. Explore listings, neighborhood insights, and expert buying guides to make your search easier."
         />
-        <meta name="twitter:image" content="https://flatquest.se/_next/static/media/opengraph-image.ae8944c1.jpg" />
+        <meta
+          name="twitter:image"
+          content="https://flatquest.se/_next/static/media/opengraph-image.ae8944c1.jpg"
+        />
 
         {/* Other scripts */}
         <script src="https://app.ilonsi.com/script/main.min.js"></script>

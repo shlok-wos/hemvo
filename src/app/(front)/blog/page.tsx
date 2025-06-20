@@ -1,20 +1,16 @@
+"use client";
 import { BlogCard, Button } from "@/components";
-import { FrontBlogPost } from "@/components/Front/FrontBlogPost";
+// import { FrontBlogPost } from "@/components/Front/FrontBlogPost";
 import { blogCard, housingqueue, overView } from "@/Const/data";
 import clsx from "clsx";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import Image from "next/image";
 import styles from "../page.module.css";
-import {
-  housingQueue,
-  leadyWithLaptop,
-  person,
-  personOne,
-} from "@/assets/images";
+import { housingQueue, leadyWithLaptop, personOne } from "@/assets/images";
 import { Icons } from "@/Const/Icons";
-export const metadata: Metadata = {
-  title: "Blog | Hemvo",
-};
+// export const metadata: Metadata = {
+//   title: "Blog | Hemvo",
+// };
 
 export default function Blog() {
   return (
@@ -55,8 +51,8 @@ export default function Blog() {
                     src={personOne}
                     alt="person-img"
                   />
-                  <div className="d-flex flex-column ">
-                    <p className="text-lg text-dark fw-bolder mb-1">
+                  <div className="d-flex flex-column justify-content-center">
+                    <p className="text-lg text-dark fw-bolder ">
                       {" "}
                       Lovisa Qvarner{" "}
                     </p>
@@ -157,25 +153,40 @@ export default function Blog() {
       {/* HOUSING QUEUE SECTION  */}
       <section className="space-lg-py">
         <div className="container">
-          <div className={clsx(styles.housingWrapper, "d-flex radius-2xs")}>
-            <div className={clsx(styles.housingQueue, "")}>
-              <h2 className="text-4xl text-white fw-bolder space-md-mb">
+          <div
+            className={clsx(
+              styles.housingWrapper,
+              "d-flex flex-column flex-xl-row justify-content-between radius-2xs"
+            )}
+          >
+            <div
+              className={clsx(
+                styles.housingQueue,
+                "d-flex flex-column gap-xs align-items-start"
+              )}
+            >
+              <h2 className="text-4xl text-white fw-bolder ">
                 Joint 200+ housing queues today
               </h2>
-              <button className={clsx(styles.lightBtn, "space-2xs-mb")}>
+              <button className={clsx(styles.lightBtn, "text-md ")}>
                 try homvo for free
               </button>
-              <p className="text-lg text-white fw-semibold">
-                One months free, then
-              </p>
-              <p className="text-xl text-white fw-bolder">35 SEK per month</p>
+              <div>
+                <p className="text-lg text-white fw-semibold mb-2">
+                  One months free, then
+                </p>
+                <p className="text-xl text-white fw-bolder">35 SEK per month</p>
+              </div>
             </div>
-            <Image
-              src={housingQueue}
-              width={700}
-              height={460}
-              alt="Housing-poster"
-            />
+            <div className={clsx(styles.housingQueuesImg)}>
+              <Image
+                className="m-auto "
+                src={housingQueue}
+                width={700}
+                height={460}
+                alt="Housing-poster"
+              />
+            </div>
           </div>
         </div>
       </section>

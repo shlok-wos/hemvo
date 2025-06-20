@@ -1,5 +1,23 @@
-import { dockCity, logoHere, person } from "@/assets/images";
+import {
+  cityOne,
+  cityThree,
+  cityTwo,
+  dockCity,
+  gbHouse,
+  groupHouse,
+  keyhouse,
+  logoHere,
+  person,
+  realastate,
+  redHouse,
+  tent,
+} from "@/assets/images";
 import { Icons } from "./Icons";
+import { title } from "process";
+import { ContactDetailForm } from "@/components/Form/ContactDetailForm";
+import { IncomeForm } from "@/components/Form/IncomeForm";
+import { CurrentResidentForm } from "@/components/Form/CurrentResidentForm";
+import { PreferanceForm } from "@/components/Form/PreferanceForm";
 
 export const heroRting = [
   {
@@ -170,5 +188,166 @@ export const aboutPartnership = [
     icon: <>{Icons.tick}</>,
     title: "Vägen framåt går vi tillsammans",
     text: "dibz är ett ungt företag och vi arbetar för att starta en dialog med alla köer som återfinns på vår plattform. Tillsammans kan vi förbättra Sveriges digitala infrastruktur.",
+  },
+];
+export const cityDetailCard = [
+  {
+    id: 1,
+    title: "Ekerö Bostäder,",
+    text: " Den största hyresvärden i natursköna Ekerö kommun. Med 9000 hyresrätter arbetar de...",
+    image: realastate,
+  },
+  {
+    id: 2,
+    title: "Hemvist",
+    text: " Hemvist (den 22/2024 januari bytte de namn från Sveafastigheter till Hemvist) äger och...",
+    image: groupHouse,
+  },
+  {
+    id: 3,
+    title: " Tyresö bostäder",
+    text: "Var sjätte tyresöbo är hyresgäst hos TYBO. Några bor i radhus, andra i flerfamiljshus och.. ",
+    image: tent,
+  },
+  {
+    id: 4,
+    title: " Telge Bostäder",
+    text: "Södertäljes största bostadsföretag, sedan 1948 erbjuder Telge AB boende i attraktiva,... ",
+    image: keyhouse,
+  },
+  {
+    id: 5,
+    title: "Ekerö Bostäder",
+    text: "Den största hyresvärden i natursköna Ekerö kommun. Med 9000 hyresrätter arbetar de... ",
+    image: gbHouse,
+  },
+  {
+    id: 6,
+    title: "Ekerö Bostäder",
+    text: "Den största hyresvärden i natursköna Ekerö kommun. Med 9000 hyresrätter arbetar de... ",
+    image: redHouse,
+  },
+];
+export const cityQueue = {
+  rows: [
+    {
+      blog_image: cityOne,
+      title: "City 1",
+      imageTitle: "Stockholm",
+      queue: "24 st köer",
+    },
+    {
+      blog_image: cityTwo,
+      title: "City 2",
+      imageTitle: "Göteborg",
+      queue: "7 st köer",
+    },
+    {
+      blog_image: cityThree,
+      title: "City 3",
+      imageTitle: "Malmö",
+      queue: "4 st köer",
+    },
+  ],
+};
+export const howWorkData = [
+  {
+    id: 1,
+    text: "Andra inte ditt lösenord via bostadskons hemsida. Anvend det du fått från diz",
+  },
+  {
+    id: 2,
+    text: "Vi sköter registrering hos respektive bostadskö som du lägger till visa dibz",
+  },
+  {
+    id: 3,
+    text: "dibz fixar regelbunden inloggning åt dig så att du inte tappar din köplats",
+  },
+];
+export const addQueueData = [
+  {
+    id: 1,
+    stepNo: 1,
+    title: "Kontaktuppgifter",
+    text: "Din grundläggande kontaktinformation",
+    data: <ContactDetailForm />,
+  },
+  {
+    id: 2,
+    stepNo: 2,
+    title: "Boendepreferenser",
+    text: "Vilken typ av boende passar dig?",
+    data: <PreferanceForm />,
+  },
+  {
+    id: 3,
+    stepNo: 3,
+    title: "Nuvarande boende",
+    text: "Vissa köer kräver att du lämnar information om hur du bor idag",
+    data: <CurrentResidentForm />,
+  },
+  {
+    id: 4,
+    stepNo: 4,
+    title: "Inkomst",
+    text: "Vissa köer kräver att du lämnar information om din ekonomi.",
+    data: <IncomeForm />,
+  },
+];
+export const chartSampleData = {
+  labels: [
+    "jun 2025",
+    "jul 2025",
+    "aug 2025",
+    "sep 2025",
+    "okt 2025",
+    "nov 2025",
+    "dec 2025",
+    "jan 2026",
+    "fab 2026",
+    "mar 2026",
+    "apr 2026",
+    "may 2026",
+  ],
+  datasets: [
+    // {
+    //   label: "Revenue",
+    //   data: [30, 50, 40, 60, 70, 55, 80],
+    //   borderColor: "rgba(75, 192, 192, 1)",
+    //   // backgroundColor: "rgba(75, 192, 192, 0.2)",
+    //   background:
+    //     " linear-gradient(141.29deg, rgba(42, 110, 244, 0.8) 25.84%, rgba(42, 110, 244, 0.2) 49.07%, rgba(42, 110, 244, 0.1) 82.34%);",
+    //   fill: true,
+    //   tension: 0.4,
+    //   pointBorderWidth: 2,
+    // },
+    {
+      label: "Köpoäng",
+      data: [0, 50, 100, 150, 200, 250, 300, 350, 400],
+      borderColor: "rgba(42, 110, 244, 0.8)",
+      backgroundColor: "rgba(42, 110, 244, 0.2)",
+      fill: true,
+      tension: 0.4,
+      pointBorderWidth: 2,
+      borderDash: [10, 8],
+    },
+  ],
+};
+// background: linear-gradient(141.29deg, rgba(42, 110, 244, 0.8) 25.84%, rgba(42, 110, 244, 0.2) 49.07%, rgba(42, 110, 244, 0.1) 82.34%);
+export const chartCardData = [
+  {
+    id: 1,
+    label: "Dagar med dibz",
+    data: "16",
+  },
+  {
+    id: 2,
+    label: "Dina områden",
+    data: "1",
+  },
+  {
+    id: 3,
+    label: "Medlemmar efter dig i kö",
+    data: "4763",
   },
 ];
