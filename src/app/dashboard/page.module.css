@@ -6,7 +6,6 @@
   gap: var(--spacing);
   height: 100%;
   background-color: var(--lightgray);
-  content: "65464654";
 }
 
 .content {

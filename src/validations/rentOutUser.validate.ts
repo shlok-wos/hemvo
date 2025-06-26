@@ -1,15 +1,19 @@
-import { emailRegex, nameRegex, numberOnlyRegex, passwordRegex } from "@/regex";
-import { UserCreateAccountErrorType, UserCreateAccountType } from "@/types/user.types";
+import { emailRegex, nameRegex, numberOnlyRegex } from "@/regex";
+import { UserCreateAccountErrorType } from "@/types/user.types";
 
 const phoneNumberLengthMax = 15;
 const phoneNumberLengthMin = 10;
-export const validateUserInquiryOnChange = (name: string, value: any, errors: any) => {
+export const validateUserInquiryOnChange = (
+  name: string,
+  value: any,
+  errors: any
+) => {
   switch (name) {
     case "firstName":
       if (!value) {
         errors.firstName = "Detta fält är obligatoriskt";
       } else if (value.length >= 30) {
-        errors.firstName = "Maximum 30 character are allowed";
+        errors.firstName = "Maximalt 30 tecken är tillåtna";
       } else if (!nameRegex.test(value)) {
         errors.firstName = "Endast bokstäver är tillåtna";
       } else {
@@ -21,7 +25,7 @@ export const validateUserInquiryOnChange = (name: string, value: any, errors: an
       if (!value) {
         errors.lastName = "Detta fält är obligatoriskt";
       } else if (value.length >= 30) {
-        errors.lastName = "Maximum 30 character are allowed";
+        errors.lastName = "Maximalt 30 tecken är tillåtna";
       } else if (!nameRegex.test(value)) {
         errors.lastName = "Endast bokstäver är tillåtna";
       } else {
@@ -45,7 +49,10 @@ export const validateUserInquiryOnChange = (name: string, value: any, errors: an
         errors.phoneNumber = "Detta fält är obligatoriskt.";
       } else if (!numberOnlyRegex.test(value)) {
         errors.phoneNumber = "Endast siffror är tillåtna";
-      } else if (value.length > phoneNumberLengthMax || value.length < phoneNumberLengthMin) {
+      } else if (
+        value.length > phoneNumberLengthMax ||
+        value.length < phoneNumberLengthMin
+      ) {
         errors.phoneNumber = "Ange ett giltigt mobilnummer.";
       } else {
         delete errors.phoneNumber;
@@ -62,7 +69,7 @@ export const validateUserInquirySubmit = (authData: any = {}) => {
   if (!firstName) {
     errors.firstName = "Detta fält är obligatoriskt";
   } else if (firstName.length >= 30) {
-    errors.firstName = "Maximum 30 character are allowed";
+    errors.firstName = "Maximalt 30 tecken är tillåtna";
   } else if (!nameRegex.test(firstName)) {
     errors.firstName = "Endast bokstäver är tillåtna";
   }
@@ -70,7 +77,7 @@ export const validateUserInquirySubmit = (authData: any = {}) => {
   if (!lastName) {
     errors.lastName = "Detta fält är obligatoriskt";
   } else if (lastName.length >= 30) {
-    errors.lastName = "Maximum 30 character are allowed";
+    errors.lastName = "Maximalt 30 tecken är tillåtna";
   } else if (!nameRegex.test(lastName)) {
     errors.lastName = "Endast bokstäver är tillåtna";
   }
@@ -85,8 +92,11 @@ export const validateUserInquirySubmit = (authData: any = {}) => {
     errors.phoneNumber = "Detta fält är obligatoriskt.";
   } else if (!numberOnlyRegex.test(phoneNumber)) {
     errors.phoneNumber = "Endast siffror är tillåtna";
-  } else if (phoneNumber.length > phoneNumberLengthMax || phoneNumber.length < phoneNumberLengthMin) {
-    errors.phoneNumber = "Enter 10 digit Mobile number";
+  } else if (
+    phoneNumber.length > phoneNumberLengthMax ||
+    phoneNumber.length < phoneNumberLengthMin
+  ) {
+    errors.phoneNumber = "Ange ett 10-siffrigt mobilnummer";
   }
   return errors;
 };

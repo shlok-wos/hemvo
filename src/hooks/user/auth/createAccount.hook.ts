@@ -44,6 +44,22 @@ export const useUserCreateAccountHook = () => {
       const registerUser = await userRegistration(authData);
       if (registerUser.success) {
         setCookie("_token", registerUser?.data?.token);
+        setCookie("authToken", registerUser?.data?.token);
+        // setCookie("_token", registerUser?.data?.token, {
+        //   path: "/",
+        //   // sameSite: "lax", // "Lax" is safest cross-browser
+        //   // secure: true, // true only in production (Safari requires Secure with SameSite=None)
+        //   maxAge: 60 * 60 * 24 * 365, // 1 year
+        //   domain: '.flatquest.se',
+        // });
+        // setCookie("authToken", registerUser?.data?.token, {
+        //   path: "/",
+        //   // sameSite: "lax", // "Lax" is safest cross-browser
+        //   // secure: true, // true only in production (Safari requires Secure with SameSite=None)
+        //   maxAge: 60 * 60 * 24 * 365, // 1 year
+        //   domain: '.flatquest.se',
+        // });
+
         setAuthHeader(registerUser?.data?.token);
         router.push("/dashboard");
       } else {

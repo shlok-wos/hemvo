@@ -16,6 +16,8 @@ export { default as HemvoCircle } from "./covers/Hemvo-circle.png";
 export { default as HowCanWeHelpTab1 } from "./covers/how-can-we-help-t1.jpg";
 export { default as HowCanWeHelpTab2 } from "./covers/women-in-yellow.jpeg";
 export { default as HowCanWeHelpTab3 } from "./covers/room-with-staircase.jpeg";
+export { default as questionAsk } from "./covers/question-ask.svg";
+export { default as user } from "./covers/user.svg";
 
 // Rental Assistance Slider
 export { default as AssistanceSlider1 } from "./assistance-slider/cleaner-working.png";

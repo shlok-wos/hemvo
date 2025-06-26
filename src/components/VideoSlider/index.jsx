@@ -64,8 +64,12 @@ const VideoCard = ({ video, index }) => {
           onEnded={handleVideoEnded}
         />
         {!isPlaying && (
-          <button className={`${styles.playButton} play-btn`} onClick={handlePlay} aria-label={`Play ${video.title}`}>
-            <Play style={{minHeight:"20px",minWidth:"20px"}} size={32} />
+          <button
+            className={`${styles.playButton} play-btn`}
+            onClick={handlePlay}
+            aria-label={`Play ${video.title}`}
+          >
+            <Play style={{ minHeight: "20px", minWidth: "20px" }} size={32} />
           </button>
         )}
       </div>
@@ -150,7 +154,7 @@ export const VideoSlider = ({
                     <VideoCard
                       video={{
                         title: video.title,
-                        video_src: video.url + video.videoName,
+                        video_src: video.url + video.mediaName,
                         // video_thubnail: video.thumbnail,
                       }}
                       index={index}

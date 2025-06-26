@@ -1,12 +1,52 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import React, { useEffect, useState } from "react";
 import Chart from "chart.js/auto";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import { Line } from "react-chartjs-2";
+import { Loader } from "@/components/Loader";
+
+Chart.register(ChartDataLabels);
 
 export const LineChart = ({
-  data,
   isLabel = true,
   isDataLabelVisible = false,
+  data,
+  isLoader = false,
 }) => {
+  const [chartData, setChartData] = useState({});
+
+  useEffect(() => {
+    if (data) {
+      setChartData({
+        labels: data?.months,
+        datasets: [
+          {
+            label: "Nuvarande poäng",
+            data: data?.gainedPoints,
+            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            fill: true,
+            tension: 0.4,
+            // pointBorderWidth: 2,
+            pointRadius: 0,
+            hidden: false,
+          },
+          {
+            label: "Förväntad poängutveckling",
+            data: data?.forecastPoints,
+            borderColor: "rgba(153, 102, 255, 1)",
+            backgroundColor: "rgba(153, 102, 255, 0.2)",
+            fill: true,
+            tension: 0.4,
+            // pointBorderWidth: 2,
+            pointRadius: 0,
+            borderDash: [10, 8],
+            hidden: false,
+          },
+        ],
+      });
+    }
+  }, [data]);
+
   const options = {
     maintainAspectRatio: false,
     aspectRatio: 2.5,
@@ -18,35 +58,39 @@ export const LineChart = ({
       y: {
         beginAtZero: true,
         ticks: {
-          font: { size: 14, family: "Onest", weight: 400 },
-          color: "rgba(126, 122, 136, 1)",
+          font: { size: 14, weight: 400 },
           stepSize: 10,
         },
       },
       x: {
+        beginAtZero: true,
         display: isLabel,
-        ticks: { font: { size: 14, family: "Onest", weight: 400 } },
+        ticks: { font: { size: 14, weight: 400 } },
         grid: { drawOnChartArea: false },
       },
     },
     plugins: {
-      usePointStyle: "circle",
       legend: {
+        display: true,
         labels: {
           usePointStyle: true,
-        },
-        position: "top",
-      },
-
-      tooltip: {
-        callbacks: {
-          label: function (context) {
-            let yValue = context.parsed.y;
-            let label = context.dataset.label || "";
-            return `${label}: ${yValue}%`;
+          font: {
+            size: 14,
+            weight: "bold",
+            // family: "Exodus Sans",
           },
         },
       },
+      // Disable default legend
+      //   tooltip: {
+      //     callbacks: {
+      //       label: function (context) {
+      //         let yValue = context.parsed.y;
+      //         let label = context.dataset.label || "";
+      //         return `${label}: ${yValue}%`;
+      //       },
+      //     },
+      //   },
       datalabels: {
         display: isDataLabelVisible,
         color: "#000",
@@ -55,5 +99,18 @@ export const LineChart = ({
     },
   };
 
-  return <Line data={data} options={options} />;
+  return (
+    <>
+      {chartData?.labels && chartData?.datasets ? (
+        <Line
+          width={"100%"}
+          height={"100%"}
+          data={chartData}
+          options={options}
+        />
+      ) : null}
+
+      <Loader isbgLight show={isLoader} />
+    </>
+  );
 };

@@ -1,41 +1,60 @@
-.chartWrapper {
-  height: 450px;
+.queueWrapper,
+.sideCardWrapper {
+  gap: var(--spacing);
+  gap: var(--spacing);
 }
-.myQueuesBtn {
-  min-height: 65px;
-  min-width: 150px;
-  border: 1px solid var(--clr-theme);
-  padding: 0 10px;
-  transition: all 0.3 ease-in-out;
-  cursor: pointer;
+
+.chartSideCardContent,
+.queueCardWrapper {
+  row-gap: var(--spacing);
 }
-.myQueuesBtn:hover {
-  background-color: var(--clr-theme);
+
+.logoWrapper {
+  padding: 8px;
+  max-width: 100px;
+  border: 1px solid #0000002e;
+  border-radius: 12px;
+  --bs-aspect-ratio: 70%;
+}
+
+.cardBtnWrapper .cardBtn {
+  border-radius: 8px;
+}
+
+.cardBtnWrapper .cardBtn.colorUnjoin {
+  color: var(--black);
+}
+
+.cardBtnWrapper .cardBtn.colorjoin {
+  color: var(--g2);
+}
+
+.cardBtnWrapper .readBtn {
+  background-color: transparent;
+  border: 1px solid var(--g2);
+  color: var(--g2);
+}
+
+.cardBtnWrapper .readBtn:hover {
+  background-color: var(--g2);
   color: var(--white);
 }
+
 .chartWrapper {
+  min-height: 380px;
 }
-.lineChart {
-  width: 75%;
+
+.chartWrapper canvas {
+  min-height: 100%;
 }
-.chartCard {
-  width: 25%;
+
+.detailLogoWrapper {
+  padding: 10px;
+  max-width: 140px;
+  border: 1px solid var(--bg-white-gray);
+  border-radius: 4px;
 }
-@media screen and (max-width: 1199px) {
-  .lineChart,
-  .chartCard {
-    width: 100%;
-  }
-  .myQueuesBtn {
-    min-height: 50px;
-  }
-  
-}
-@media screen and (max-width: 575px) {
-  .chartWrapper {
-    height: 250px;
-  }
-  .myQueuesBtn {
-    min-height: 45px;
-  }
+
+.queueCardWrapper {
+  min-height: 250px;
 }

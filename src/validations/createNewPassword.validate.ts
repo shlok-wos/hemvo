@@ -1,7 +1,12 @@
 import { passwordRegex } from "@/regex";
-import { UseResetPasswordErrorType, UseResetPasswordType } from "@/types/user.types";
+import { UseResetPasswordErrorType } from "@/types/user.types";
 
-export const validateOnChangePassword = (name: string, value: any, errors: any, password: string) => {
+export const validateOnChangePassword = (
+  name: string,
+  value: any,
+  errors: any,
+  password: string
+) => {
   switch (name) {
     case "newPassword":
       if (value.trim() === null || value.trim() === "" || value === undefined) {
@@ -10,9 +15,10 @@ export const validateOnChangePassword = (name: string, value: any, errors: any, 
         errors.newPassword =
           "Lösenordet måste innehålla minst en stor bokstav, en liten bokstav, en siffra och ett specialtecken, samt inte ha några mellanslag.";
       } else if (value.length < 6) {
-        errors.newPassword = "Password length must be atleast 6 letters";
+        errors.newPassword = "Lösenordslängden måste vara minst 6 tecken";
       } else if (value.length > 16) {
-        errors.newPassword = "Password length must be less than or or equal to 16";
+        errors.newPassword =
+          "Lösenordslängden måste vara kortare än eller lika med 16";
       } else {
         delete errors.newPassword;
       }
@@ -21,7 +27,8 @@ export const validateOnChangePassword = (name: string, value: any, errors: any, 
       if (value.trim() === null || value.trim() === "" || value === undefined) {
         errors.confirmPassword = "Detta fält är obligatoriskt";
       } else if (password !== value) {
-        errors.confirmPassword = "Lösenordet och bekräfta lösenordet matchar inte";
+        errors.confirmPassword =
+          "Lösenordet och bekräfta lösenordet matchar inte";
       } else {
         delete errors.confirmPassword;
       }
@@ -40,15 +47,16 @@ export const validateOnSubmitChangePassword = (newPasswordData: any = {}) => {
     errors.newPassword =
       "Lösenordet måste innehålla minst en versal, en gemen, en siffra, ett specialtecken och får inte innehålla något mellanslag";
   } else if (newPassword.length < 6) {
-    errors.newPassword = "Password length must be atleast 6 letters";
+    errors.newPassword = "Lösenordslängden måste vara minst 6 tecken";
   } else if (newPassword.length > 16) {
-    errors.newPassword = "Password length must be less than or or equal to 16";
+    errors.newPassword =
+      "Lösenordslängden måste vara kortare än eller lika med 16";
   }
 
   if (!confirmPassword) {
     errors.confirmPassword = "Detta fält är obligatoriskt";
   } else if (newPassword !== confirmPassword) {
-    errors.confirmPassword = "Password and confirm password does not match";
+    errors.confirmPassword = "Lösenordet och bekräftande lösenord matchar inte";
   }
   return errors;
 };

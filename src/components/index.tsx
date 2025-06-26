@@ -25,3 +25,4 @@ export * from "./TrustpilotReviewSlider";
 export * from "./VideoSlider";
 export * from "./BlogCard";
 export * from "./Dashboard/HowWork";
+export * from "./Skeleton";

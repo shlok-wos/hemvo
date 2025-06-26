@@ -32,14 +32,6 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   const router = useRouter();
   const dashboardNavlinks = [
     {
-      id: 9,
-      name: "Översikt",
-      icon: (
-        <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
-      ),
-      path: "/dashboard/overview",
-    },
-    {
       id: 1,
       name: "Hem",
       icon: <House weight="duotone" size={22} className="me-2 flex-shrink-0" />,
@@ -55,6 +47,14 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     },
     {
       id: 3,
+      name: "Bostadskö",
+      icon: (
+        <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/overview",
+    },
+    {
+      id: 4,
       name: "Guide",
       icon: (
         <Notebook weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -62,7 +62,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/blogspot",
     },
     {
-      id: 4,
+      id: 5,
       name: "Medlemskap",
       icon: (
         <HandCoins size={22} weight="duotone" className="me-2 flex-shrink-0" />
@@ -70,7 +70,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/subscription",
     },
     {
-      id: 5,
+      id: 6,
       name: "Inställningar",
       icon: (
         <GearSix weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -78,7 +78,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/settings",
     },
     {
-      id: 6,
+      id: 7,
       name: "Vanliga frågor",
       icon: (
         <Question weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -86,7 +86,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/faq",
     },
     {
-      id: 7,
+      id: 8,
       name: "Hur funkar det?",
       icon: (
         <PlayCircle weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -94,7 +94,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/how-work",
     },
     {
-      id: 8,
+      id: 9,
       name: "Lägg till köer",
       icon: (
         <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />

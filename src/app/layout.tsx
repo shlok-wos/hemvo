@@ -24,21 +24,17 @@ export default function RootLayout({
         <link
           rel="icon"
           type="image/png"
-          href="../assets/images/favicon/favicon-96x96.png"
+          href="favicon-96x96.png"
           sizes="96x96"
         />
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="../assets/images/favicon/favicon.svg"
-        />
-        <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="shortcut icon" href="favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="../assets/images/favicon/apple-touch-icon.png"
+          href="apple-touch-icon.png"
         />
-        <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
+        <link rel="manifest" href="site.webmanifest" />
 
         {/* SEO + meta */}
         <meta charSet="utf-8" />

@@ -1,4 +1,10 @@
-import { cancelPlan, checkoutSession, subscribedPlan, subscriptionPlansList } from "@/actions";
+import {
+  cancelPlan,
+  checkoutSession,
+  eventHandler,
+  subscribedPlan,
+  subscriptionPlansList,
+} from "@/actions";
 import { PlanDetails, PlanList } from "@/types/subscription.types";
 import { getCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
@@ -12,14 +18,15 @@ import { trackTikTokEvent } from "@/services/tiktokEvents";
 export const usePlanListHook = () => {
   const router: any = useRouter();
   // const pathname = usePathname()
-  const [planDetails, setPlanDetails] = useState<PlanDetails>({} as PlanDetails);
+  const [planDetails, setPlanDetails] = useState<PlanDetails>(
+    {} as PlanDetails
+  );
   const [planList, setPlanList] = useState<PlanList[]>([{}] as PlanList[]);
   const [isLoader, setIsLoader] = useState<boolean>(true);
   const [isCancelModal, setIsCancelModal] = useState<boolean>(false);
   const token = getCookie("_token");
   // const storedPlans = useAppSelector((state) => state.staticData.subscriptionPlanList);
   // const dispatch = useAppDispatch()
-
   useEffect(() => {
     getSubscriptionList();
     getSubscribedPlanDetails();
@@ -30,10 +37,20 @@ export const usePlanListHook = () => {
       if (token) {
         const subscribedPlanResponse = await subscribedPlan();
         const planData = subscribedPlanResponse?.data;
-        const planfeatures = planData?.SubscriptionPlan?.features.split(",").map((item: any) => item.trim());
+        const planfeatures = planData?.SubscriptionPlan?.features
+          .split(",")
+          .map((item: any) => item.trim());
 
-        const subscribedPlanFeatures = { SubscriptionPlan: { ...planData?.SubscriptionPlan, features: planfeatures } };
-        const updatedPlanList: PlanDetails = { ...planData, ...subscribedPlanFeatures };
+        const subscribedPlanFeatures = {
+          SubscriptionPlan: {
+            ...planData?.SubscriptionPlan,
+            features: planfeatures,
+          },
+        };
+        const updatedPlanList: PlanDetails = {
+          ...planData,
+          ...subscribedPlanFeatures,
+        };
         updatedPlanList.daysLeft = await getExpiryDays(planData?.expire_date);
         updatedPlanList.isCancelled = planData?.payment_status === "CANCELLED";
         setPlanDetails(updatedPlanList);
@@ -59,19 +76,23 @@ export const usePlanListHook = () => {
       // if (storedPlans?.length === 0) {
       const subscriptionPlanListResp = await subscriptionPlansList();
       if (subscriptionPlanListResp.success) {
-        const updatedPlanList: PlanList[] = subscriptionPlanListResp?.data?.map((element: any, key: number) => {
-          const resultArray = element?.features.split(",").map((item: any) => item.trim());
-          return {
-            plan: element?.name,
-            label: element?.description,
-            price: element?.price,
-            isPopular: element?.is_popular,
-            variant: element?.is_popular,
-            features: resultArray,
-            gatewayPlanId: element?.gateway_plan_id,
-            subscriptionPlanId: element?.id,
-          };
-        });
+        const updatedPlanList: PlanList[] = subscriptionPlanListResp?.data?.map(
+          (element: any, key: number) => {
+            const resultArray = element?.features
+              .split(",")
+              .map((item: any) => item.trim());
+            return {
+              plan: element?.name,
+              label: element?.description,
+              price: element?.price,
+              isPopular: element?.is_popular,
+              variant: element?.is_popular,
+              features: resultArray,
+              gatewayPlanId: element?.gateway_plan_id,
+              subscriptionPlanId: element?.id,
+            };
+          }
+        );
 
         // dispatch(subscriptionPlanList(updatedPlanList))
         setPlanList(updatedPlanList);
@@ -87,14 +108,17 @@ export const usePlanListHook = () => {
     }
   };
 
-  const handleOnClickPlan = async (subscriptionPlanId: number, gatewayPlanId: string) => {
+  const handleOnClickPlan = async (
+    subscriptionPlanId: number,
+    gatewayPlanId: string
+  ) => {
     try {
       if (token) {
         const checkoutSessionData = {
           subscriptionPlanId: subscriptionPlanId,
           gatewayPlanId: gatewayPlanId,
         };
-        trackTikTokEvent("clickedPlanButton", checkoutSessionData)
+        trackTikTokEvent("clickedPlanButton", checkoutSessionData);
         // setIsLoader(true);
         const checkoutSessionResp = await checkoutSession(checkoutSessionData);
         if (checkoutSessionResp.success && typeof window !== "undefined") {
@@ -116,7 +140,9 @@ export const usePlanListHook = () => {
 
   const handleCancelPlan = async () => {
     try {
-      const cancelPlanResponse: any = await cancelPlan({ paymentId: planDetails?.id });
+      const cancelPlanResponse: any = await cancelPlan({
+        paymentId: planDetails?.id,
+      });
       if (cancelPlanResponse?.success) {
         const cancelPlanData = cancelPlanResponse?.data;
         toast.success(cancelPlanResponse.message);
@@ -134,6 +160,21 @@ export const usePlanListHook = () => {
     setIsCancelModal(!isCancelModal);
   };
 
+  const subscriptionEventHandler = async (sessionId: any) => {
+    try {
+      const eventHandlerResponse = await eventHandler(sessionId);
+
+      if (eventHandlerResponse?.success) {
+        toast.success(eventHandlerResponse.message);
+        getSubscribedPlanDetails();
+        router.push("/dashboard/subscription");
+      }
+      // router?.push(eventHandlerResponse?.data?.redirectionUrl);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     isLoader,
     planDetails,
@@ -142,5 +183,7 @@ export const usePlanListHook = () => {
     handleOnClickPlan,
     handleCancelPlan,
     handleCancelPlanModal,
+    subscriptionEventHandler,
+    getSubscribedPlanDetails,
   };
 };
