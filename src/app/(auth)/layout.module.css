@@ -13,9 +13,11 @@
 .content {
   overflow-y: hidden;
 }
+
 .authPageLayout {
   position: relative;
 }
+
 .authPageLayout::before {
   content: "";
   background-image: url("../../assets/images/covers/auth-tringle.png");
@@ -28,15 +30,18 @@
   top: 0;
   left: 0;
 }
+
 .authContent {
   /* max-width: 710px; */
   width: 100%;
   border-radius: var(--radius-md);
   padding: 40px;
 }
+
 .logInForm {
   max-width: 630px;
 }
+
 .bannerText {
   max-width: 680px;
 }
@@ -54,37 +59,45 @@
     position: fixed;
     margin-top: var(--space-xs);
   }
+
   .authContent {
     width: 50%;
   }
 }
+
 @media (min-width: 1200px) {
   .authCard {
     overflow-y: auto;
     height: 100%;
   }
 }
+
 @media screen and (max-width: 1199px) {
   .auth {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .authContent,
   .bannerContent {
     max-width: 600px;
   }
+
   .authContent {
     padding: 0;
   }
+
   .authContentBeforeRegister {
     padding: 20px;
   }
 }
+
 @media screen and (max-width: 991px) {
   .authContentBeforeRegister {
     margin-top: var(--space-xs);
     position: relative;
     z-index: 1;
   }
+
   .authLogo {
     width: 100%;
   }
@@ -93,6 +106,7 @@
     padding: 12px;
   }
 }
+
 @media screen and (max-width: 767px) {
   .authContentBeforeRegister {
     padding: 20px;

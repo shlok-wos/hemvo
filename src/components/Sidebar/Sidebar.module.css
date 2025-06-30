@@ -1,9 +1,13 @@
 .sidebar {
   height: 100svh;
-  overflow: hidden;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
+  height: 100%;
+  overflow: hidden;
+  width: var(--sidebar-width);
+
 }
 
 .nav {

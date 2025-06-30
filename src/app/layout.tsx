@@ -62,7 +62,7 @@ export default function RootLayout({
           property="og:image"
           content="https://flatquest.se/_next/static/media/opengraph-image.ae8944c1.jpg"
         />
-        <meta property="og:url" content="https://flatquest.se" />
+        <meta property="og:url" content="https://hemvo-frontend.vercel.app/" />
         <meta property="og:site_name" content="hemvo" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />

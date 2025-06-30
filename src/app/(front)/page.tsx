@@ -3,6 +3,7 @@ import {
   CityDome,
   LivingRoom,
   logoHere,
+  opengraphImage,
   WhatCustomersSayAboutUs,
 } from "@/assets/images";
 import { cx } from "class-variance-authority";
@@ -74,6 +75,9 @@ export default function Home() {
           />
         </div>
       </section>
+      <div>
+        <Image src={opengraphImage.src} width="20" height="20" alt="test" />
+      </div>
       <div className="container">
         <div
           className={cx(
