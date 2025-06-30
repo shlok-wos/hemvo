@@ -80,6 +80,12 @@ export const LineChart = ({
             // family: "Exodus Sans",
           },
         },
+        onHover: function (event) {
+          event.native.target.style.cursor = "pointer";
+        },
+        onLeave: function (event) {
+          event.native.target.style.cursor = "default";
+        },
       },
       // Disable default legend
       //   tooltip: {

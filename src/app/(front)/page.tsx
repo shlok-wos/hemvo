@@ -35,10 +35,11 @@ import {
 } from "@/static";
 import { usePlanListHook } from "@/hooks/plan/planlist.hook";
 import { useBlogListHook } from "@/hooks/user/blogs/blogList.hook";
-import styles from "./page.module.css";
 import { useHomeHook } from "@/hooks/common/home.hook";
 import clsx from "clsx";
 import Image from "next/image";
+import { Icons } from "@/Const/Icons";
+import styles from "./page.module.css";
 
 export default function Home() {
   const { planList, handleOnClickPlan, isLoader } = usePlanListHook();
@@ -76,7 +77,13 @@ export default function Home() {
         </div>
       </section>
       <div>
-        <Image src={opengraphImage.src} width="20" height="20" alt="test" />
+        <img
+          src={opengraphImage.src}
+          width="20"
+          height="20"
+          alt="test"
+          className="d-none"
+        />
       </div>
       <div className="container">
         <div
@@ -85,8 +92,16 @@ export default function Home() {
             "grid-secondary bg-white  space-xs-p position-relative z-1 radius-md  "
           )}
         >
-          <div className="d-flex  gap-2xs">
-            <Image height={60} width={60} src={logoHere.src} alt="logo" />
+          <div className="d-flex align-items-start gap-2xs">
+            {/* <Image height={60} width={60} src={logoHere.src} alt="logo" /> */}
+            <span
+              className={clsx(
+                styles.heroIcons,
+                "d-flex justify-content-center align-items-center "
+              )}
+            >
+              {Icons.Home}
+            </span>
             <div className="">
               <h3 className="text-xl fw-bold mb-2">Hemvo.se</h3>
               <p className="text-gray text-base">
@@ -95,8 +110,16 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="d-flex  gap-2xs">
-            <Image height={60} width={60} src={logoHere.src} alt="logo" />
+          <div className="d-flex align-items-start  gap-2xs">
+            {/* <Image height={60} width={60} src={logoHere.src} alt="logo" /> */}
+            <span
+              className={clsx(
+                styles.heroIcons,
+                "d-flex justify-content-center align-items-center "
+              )}
+            >
+              {Icons.userReview}
+            </span>
             <div className="">
               <h3 className="text-xl fw-bold mb-2">User reviews</h3>
               <p className="text-gray text-base">
@@ -105,8 +128,16 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="d-flex  gap-2xs">
-            <Image height={60} width={60} src={logoHere.src} alt="logo" />
+          <div className="d-flex align-items-start  gap-2xs">
+            {/* <Image height={60} width={60} src={logoHere.src} alt="logo" /> */}
+            <span
+              className={clsx(
+                styles.heroIcons,
+                "d-flex justify-content-center align-items-center "
+              )}
+            >
+              {Icons.Home}
+            </span>
             <div className="">
               <h3 className="text-xl fw-bold mb-2">Hemvo.se</h3>
               <p className="text-gray text-base">

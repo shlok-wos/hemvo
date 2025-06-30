@@ -143,6 +143,12 @@
 .onlyImgSlider {
   padding-top: 20px;
 }
+.heroIcons {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  min-width: 40px;
+  aspect-ratio: 1/1;
+}
 /* responsive css start */
 @media screen and (max-width: 1599px) {
   .cityCardWrapper {
