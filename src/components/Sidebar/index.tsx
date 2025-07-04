@@ -37,16 +37,16 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       icon: <House weight="duotone" size={22} className="me-2 flex-shrink-0" />,
       path: "/dashboard",
     },
+    // {
+    //   id: 2,
+    //   name: "Hyresprofil",
+    //   icon: (
+    //     <Faders weight="duotone" size={22} className="me-2 flex-shrink-0" />
+    //   ),
+    //   path: "/dashboard/rental-profile",
+    // },
     {
       id: 2,
-      name: "Hyresprofil",
-      icon: (
-        <Faders weight="duotone" size={22} className="me-2 flex-shrink-0" />
-      ),
-      path: "/dashboard/rental-profile",
-    },
-    {
-      id: 3,
       name: "Bostadskö",
       icon: (
         <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -54,7 +54,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/overview",
     },
     {
-      id: 4,
+      id: 3,
       name: "Guide",
       icon: (
         <Notebook weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -62,7 +62,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/blogspot",
     },
     {
-      id: 5,
+      id: 4,
       name: "Medlemskap",
       icon: (
         <HandCoins size={22} weight="duotone" className="me-2 flex-shrink-0" />
@@ -70,7 +70,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/subscription",
     },
     {
-      id: 6,
+      id: 5,
       name: "Inställningar",
       icon: (
         <GearSix weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -78,7 +78,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/settings",
     },
     {
-      id: 7,
+      id: 6,
       name: "Vanliga frågor",
       icon: (
         <Question weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -86,7 +86,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/faq",
     },
     {
-      id: 8,
+      id: 7,
       name: "Hur funkar det?",
       icon: (
         <PlayCircle weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -94,7 +94,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/how-work",
     },
     {
-      id: 9,
+      id: 8,
       name: "Lägg till köer",
       icon: (
         <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />

@@ -1,6 +1,15 @@
+.blogCardWrapper {
+  --blog-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px;
+  background: var(--doctor-light);
+  border-radius: var(--blog-radius);
+}
+
 .blogImage {
   width: 100%;
   aspect-ratio: 19/6;
   object-fit: cover;
   object-position: center;
+  border-radius: var(--blog-radius);
 }

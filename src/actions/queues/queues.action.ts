@@ -42,3 +42,27 @@ export const fetchQueuesDetail = async (
     return error?.response?.data;
   }
 };
+
+export const doFetchAreas = async (): Promise<any> => {
+  try {
+    const response = await axiosApi.get(`/v1/area/list`);
+    return response.data;
+  } catch (error: any) {
+    return error?.response?.data;
+  }
+};
+
+export const doFetchBlogsList = async (
+  currentPage: number = 1,
+  pageSize: number = 6
+) => {
+  try {
+    const response = await axiosApi({
+      method: "get",
+      url: `v1/blog/list?currentPage=${currentPage}&pageSize=${pageSize}`,
+    });
+    return response;
+  } catch (error: any) {
+    return error.response;
+  }
+};

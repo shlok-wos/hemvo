@@ -56,6 +56,12 @@
   cursor: pointer;
 }
 
+.close svg{
+  --icon-sizing:24px;
+  width: var(--icon-sizing);
+  height: var(--icon-sizing);
+}
+
 @keyframes modal {
   0% {
     opacity: 0;

@@ -69,9 +69,9 @@ export const Header: React.FC<any> = () => {
               </Link>
 
               <Link
-                href={"/city-detail"}
+                href={"/queues"}
                 className={cx("link p-2 text-decoration-none fw-bold", {
-                  "link-highlight": pathname === "/city-detail",
+                  "link-highlight": pathname === "/queues",
                 })}
                 onClick={() => setShow(false)}
               >
@@ -84,7 +84,7 @@ export const Header: React.FC<any> = () => {
                 })}
                 onClick={() => setShow(false)}
               >
-                Familjekonto
+                Hyr ut med hemvo
               </Link>
               {/* <Link
               href={"/plans"}

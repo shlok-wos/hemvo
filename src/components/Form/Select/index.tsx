@@ -1,12 +1,11 @@
 "use client";
-import { ReactNode } from "react";
 import { useSelect } from "downshift";
 import { cx } from "class-variance-authority";
 import { CaretDown } from "@phosphor-icons/react";
 import styles from "./Select.module.css";
 
 export const Select: React.FC<any> = ({
-  options,
+  options = [],
   label,
   onChange,
   placeholder,
@@ -24,7 +23,14 @@ export const Select: React.FC<any> = ({
     return item ? item.value : "";
   }
 
-  const { isOpen, getItemProps, getMenuProps, getLabelProps, highlightedIndex, getToggleButtonProps } = useSelect({
+  const {
+    isOpen,
+    getItemProps,
+    getMenuProps,
+    getLabelProps,
+    highlightedIndex,
+    getToggleButtonProps,
+  } = useSelect({
     items: options,
     defaultSelectedItem,
     itemToString: customItemToString ? customItemToString : itemToString,
@@ -35,15 +41,25 @@ export const Select: React.FC<any> = ({
   return (
     <div className={cx(parentClassName)}>
       {label && (
-        <label className={cx(styles.label, labelClassName)} {...getLabelProps()}>
+        <label
+          className={cx(styles.label, labelClassName)}
+          {...getLabelProps()}
+        >
           {label}
         </label>
       )}
       <div className={"position-relative"}>
-        <div className={cx(styles.select, triggerClassName)} {...getToggleButtonProps()}>
+        <div
+          className={cx(styles.select, triggerClassName)}
+          {...getToggleButtonProps()}
+        >
           {!selectedItem?.hasOwnProperty("countryCallingCode") ? (
             <div className="d-flex align-items-center gap-2">
-              <span>{selectedItem ? selectedItem.label ?? selectedItem.value : placeholder}</span>
+              <span>
+                {selectedItem
+                  ? selectedItem.label ?? selectedItem.value
+                  : placeholder}
+              </span>
             </div>
           ) : (
             <div className="d-flex align-items-center gap-2">
@@ -52,10 +68,15 @@ export const Select: React.FC<any> = ({
                 alt={`Flag of ${selectedItem.name}`}
                 width={20}
                 height={20}
-                className={"d-inline-block rounded-circle object-fit-cover flex-shrink-0"}
+                className={
+                  "d-inline-block rounded-circle object-fit-cover flex-shrink-0"
+                }
               />
               <span>
-                {selectedItem ? selectedItem.countryCallingCode ?? selectedItem.countryCallingCode : placeholder}
+                {selectedItem
+                  ? selectedItem.countryCallingCode ??
+                    selectedItem.countryCallingCode
+                  : placeholder}
               </span>
             </div>
           )}
@@ -84,7 +105,9 @@ export const Select: React.FC<any> = ({
                 index: index,
                 className: cx(styles.item, itemClassName, {
                   [styles.highlighted]: highlightedIndex === index,
-                  [styles.selected]: selectedItem?.hasOwnProperty("countryCallingCode")
+                  [styles.selected]: selectedItem?.hasOwnProperty(
+                    "countryCallingCode"
+                  )
                     ? selectedItem?.countryCallingCode === item.id
                     : selectedItem?.id === item.id,
                 }),

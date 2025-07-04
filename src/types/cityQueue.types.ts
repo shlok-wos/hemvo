@@ -34,17 +34,8 @@ export type QueueType = {
 };
 
 export type QueueDataType = {
-  daysPassed: number;
-  yourAreas: number;
-  points: number;
-  activeQueues: number;
   areas: AreaType[];
   queue: QueueType;
-  chartData: {
-    months: string[];
-    forecastPoints: number[];
-    gainedPoints: number[];
-  };
 };
 
 export type QueuePaginationData = {
@@ -61,6 +52,16 @@ export type QueueDetailType = {
   title: string;
   description: string;
   image: string;
+  status: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type AreaListType = {
+  id: number;
+  name: string;
+  url: string;
+  media: string;
   status: boolean;
   createdAt: string;
   updatedAt: string;

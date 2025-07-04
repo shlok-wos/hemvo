@@ -1,18 +1,21 @@
 "use client";
 import { BlogCard, Button } from "@/components";
 // import { FrontBlogPost } from "@/components/Front/FrontBlogPost";
-import { blogCard, housingqueue, overView } from "@/Const/data";
+import { housingqueue, overView } from "@/Const/data";
 import clsx from "clsx";
 // import { Metadata } from "next";
 import Image from "next/image";
 import styles from "../page.module.css";
 import { housingQueue, leadyWithLaptop, personOne } from "@/assets/images";
 import { Icons } from "@/Const/Icons";
+import { useBlogListHook } from "@/hooks/common/blogList.hook";
 // export const metadata: Metadata = {
 //   title: "Blog | Hemvo",
 // };
 
 export default function Blog() {
+  const { isBlogListLoader, blogListData } = useBlogListHook();
+
   return (
     <>
       {/* BLOG HERO SECTION  */}
@@ -69,21 +72,22 @@ export default function Blog() {
         <div className="container">
           <div className="space-margin-bottom-sm  d-flex justify-content-between align-items-center">
             <h4 className="text-3xl text-dark fw-medium">Senaste artiklar</h4>
-            <p className="text-xl text-gray fw-medium">Välj kategori</p>
+            {/* <p className="text-xl text-gray fw-medium">Välj kategori</p> */}
           </div>
           <div className="grid-secondary">
-            {blogCard.map((item, index) => {
+            {blogListData?.rows?.map((item: any, index: any) => {
               return (
                 <>
                   <BlogCard
                     key={index}
-                    time={item.time}
-                    date={item.date}
-                    imgSrc={item.imgSrc}
+                    time={""}
+                    date={item?.createdAt}
+                    imgSrc={item.blog_image}
                     title={item.title}
-                    personImg={item.personImg}
-                    personName={item.personName}
-                    personPos={item.personPos}
+                    description={item?.description}
+                    personImg={""}
+                    personName={""}
+                    personPos={""}
                   />
                 </>
               );
@@ -95,7 +99,7 @@ export default function Blog() {
       <section className="space-bottom-sm">
         <div className="container">
           <div className="d-flex flex-column gap-2xs  ">
-            <div className="d-flex gap-2 align-items-center">
+            {/* <div className="d-flex gap-2 align-items-center">
               <div className="d-flex gap-2 align-items-center">
                 <span className="d-flex align-items-center">
                   {Icons.calander}
@@ -107,7 +111,7 @@ export default function Blog() {
                 <span className="d-flex align-items-center">{Icons.clock}</span>
                 <p className="text-base text-gray fw-medium">10 min.</p>
               </div>
-            </div>
+            </div> */}
             <h4 className="text-2xl text-dark fw-bold">
               Bostadsmarknaden i Navigera på Sverige: En Guide för Alla
             </h4>
@@ -191,7 +195,7 @@ export default function Blog() {
         </div>
       </section>
       {/* HOUSING QUEUE ARTICAL  */}
-      <section className="space-bottom-lg">
+      {/* <section className="space-bottom-lg">
         <div className="container">
           <div className="grid-secondary">
             {housingqueue.map((item, index) => {
@@ -212,7 +216,7 @@ export default function Blog() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

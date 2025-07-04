@@ -1,16 +1,18 @@
 "use client";
-import { queuesJoin, queuesListByArea } from "@/actions";
+import { doFetchAreas, doFetchQueuesByArea, queuesJoin } from "@/actions";
 import {
+  AreaListType,
   AreaType,
   QueueDataType,
   QueueItemType,
   QueuePaginationData,
-} from "@/types/queue.types";
+} from "@/types/cityQueue.types";
+import { debounce } from "lodash";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-export const useQueueLisHook = () => {
+export const useCityDetailHook = () => {
   const router = useRouter();
 
   const [queuesData, setQueuesData] = useState<QueueDataType>(
@@ -31,6 +33,12 @@ export const useQueueLisHook = () => {
   const [selectedQueue, setSelectedQueue] = useState<QueueItemType>(
     {} as QueueItemType
   );
+  const [allAreaList, setAllAreaList] = useState<AreaListType[]>([]);
+  const [isAreaLoader, setIsAreaLoader] = useState<boolean>(true);
+
+  useEffect(() => {
+    getAreasList();
+  }, []);
 
   useEffect(() => {
     getQueuesDetails(paginationData);
@@ -42,6 +50,28 @@ export const useQueueLisHook = () => {
       [name]: value.value,
     }));
   };
+
+  const handleInputChange = (event: any) => {
+    const { name, value } = event?.target;
+
+    setPaginationData((prevData: any) => ({
+      ...prevData,
+      [name]: value.value,
+    }));
+
+    debounceSearchHandler({
+      ...paginationData,
+      [name]: value,
+      currentPage: 1,
+    });
+  };
+
+  const debounceSearchHandler = useCallback(
+    debounce(async (data) => {
+      await getQueuesDetails(data);
+    }, 1000),
+    []
+  );
 
   const joinModalHandler = (data: any = {}) => {
     if (data && !data?.joined) {
@@ -72,20 +102,21 @@ export const useQueueLisHook = () => {
   const getQueuesDetails = async (data: QueuePaginationData) => {
     try {
       setIsLoader(true);
-      const getQueuesDetails = await queuesListByArea(
+      const getQueuesAreaDetails = await doFetchQueuesByArea(
         data?.areaId,
         data?.isPaginate,
         data?.currentPage,
-        data?.pageSize
+        data?.pageSize,
+        data?.search
       );
-      if (getQueuesDetails.success) {
+      if (getQueuesAreaDetails.success) {
         const areaListResponse = [
           {
             id: "",
             value: "",
             label: "Hemvo Bostadsköer",
           },
-          ...getQueuesDetails?.data?.areas?.map((data: any) => ({
+          ...getQueuesAreaDetails?.data?.areas?.map((data: any) => ({
             id: data?.id,
             value: data?.id,
             label: data?.name,
@@ -93,7 +124,10 @@ export const useQueueLisHook = () => {
         ];
 
         setAreaListData(areaListResponse);
-        setQueuesData(getQueuesDetails?.data);
+        setQueuesData({
+          ...getQueuesAreaDetails?.data,
+          areas: areaListResponse,
+        });
       }
       setIsLoader(false);
     } catch (error) {
@@ -136,19 +170,38 @@ export const useQueueLisHook = () => {
     }));
   };
 
+  const getAreasList = async () => {
+    try {
+      setIsAreaLoader(true);
+      const areasListResponse = await doFetchAreas();
+
+      if (areasListResponse.success) {
+        setAllAreaList(areasListResponse?.data);
+      }
+      setIsAreaLoader(false);
+    } catch (error) {
+      setIsAreaLoader(false);
+      console.log(error);
+    }
+  };
+
   return {
+    router,
     isLoader,
     queuesData,
+    allAreaList,
     isJoinModal,
+    isAreaLoader,
     areaListData,
     selectedQueue,
     paginationData,
     isReadMoreModal,
     isQueueJoinLoader,
     doQueueJoin,
-    handlePageChange,
     readMoreHandler,
     joinModalHandler,
+    handlePageChange,
+    handleInputChange,
     handleSelectChange,
     cancelJoinModalHandler,
   };

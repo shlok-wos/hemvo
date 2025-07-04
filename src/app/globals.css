@@ -68,7 +68,11 @@
   --container-size: calc(100vw - 30px);
   --card-shadow: 0px 24px 48px 0px #0040a114;
   --linear-gradient: linear-gradient(90deg, #2a6ef4 0%, #2a6ef4 100%);
+}
+
+html {
   scroll-padding-top: var(--header-height);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -425,6 +429,10 @@ body {
   border-radius: var(--radius-2xs);
 }
 
+.radius-2xs-imp {
+  border-radius: var(--radius-2xs) !important;
+}
+
 .radius-inherit {
   border-radius: inherit;
 }
@@ -554,4 +562,22 @@ body {
 
 .header-space {
   margin-bottom: var(--spacing);
+}
+
+.numerical-circle {
+  --circle-sizing: 50px;
+  width: var(--circle-sizing);
+  height: var(--circle-sizing);
+  background-color: var(--bg-white-gray);
+}
+
+
+.how-hemvo-works-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.text-limit p:nth-child(n + 3) {
+  display: none;
 }

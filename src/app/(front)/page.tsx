@@ -40,6 +40,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import { Icons } from "@/Const/Icons";
 import styles from "./page.module.css";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
   const { planList, handleOnClickPlan, isLoader } = usePlanListHook();
@@ -52,6 +54,22 @@ export default function Home() {
     triggerNextPage,
     isLoadingMore,
   } = useHomeHook();
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [pathname, searchParams]); 
   return (
     <>
       <ScrollToTop />
@@ -215,6 +233,18 @@ export default function Home() {
         )}
       >
         <div className="container">
+          {/* <div className="d-flex flex-column gap-3 align-items-center text-center">
+            <h4 className="mb-0 text-xl fw-bold numerical-circle d-flex align-items-center justify-content-center rounded-circle bg-danger">
+              1
+            </h4>
+            <h4 className="text-xl fw-bold">test</h4>
+            <p className="text-base text-gray">
+              Med kraften från vår bostadsrobot och erfarenheten i vårt team
+              söker vi bostäder åt dig dygnet runt, helt utifrån din unika
+              hyresprofil. Tillsammans maximerar vi dina chanser till ett
+              förstahandskontrakt.
+            </p>
+          </div> */}
           <h2 className="text-3xl mb-3 mb-md-4">Så funkar Hemvo?</h2>
           <div className={cx(styles.firstInSwedenContent)}>
             <p className="text-md lh-base text-gray">
@@ -231,18 +261,16 @@ export default function Home() {
             {firstInSwedenContentData.map(
               (FISwedenItem: any, FISwedenIndex: number) => {
                 return (
-                  <div
-                    className="col-sm-6 col-lg-4 d-flex align-items-stretch mt-4 mt-lg-5"
-                    key={`Swed-${FISwedenIndex}`}
-                  >
-                    <Card interactive>
-                      <h4 className="text-xl fw-bold mb-3">
-                        {FISwedenItem.title}
+                  <div className="col-sm-6 col-lg-4 d-flex align-items-stretch mt-4 mt-lg-5">
+                    <div className="d-flex flex-column gap-3 align-items-center text-center how-hemvo-works-card">
+                      <h4 className="mb-0 text-xl fw-bold numerical-circle d-flex align-items-center justify-content-center rounded-circle bg-danger">
+                        {FISwedenIndex + 1}
                       </h4>
+                      <h4 className="text-xl fw-bold">{FISwedenItem?.title}</h4>
                       <p className="text-base text-gray">
-                        {FISwedenItem.description}
+                        {FISwedenItem?.description}
                       </p>
-                    </Card>
+                    </div>
                   </div>
                 );
               }
@@ -250,12 +278,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="space-top-lg">
+      <section className="space-top-lg space-bottom-md">
         <div className="container">
           <AppInfoCard />
         </div>
       </section>
-      <section className="bg-accent space-top-sm space-bottom-sm">
+      {/* <section className="bg-accent space-top-sm space-bottom-sm">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-12 col-lg-6 col-xl-5">
@@ -326,10 +354,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-      <section id="assistance" className="space-top-lg position-relative">
+      </section> */}
+      <section id="assistance" className="position-relative">
         <div className="container d-flex align-items-center justify-content-between">
-          <div className="section-title-right-space w-100 mb-3 ">
+          <div className="section-title-right-space w-100 mb-3">
             <h2 className="text-3xl fw-bold mb-2 mb-xxl-3">Hyreshjälpen</h2>
             <p className="text-md text-gray">
               Guider, inspiration, tips och intervjuer för ditt nya hem.
@@ -337,7 +365,15 @@ export default function Home() {
           </div>
         </div>
         <div className={clsx(styles.SwiperHeroWrapper, "position-relative ")}>
-          <AssistanceSlider blogListData={blogListData} />
+          <AssistanceSlider
+            blogListData={blogListData}
+            slidePerView={{
+              0: { slidesPerView: 1.3, spaceBetween: 15 },
+              576: { slidesPerView: 3, spaceBetween: 20 },
+              768: { slidesPerView: 4, spaceBetween: 20 },
+              1200: { slidesPerView: 5, spaceBetween: 20 },
+            }}
+          />
         </div>
       </section>
       <section className="space-top-lg space-bottom-lg">
@@ -364,7 +400,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="faq" className=" space-top-md space-bottom-md">
+      {/* <section id="faq" className=" space-top-md space-bottom-md">
         <div className="container">
           <h2 className="text-3xl fw-bold mb-2 mb-xxl-3">Frågor och svar </h2>
           <p className="text-md text-gray">
@@ -377,7 +413,7 @@ export default function Home() {
             itemClassName="mb-4 radius-lg"
           />
         </div>
-      </section>
+      </section> */}
       <section className="space-top-lg space-bottom-lg">
         <div className="container">
           <div className="row align-items-center">

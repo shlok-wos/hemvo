@@ -4,6 +4,7 @@ import { cx } from "class-variance-authority";
 import { ReactNode } from "react";
 import { XCircle } from "@phosphor-icons/react/dist/ssr";
 import styles from "./Modal.module.css";
+import { Icons } from "@/Const/Icons";
 
 export const Modal: React.FC<ModalProps> = ({
   title,
@@ -36,7 +37,7 @@ export const Modal: React.FC<ModalProps> = ({
 
             {showClose && (
               <Dialog.Close className={styles.close}>
-                <XCircle size={32} weight="duotone" />
+                {Icons.iconClose}
               </Dialog.Close>
             )}
 

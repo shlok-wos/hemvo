@@ -11,17 +11,18 @@ import clsx from "clsx";
 interface IAssistanceSlider {
   blogListData?: any;
   variant?: "primary" | "imgslide"; // Add this
+  slidePerView?: any;
 }
 
 export const AssistanceSlider: React.FC<IAssistanceSlider> = ({
   blogListData,
   variant = "primary", // Default to primary
+  slidePerView,
 }) => {
   return (
     <FQSwiper
       isCustomArrow={true}
       config={{
-        slidesPerView: 1.5,
         spaceBetween: 15,
         centeredSlides: false,
         loop: true,
@@ -30,17 +31,7 @@ export const AssistanceSlider: React.FC<IAssistanceSlider> = ({
           duration: 1000,
         },
         modules: [Autoplay],
-        breakpoints: {
-          0: { slidesPerView: 1.3, spaceBetween: 15 },
-          375: { slidesPerView: 1.6, spaceBetween: 15 },
-          576: { slidesPerView: 2.3, spaceBetween: 20 },
-          768: { slidesPerView: 3, spaceBetween: 20 },
-          992: { slidesPerView: 3.8, spaceBetween: 20 },
-          1200: { slidesPerView: 4, spaceBetween: 30 },
-          1350: { slidesPerView: 5, spaceBetween: 30 },
-          1600: { slidesPerView: 5, spaceBetween: 40 },
-          1800: { slidesPerView: 5, spaceBetween: 64 },
-        },
+        breakpoints: slidePerView,
       }}
       isCustomArrowClass={cx([styles.assistanceSliderArrowWrap])}
     >
@@ -56,7 +47,7 @@ export const AssistanceSlider: React.FC<IAssistanceSlider> = ({
           <SwiperSlide key={`blogs-${idx}`}>
             {variant === "primary" && (
               <Link
-                href={`/blogspot/${post?.slug}`}
+                href={`/blogspot/${post?.slug || post?.idx}`}
                 className={cx(
                   [styles.card],
                   "text-decoration-none w-100 h-100"
@@ -64,18 +55,23 @@ export const AssistanceSlider: React.FC<IAssistanceSlider> = ({
               >
                 <div className="ratio ratio-1x1 mb-3 bg-white-gray radius-md">
                   <img
-                    src={post.blog_image}
-                    alt={post.title}
+                    src={
+                      post.blog_image ||
+                      `${post.url}${post.url.endsWith("/") ? "" : "/"}${
+                        post.media
+                      }`
+                    }
+                    alt={post.title || post?.name}
                     className="radius-inherit object-fit-cover"
                   />
                 </div>
 
                 <h4 className="text-lg text-dark clamp clamp-3 fw-bold mb-2">
-                  {post.title}
+                  {post.title || post?.name}
                 </h4>
                 <div
                   className="text-gray text-sm lh-base clamp clamp-3"
-                  dangerouslySetInnerHTML={{ __html: description }}
+                  dangerouslySetInnerHTML={{ __html: description || "" }}
                 />
               </Link>
             )}
@@ -85,9 +81,15 @@ export const AssistanceSlider: React.FC<IAssistanceSlider> = ({
                 <Image
                   height={320}
                   width={455}
-                  src={post.blog_image}
-                  alt={post.title}
-                  className=" object-fit-cover radius-md"
+                  src={
+                    post.blog_image ||
+                    `${post.url}${post.url.endsWith("/") ? "" : "/"}${
+                      post.media
+                    }`
+                  }
+                  alt={post.title || post.name}
+                  className=" object-fit-cover radius-md w-100"
+                  unoptimized
                 />
                 <div
                   className={clsx(
@@ -96,10 +98,10 @@ export const AssistanceSlider: React.FC<IAssistanceSlider> = ({
                   )}
                 >
                   <p className="space-3xs-mb text-xl text-white fw-bolder">
-                    {post.imageTitle}
+                    {post.imageTitle || post.name}
                   </p>
                   <p className="text-base text-white fw-medium ">
-                    {post.queue}
+                    {post.queue || ""}
                   </p>
                 </div>
               </div>

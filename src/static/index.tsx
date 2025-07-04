@@ -398,7 +398,7 @@ export const appInfoCardData = [
   },
   {
     appImgae: SquareIPhoneWithGirl.src,
-    title: "Smart robot ",
+    title: "Smart robot",
     description: `Vi tar dig genom bostadsdjungeln och sköter hela processen åt dig. Vi söker bostäder, kontaktar hyresvärdar och bokar visningar utifrån din profil. Du blir medlem, vi gör resten. När en lägenhet är klar för visning eller redo att signeras får du direkt besked via sms eller mejl`,
     rowReverse: "flex-row-reverse",
   },
