@@ -33,43 +33,30 @@ import {
   firstInSwedenContentData,
   homeHeroLabelData,
 } from "@/static";
-import { usePlanListHook } from "@/hooks/plan/planlist.hook";
-import { useBlogListHook } from "@/hooks/user/blogs/blogList.hook";
-import { useHomeHook } from "@/hooks/common/home.hook";
 import clsx from "clsx";
 import Image from "next/image";
 import { Icons } from "@/Const/Icons";
 import styles from "./page.module.css";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useHomeHook } from "@/hooks/common/home.hook";
 
 export default function Home() {
-  const { planList, handleOnClickPlan, isLoader } = usePlanListHook();
-  const { blogListData } = useBlogListHook();
+  // const { planList, handleOnClickPlan, isLoader } = usePlanListHook();
+  // const { blogListData } = useBlogListHook();
   const {
-    reviewList,
-    observerScroll,
-    videoList,
     hasMore,
-    triggerNextPage,
+    isLoader,
+    planList,
+    videoList,
+    reviewList,
+    blogListData,
+    isBlogLoader,
     isLoadingMore,
+    isPlanListLoader,
+    observerScroll,
+    triggerNextPage,
+    handleOnClickPlan,
   } = useHomeHook();
 
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const hash = window.location.hash;
-
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    }
-  }, [pathname, searchParams]); 
   return (
     <>
       <ScrollToTop />

@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: "login | Hemvo",
 };
 
-export default function Login() {
+export default function Login({ searchParams }: any) {
+  const query = searchParams.query;
+  
   return (
     <>
       <div>

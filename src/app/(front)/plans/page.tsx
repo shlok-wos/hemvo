@@ -5,7 +5,9 @@ export const metadata: Metadata = {
 	title: "Plans | Hemvo",
 };
 
-export default function plans() {
+export default function plans({ searchParams }: any) {
+  const query = searchParams.query;
+
 	return (
 		<>
 			<div>

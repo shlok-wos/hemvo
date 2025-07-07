@@ -1,3 +1,4 @@
+"use client";
 import {
   blogList,
   cancelPlan,
@@ -13,10 +14,10 @@ import { reviewTypes } from "@/types/review.types";
 import { PlanDetails, PlanList } from "@/types/subscription.types";
 import { getCookie } from "cookies-next";
 import moment, { Moment } from "moment";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export const useHomeHook = () => {
   const [reviewList, setReviewList] = useState<reviewTypes>({} as reviewTypes);
@@ -37,7 +38,12 @@ export const useHomeHook = () => {
   const [blogPaginationData, setBlogPaginationData] =
     useState<BlogPaginationData>({} as BlogPaginationData);
   const [isBlogLoader, setIsBlogLoader] = useState<boolean>(true);
+
   const pathname = usePathname();
+  // const searchParams = useSearchParams();
+
+  // const isblogsListPage = true;
+  // const pathname = true;
   const isblogsListPage = pathname.includes("/blogspot");
   const router: any = useRouter();
   const [planDetails, setPlanDetails] = useState<PlanDetails>(
@@ -89,6 +95,19 @@ export const useHomeHook = () => {
       );
     }
   }, [pathname]);
+
+  // useEffect(() => {
+  //   const hash = window.location.hash;
+
+  //   if (hash) {
+  //     const el = document.querySelector(hash);
+  //     if (el) {
+  //       setTimeout(() => {
+  //         el.scrollIntoView({ behavior: "smooth" });
+  //       }, 100);
+  //     }
+  //   }
+  // }, [pathname, searchParams]);
 
   const loadMoreVideos = async (pageNum: number) => {
     try {
