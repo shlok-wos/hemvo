@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         {!isActivate && !subscriptionPage && !isLoader && (
           <Card
             contentClassName="d-flex flex-wrap gap-3 align-items-center justify-content-sm-between justify-content-center"
-            className="header-space"
+            className="header-space mt-3"
           >
             <h5 className="text-lg fw-medium">Ditt konto är inte aktivt.</h5>
             <Button

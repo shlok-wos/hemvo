@@ -133,7 +133,7 @@ export const usePlanListHook = () => {
       // setIsLoader(false);
     } catch (error: any) {
       setIsLoader(false);
-      console.log(error);
+      // console.log(error);
       // toast.error("Something Went Wrong")
     }
   };

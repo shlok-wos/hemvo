@@ -6,12 +6,14 @@ import {
   Crown,
   Faders,
   GearSix,
+  GitFork,
   HandCoins,
   House,
   Notebook,
   Play,
   PlusSquare,
   Question,
+  Queue,
   SignOut,
 } from "@phosphor-icons/react";
 import styles from "./Sidebar.module.css";
@@ -37,25 +39,17 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       icon: <House weight="duotone" size={22} className="me-2 flex-shrink-0" />,
       path: "/dashboard",
     },
-    // {
-    //   id: 2,
-    //   name: "Hyresprofil",
-    //   icon: (
-    //     <Faders weight="duotone" size={22} className="me-2 flex-shrink-0" />
-    //   ),
-    //   path: "/dashboard/rental-profile",
-    // },
     {
       id: 2,
-      name: "Bostadskö",
+      name: "Bostadsprofil",
       icon: (
         <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
       ),
-      path: "/dashboard/overview",
+      path: "/dashboard/add-queue",
     },
     {
       id: 3,
-      name: "Guide",
+      name: "Blogg",
       icon: (
         <Notebook weight="duotone" size={22} className="me-2 flex-shrink-0" />
       ),
@@ -63,27 +57,27 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     },
     {
       id: 4,
-      name: "Medlemskap",
+      name: "Bostadspoäng",
       icon: (
-        <HandCoins size={22} weight="duotone" className="me-2 flex-shrink-0" />
+        <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
       ),
-      path: "/dashboard/subscription",
+      path: "/dashboard/overview",
     },
     {
-      id: 5,
-      name: "Inställningar",
-      icon: (
-        <GearSix weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      id:5,
+      name:"Bostadsköer",
+      icon:(
+        <Queue weight="duotone" size={22} className="me-2 flex-shrink-0" />
       ),
-      path: "/dashboard/settings",
+      path: "/dashboard/housing-queue",
     },
     {
-      id: 6,
-      name: "Vanliga frågor",
-      icon: (
-        <Question weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      id:6,
+      name:"Kontrollpanel ",
+      icon:(
+        <GitFork weight="duotone" size={22} className="me-2 flex-shrink-0" />
       ),
-      path: "/dashboard/faq",
+      path: "/dashboard/housing-control-panel",
     },
     {
       id: 7,
@@ -95,11 +89,28 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     },
     {
       id: 8,
-      name: "Lägg till köer",
+      name: "Frågor och svar",
       icon: (
-        <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
+        <Question weight="duotone" size={22} className="me-2 flex-shrink-0" />
       ),
-      path: "/dashboard/add-queue",
+      path: "/dashboard/faq",
+    },
+
+    {
+      id: 9,
+      name: "Medlemskap",
+      icon: (
+        <HandCoins size={22} weight="duotone" className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/subscription",
+    },
+    {
+      id: 10,
+      name: "Inställningar",
+      icon: (
+        <GearSix weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/settings",
     },
   ];
   const handleOnLogout = (event: any) => {

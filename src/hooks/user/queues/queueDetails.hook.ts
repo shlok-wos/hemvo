@@ -1,5 +1,5 @@
 "use client";
-import { queuesJoin, queuesListByArea } from "@/actions";
+import { queuesAnalyticsList, queuesJoin } from "@/actions";
 import {
   AreaType,
   QueueDataType,
@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-export const useQueueListHook = () => {
+export const useQueueDetailsHook = () => {
   const router = useRouter();
 
   const [queuesData, setQueuesData] = useState<QueueDataType>(
@@ -72,27 +72,9 @@ export const useQueueListHook = () => {
   const getQueuesDetails = async (data: QueuePaginationData) => {
     try {
       setIsLoader(true);
-      const getQueuesDetails = await queuesListByArea(
-        data?.areaId,
-        data?.isPaginate,
-        data?.currentPage,
-        data?.pageSize
-      );
-      if (getQueuesDetails.success) {
-        const areaListResponse = [
-          {
-            id: "",
-            value: "",
-            label: "Hemvo Bostadsköer",
-          },
-          ...getQueuesDetails?.data?.areas?.map((data: any) => ({
-            id: data?.id,
-            value: data?.id,
-            label: data?.name,
-          })),
-        ];
+      const getQueuesDetails = await queuesAnalyticsList(data?.areaId, false);
 
-        setAreaListData(areaListResponse);
+      if (getQueuesDetails.success) {
         setQueuesData(getQueuesDetails?.data);
       }
       setIsLoader(false);

@@ -2,9 +2,27 @@
 import { Button, Input, RotatingRings } from "@/components";
 import { useUserLoginHook } from "@/hooks/user/auth/login.hook";
 import { ArrowRight, Envelope, Password } from "@phosphor-icons/react/dist/ssr";
+import { setCookie } from "cookies-next";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export const LoginForm = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const token = searchParams?.get("token");
+  const sessionId = searchParams?.get("session_id");
+
+  useEffect(() => {
+    if (token) {
+      setCookie("_token", token);
+      setCookie("authToken", token);
+      router.push(`/dashboard/subscription?token=${token}&session_id=${sessionId}`);
+    }
+  }, [token]);
+
   const { userData, errorMessage, handleInputChange, onSubmitLogin } =
     useUserLoginHook();
   return (

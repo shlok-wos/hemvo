@@ -75,3 +75,5 @@ export { default as cityOne } from "./covers/city1.jpg";
 export { default as cityTwo } from "./covers/city2.jpg";
 export { default as cityThree } from "./covers/city3.jpg";
 export { default as cityFour } from "./covers/city4.jpg";
+
+export { default as swedenMap } from "./covers/sweden-provinces-and-capital-map.jpg"

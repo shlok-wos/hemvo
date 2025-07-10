@@ -11,6 +11,7 @@ import {
   realastate,
   redHouse,
   tent,
+  visa,
 } from "@/assets/images";
 import { Icons } from "./Icons";
 import { title } from "process";
@@ -349,5 +350,51 @@ export const chartCardData = [
     id: 3,
     label: "Medlemmar efter dig i kö",
     data: "4763",
+  },
+];
+
+
+export const housingQueues = [
+  {
+    id: 1,
+    title: "Nykvarnsbostäder",
+    image: visa,
+    description:
+      "Nykvarnsbostäders ambition är att vara ett attraktivt boendealternativ genom öppenhet...",
+  },
+  {
+    id: 2,
+    title: "ByggVesta",
+    image: visa,
+    description:
+      "Hos Byggvesta hittar du moderna, miljövänliga och trivsamma hyresrätter och studentlägenheter i...",
+  },
+  {
+    id: 3,
+    title: "Väsbyhem",
+    image: visa,
+    description:
+      "Med visionen 'en värld för alla' bygger Väsbyhems affärsidé på att bygga och förvalta ett variationsrikt...",
+  },
+  {
+    id: 4,
+    title: "Armada Fastighets",
+    image: visa,
+    description:
+      "Armada Bostäder AB har ca 1500 lägenheter, de flesta belägna centralt i Åkersberga och vid Åkers Kanal...",
+  },
+  {
+    id: 5,
+    title: "Upplands-Brohus",
+    image: visa,
+    description:
+      "Utvecklar hyresrätten till en attraktiv boendeform för alla. För närvarande håller denna ko 5100...",
+  },
+  {
+    id: 6,
+    title: "Sollentunahem",
+    image: visa,
+    description:
+      "Utvecklar hyresrätten till en attraktiv boendeform för alla. För närvarande håller denna ko 5100...",
   },
 ];

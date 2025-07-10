@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import { Toaster } from "react-hot-toast";
 import { Provider } from "react-redux";
 import store from "@/store";
+import TiktokPixel from "../TiktokPixel";
 
 const Manrope = localFont({
   src: [
@@ -63,15 +64,11 @@ const Manrope = localFont({
   fallback: ["Arial"],
 });
 
-export const RootProvider = ({
-  children,
-  ...rest
-}: {
-  children: ReactNode;
-}) => {
+export const RootProvider = ({ children, ...rest }: { children: ReactNode }) => {
   return (
     <>
       <body className={Manrope.className} id="root">
+        <TiktokPixel />
         <Toaster position="top-right" />
         <Provider store={store} {...rest}>
           {children}

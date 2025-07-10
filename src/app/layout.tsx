@@ -86,10 +86,9 @@ export default function RootLayout({
         <script src="https://app.ilonsi.com/script/purchase.min.js"></script>
       </head>
 
-      <body>
-        <TiktokPixel /> {/* ✅ Moved here */}
+      {/* <body> */}
         <RootProvider>{children}</RootProvider>
-      </body>
+      {/* </body> */}
     </html>
   );
 }

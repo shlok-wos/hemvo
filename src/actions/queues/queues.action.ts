@@ -1,5 +1,28 @@
 import { axiosApi } from "@/axiosApi";
 
+export const queuesAnalyticsList = async (
+  areaId: number | "" = "",
+  isPaginate: boolean = true,
+  currentPage: number = 1,
+  pageSize: number = 12
+): Promise<any> => {
+  try {
+    const queryParams = new URLSearchParams({
+      areaId: areaId.toString(),
+      isPaginate: String(isPaginate),
+      currentPage: String(currentPage),
+      pageSize: String(pageSize),
+    });
+
+    const response = await axiosApi.get(
+      `/v1/user/queue/analytics?${queryParams.toString()}`
+    );
+    return response.data;
+  } catch (error: any) {
+    return error?.response?.data;
+  }
+};
+
 export const queuesListByArea = async (
   areaId: number | "" = "",
   isPaginate: boolean = true,

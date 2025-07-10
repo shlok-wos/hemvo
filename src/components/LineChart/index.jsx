@@ -33,8 +33,8 @@ export const LineChart = ({
           {
             label: "Förväntad poängutveckling",
             data: data?.forecastPoints,
-            borderColor: "rgba(153, 102, 255, 1)",
-            backgroundColor: "rgba(153, 102, 255, 0.2)",
+            borderColor: "rgba(42, 110, 244,0.8)",
+            backgroundColor: "rgba(42, 110, 244, 0.3)",
             fill: true,
             tension: 0.4,
             // pointBorderWidth: 2,

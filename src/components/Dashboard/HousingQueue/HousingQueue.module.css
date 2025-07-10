@@ -1,0 +1,72 @@
+.logoWrapper {
+    padding: 8px;
+    max-width: 100px;
+    border: 1px solid #0000002e;
+    border-radius: 12px;
+    --bs-aspect-ratio: 70%;
+}
+
+.cardBtnWrapper .cardBtn {
+    border-radius: 8px;
+}
+
+.cardBtnWrapper .cardBtn.colorjoin {
+    color: var(--g2);
+}
+
+.queueCardWrapper {
+    min-height: 250px;
+}
+
+.housingQueueGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
+}
+
+.filterIcon {
+    width: 30px;
+    height: 30px;
+    background: var(--white);
+    padding: 4px;
+    border-radius: 4px;
+    border: solid 1px var(--cosmic-quest);
+}
+
+.filterIcon svg{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 24px;
+    height: 24px;
+}
+
+.labelTagWrapper{
+    grid-gap: 8px;
+}
+
+.tagLabel{
+    max-width: max-content;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: #acc0cd36;
+}
+
+/* RESPONSIVE STARTS */
+@media(max-width:1730px){
+    .housingQueueGrid{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media(max-width:1400px){
+    .housingQueueGrid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:575px){
+    .housingQueueGrid{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/* RESPONSIVE ENDS */

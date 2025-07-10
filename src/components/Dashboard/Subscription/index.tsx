@@ -13,8 +13,12 @@ import styles from "./Subscription.module.css";
 import { cx } from "class-variance-authority";
 import Script from "next/script";
 import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export const Subscription = () => {
+  const searchParams = useSearchParams();
+  const router: any = useRouter();
   const {
     isLoader,
     planList,
@@ -23,7 +27,19 @@ export const Subscription = () => {
     handleOnClickPlan,
     handleCancelPlan,
     handleCancelPlanModal,
+    subscriptionEventHandler,
+    getSubscribedPlanDetails,
   } = usePlanListHook();
+
+  const sessionId = searchParams?.get("session_id");
+  useEffect(() => {
+    if (sessionId) {
+      subscriptionEventHandler(sessionId);
+      getSubscribedPlanDetails();
+      router.push("/dashboard/subscription");
+    }
+  }, [sessionId]);
+
   const expiryDate = moment(planDetails?.expire_date).format("DD/MM/YYYY");
   const isPlanActive = planDetails?.hasOwnProperty("is_active")
     ? planDetails?.is_active
