@@ -48,9 +48,9 @@ export const HousingControlPanel = () => {
   const columns = [
     {
       name: "Könamn",
-      selector: (row) => row.make.name,
+      selector: (row: any) => row.make.name,
       width: "400px",
-      cell: (row) => (
+      cell: (row: any) => (
         <div className="d-flex align-items-center gap-3">
           <div className={clsx(styles.contentImgWrapper, "w-100")}>
             <div className="w-100">
@@ -68,9 +68,9 @@ export const HousingControlPanel = () => {
     },
     {
       name: "Kommuner",
-      selector: (row) => row.model,
+      selector: (row: any) => row.model,
       width: "180px",
-      cell: (row) => (
+      cell: (row: any) => (
         <span className={clsx(styles.kommunBadge, "text-base")}>
           {row.model}
         </span>
@@ -78,9 +78,9 @@ export const HousingControlPanel = () => {
     },
     {
       name: "Din status i kön",
-      selector: (row) => row.status,
+      selector: (row: any) => row.status,
       width: "160px",
-      cell: (row) => (
+      cell: (row: any) => (
         <span className={clsx(styles.statusBadge, "text-base fw-medium")}>
           {row.status}
         </span>
@@ -88,9 +88,9 @@ export const HousingControlPanel = () => {
     },
     {
       name: "Kötid",
-      selector: (row) => row.kötId,
+        selector: (row: any) => row.kötId,
       width: "120px",
-      cell: (row) => <span className="text-base">{row.kötId}</span>,
+      cell: (row: any) => <span className="text-base">{row.kötId}</span>,
     },
     {
       name: "Lösenord",
@@ -200,7 +200,10 @@ export const HousingControlPanel = () => {
             ]}
           />
         </div>
-        <Input type="search" placeholder="Sök efter kö-namn, stad eller nyckelord"/>
+        <Input
+          type="search"
+          placeholder="Sök efter kö-namn, stad eller nyckelord"
+        />
       </div>
       <Card className="mt-4">
         <Table rowData={rowData} columns={columns} />
