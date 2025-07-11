@@ -266,36 +266,36 @@ export const howWorkData = [
     text: "dibz fixar regelbunden inloggning åt dig så att du inte tappar din köplats",
   },
 ];
-export const addQueueData = [
-  {
-    id: 1,
-    stepNo: 1,
-    title: "Kontaktuppgifter",
-    text: "Din grundläggande kontaktinformation",
-    data: <ContactDetailForm />,
-  },
-  {
-    id: 2,
-    stepNo: 2,
-    title: "Boendepreferenser",
-    text: "Vilken typ av boende passar dig?",
-    data: <PreferanceForm />,
-  },
-  {
-    id: 3,
-    stepNo: 3,
-    title: "Nuvarande boende",
-    text: "Vissa köer kräver att du lämnar information om hur du bor idag",
-    data: <CurrentResidentForm />,
-  },
-  {
-    id: 4,
-    stepNo: 4,
-    title: "Inkomst",
-    text: "Vissa köer kräver att du lämnar information om din ekonomi.",
-    data: <IncomeForm />,
-  },
-];
+// export const addQueueData = [
+//   {
+//     id: 1,
+//     stepNo: 1,
+//     title: "Kontaktuppgifter",
+//     text: "Din grundläggande kontaktinformation",
+//     data: <ContactDetailForm />,
+//   },
+//   {
+//     id: 2,
+//     stepNo: 2,
+//     title: "Boendepreferenser",
+//     text: "Vilken typ av boende passar dig?",
+//     data: <PreferanceForm />,
+//   },
+//   {
+//     id: 3,
+//     stepNo: 3,
+//     title: "Nuvarande boende",
+//     text: "Vissa köer kräver att du lämnar information om hur du bor idag",
+//     data: <CurrentResidentForm />,
+//   },
+//   {
+//     id: 4,
+//     stepNo: 4,
+//     title: "Inkomst",
+//     text: "Vissa köer kräver att du lämnar information om din ekonomi.",
+//     data: <IncomeForm />,
+//   },
+// ];
 export const chartSampleData = {
   labels: [
     "jun 2025",
