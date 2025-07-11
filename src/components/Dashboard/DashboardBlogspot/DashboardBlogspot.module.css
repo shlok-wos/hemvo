@@ -118,6 +118,28 @@
 .blogUser{
   max-width: 48px;
 }
+
+.blogUser img{
+  object-fit: cover;
+}
+
+.blogPostedByImg{
+  max-width: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blogPostImg{
+  max-width: 360px;
+}
+
+.authorInfo{
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #007bff;
+}
 /* Responsive */
 @media screen and (max-width: 1023px) {
   .blogGrid {

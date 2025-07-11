@@ -3,8 +3,6 @@ import Link from "next/link";
 import { HemvoColored } from "@/assets/images";
 import { Card } from "../Card";
 import {
-  Crown,
-  Faders,
   GearSix,
   GitFork,
   HandCoins,
@@ -33,11 +31,19 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const dashboardNavlinks = [
+    // {
+    //   id: 1,
+    //   name: "Hem",
+    //   icon: <House weight="duotone" size={22} className="me-2 flex-shrink-0" />,
+    //   path: "/dashboard",
+    // },
     {
       id: 1,
-      name: "Hem",
-      icon: <House weight="duotone" size={22} className="me-2 flex-shrink-0" />,
-      path: "/dashboard",
+      name: "Hur funkar det?",
+      icon: (
+        <PlayCircle weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/how-work",
     },
     {
       id: 2,
@@ -49,14 +55,6 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     },
     {
       id: 3,
-      name: "Blogg",
-      icon: (
-        <Notebook weight="duotone" size={22} className="me-2 flex-shrink-0" />
-      ),
-      path: "/dashboard/blogspot",
-    },
-    {
-      id: 4,
       name: "Bostadspoäng",
       icon: (
         <PlusSquare weight="duotone" size={22} className="me-2 flex-shrink-0" />
@@ -64,40 +62,21 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/overview",
     },
     {
-      id:5,
-      name:"Bostadsköer",
-      icon:(
-        <Queue weight="duotone" size={22} className="me-2 flex-shrink-0" />
-      ),
+      id: 4,
+      name: "Bostadsköer",
+      icon: <Queue weight="duotone" size={22} className="me-2 flex-shrink-0" />,
       path: "/dashboard/housing-queue",
     },
     {
-      id:6,
-      name:"Kontrollpanel ",
-      icon:(
+      id: 5,
+      name: "Kontrollpanel",
+      icon: (
         <GitFork weight="duotone" size={22} className="me-2 flex-shrink-0" />
       ),
       path: "/dashboard/housing-control-panel",
     },
     {
-      id: 7,
-      name: "Hur funkar det?",
-      icon: (
-        <PlayCircle weight="duotone" size={22} className="me-2 flex-shrink-0" />
-      ),
-      path: "/dashboard/how-work",
-    },
-    {
-      id: 8,
-      name: "Frågor och svar",
-      icon: (
-        <Question weight="duotone" size={22} className="me-2 flex-shrink-0" />
-      ),
-      path: "/dashboard/faq",
-    },
-
-    {
-      id: 9,
+      id: 6,
       name: "Medlemskap",
       icon: (
         <HandCoins size={22} weight="duotone" className="me-2 flex-shrink-0" />
@@ -105,7 +84,23 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       path: "/dashboard/subscription",
     },
     {
-      id: 10,
+      id: 7,
+      name: "Frågor och svar",
+      icon: (
+        <Question weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/faq",
+    },
+    {
+      id: 8,
+      name: "Blogg",
+      icon: (
+        <Notebook weight="duotone" size={22} className="me-2 flex-shrink-0" />
+      ),
+      path: "/dashboard/blogspot",
+    },
+    {
+      id: 9,
       name: "Inställningar",
       icon: (
         <GearSix weight="duotone" size={22} className="me-2 flex-shrink-0" />

@@ -68,7 +68,7 @@ export const middleware = async (request: NextRequest) => {
     (!userAuthRoutes.some(route => activePath.startsWith(route)) &&
       !activePath.includes("/dashboard/blogspot/"))
   ) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+    return NextResponse.redirect(new URL("/dashboard/how-work", request.url));
   }
   return NextResponse.next();
 }

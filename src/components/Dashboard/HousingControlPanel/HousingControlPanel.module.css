@@ -1,3 +1,86 @@
-.panel{
-    
+.queueCardStatusGrid{
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 16px;
 }
+
+.queueCardStatus{
+    padding: 20px;
+}
+
+.cardIconWrapper{
+    --circle-sizing:60px;
+    width: var(--circle-sizing);
+    height: var(--circle-sizing);
+    border-radius: 100px;
+}
+
+.cardIcon{
+    --icon-sizing:24px;
+    width: var(--icon-sizing);
+    height: var(--icon-sizing);
+}
+
+.cardIcon svg{
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+}
+
+.visaLink{
+    transition: 0.35s;
+    color: var(--clr-theme);
+}
+
+.bgGreen{
+    background-color: #d1fbe5;
+}
+
+.iconGreen{
+    color:#21a567;
+}
+
+.bgLightYellow{
+    background-color:#fef3c8;
+}
+
+.iconLightYellow{
+    color:#d97606;
+}
+
+.iconBlue{
+    color:#3235ff;
+}
+
+.bgBlue{
+    background-color:#d4e6ff;
+}
+
+.iconRed{
+    color: #d92820;
+}
+
+.bgRed{
+    background-color: #fee2e2;
+}
+
+.contentImgWrapper{
+    padding: 8px;
+    max-width: 100px;
+    border: 1px solid #0000002e;
+    border-radius: 12px;
+    --bs-aspect-ratio: 70%;
+}
+
+.kommunBadge{
+    padding: 4px 8px;
+    border: solid 1px var(--gray);
+    border-radius: 12px;
+}
+
+.statusBadge{
+    background-color: #d1fbe5;
+    color: #35745a;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+

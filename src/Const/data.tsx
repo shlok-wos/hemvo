@@ -19,6 +19,7 @@ import { ContactDetailForm } from "@/components/Form/ContactDetailForm";
 import { IncomeForm } from "@/components/Form/IncomeForm";
 import { CurrentResidentForm } from "@/components/Form/CurrentResidentForm";
 import { PreferanceForm } from "@/components/Form/PreferanceForm";
+import { ArrowsClockwise, Database, User, WarningDiamond } from "@phosphor-icons/react";
 
 export const heroRting = [
   {
@@ -396,5 +397,41 @@ export const housingQueues = [
     image: visa,
     description:
       "Utvecklar hyresrätten till en attraktiv boendeform för alla. För närvarande håller denna ko 5100...",
+  },
+];
+
+
+export const houseControlPanel = [
+  {
+    id:1,
+    icon: Icons.iconUser,
+    label: "Aktiva köer",
+    count: 7,
+    bgColor:"bgGreen",
+    iconColor:"iconGreen",
+  },
+  { 
+    id:2,
+    icon: <ArrowsClockwise size={18} />, 
+    label: "Bearbetas",
+    count: 0,
+    bgColor:"bgLightYellow",
+    iconColor:"iconLightYellow",
+  },
+  {
+    id:3,
+    icon: <Database size={18} />,
+    label: "Betalköer",
+    count: 0,
+    bgColor:"bgBlue",
+    iconColor:"iconBlue",
+  },
+  {
+    id:4,
+    icon: <WarningDiamond size={18} />,
+    label: "Inaktiva köer",
+    count: 0,
+    bgColor:"bgRed",
+    iconColor:"iconRed",
   },
 ];

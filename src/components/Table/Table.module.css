@@ -1,0 +1,9 @@
+.customTableContainer :global .rdt_TableCell {
+  padding: 16px;
+}
+
+.customTableContainer :global .gxvszF{
+    font-size: var(--text-md);
+    font-weight: 500;
+    color: var(--dark);
+}

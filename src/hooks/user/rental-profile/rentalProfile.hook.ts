@@ -14,13 +14,15 @@ import toast from "react-hot-toast";
 
 export const useRentalProfileHook = () => {
   const defaultRoomValue = {
-    personalPrefrence: "",
     cityId: "",
     isFirstHand: false,
     isSubContract: false,
-    noOfRooms: [2, 5],
-    size: [50, 70],
-    rent: [12000, 23000],
+    minRooms: 0,
+    maxRooms: 0,
+    minSize: 0,
+    maxSize: 0,
+    minrent: 0,
+    maxrent: 0,
   };
   const [rentalProfileData, setRentalProfileData] = useState<RentalProfileType>(
     defaultRoomValue as RentalProfileType
@@ -71,16 +73,27 @@ export const useRentalProfileHook = () => {
           noOfRooms,
           size,
           rent,
+          minRoom,
+          maxRoom,
+          minSize,
+          maxSize,
+          minRent,
+          maxRent,
         } = rentalProfileDetailsResp?.data;
+
         const roomValue: any = {
           personalPrefrence: personal_prefrence,
           cityId: city_id,
           isFirstHand: is_first_hand,
           isSubContract: is_sub_contract,
-          noOfRooms: noOfRooms,
-          size: size,
-          rent: rent,
+          minRooms: minRoom,
+          maxRooms: maxRoom,
+          minSize: minSize,
+          maxSize: maxSize,
+          minrent: minRent,
+          maxrent: maxRent,
         };
+
         if (rentalProfileDetailsResp?.data?.id) {
           roomValue.rentalId = rentalProfileDetailsResp?.data?.id;
         }
@@ -95,6 +108,14 @@ export const useRentalProfileHook = () => {
     }
   };
 
+  const handleInputChange = (event: any) => {
+    const { name, value } = event.target;
+
+    // const errors = validateUserInquiryOnChange(name, value, errorMessage);
+    // setErrorMessage(errors);
+    setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   const handleOnchangeRange = (value: [number, number], name: string) => {
     setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
   };
@@ -106,7 +127,10 @@ export const useRentalProfileHook = () => {
   const handleOnChangeSelect = (value: any, name: string) => {
     const errors = validateOnChangeRentalProfile(name, value, errorMessage);
     setErrorMessage(errors);
-    setRentalProfileData((prevData) => ({ ...prevData, [name]: value.id }));
+    setRentalProfileData((prevData) => ({
+      ...prevData,
+      [name]: name === "cityId" ? value.id : value,
+    }));
   };
   const handleOnChangeTextArea = (event: any) => {
     const { name, value } = event?.target;
@@ -129,6 +153,7 @@ export const useRentalProfileHook = () => {
       );
       if (createRentalProfileResp.success) {
         handleConfirmModal();
+        toast?.success(createRentalProfileResp?.message);
       } else {
         toast.error(createRentalProfileResp.message);
       }
@@ -149,6 +174,7 @@ export const useRentalProfileHook = () => {
     handleOnchangeSwitch,
     handleOnChangeSelect,
     onSaveRentalData,
+    handleInputChange,
     handleOnChangeTextArea,
   };
 };

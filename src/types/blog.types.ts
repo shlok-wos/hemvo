@@ -17,6 +17,9 @@ export type BlogDetailsTypes = {
    title: string;
    createdAt: string;
    updatedAt: string;
+   posted_by_image: string;
+   posted_by: string;
+   designation: string;
 }
 
 export type BlogPaginationData = {

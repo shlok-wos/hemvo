@@ -557,7 +557,7 @@ body {
 .grid-secondary {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
+  grid-gap: var(--space-2xs);
 }
 
 .header-space {
@@ -578,6 +578,10 @@ body {
   border-radius: 8px;
 }
 
-.text-limit p:nth-child(n + 3) {
-  display: none;
+.text-limit p {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

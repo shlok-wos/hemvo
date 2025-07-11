@@ -26,12 +26,13 @@ export const DashboardBlogspot = () => {
                       <Link
                         href={`/dashboard/blogspot/${post.slug}`}
                         className={clsx(
-                          "text-decoration-none",
+                          "text-decoration-none d-flex flex-column justify-content-between",
                           styles.dashboardBlogCard
                         )}
                         key={`blog-${index}`}
                       >
-                        <div className="ratio ratio-16x9 mb-2">
+                        <div>
+                         <div className="ratio ratio-16x9 mb-2">
                           <img
                             src={post.blog_image}
                             alt={post.slug}
@@ -54,11 +55,12 @@ export const DashboardBlogspot = () => {
                             {post.title}
                           </h4>
                           <p
-                            className="text-dark clamp clamp-3"
+                            className="text-dark clamp clamp-2"
                             dangerouslySetInnerHTML={{
                               __html: post?.description,
                             }}
                           ></p>
+                        </div>
                         </div>
                         <div className="d-flex align-items-center gap-3 mt-3">
                           <div

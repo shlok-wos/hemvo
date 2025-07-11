@@ -5,6 +5,7 @@ import {
   InputHTMLAttributes,
   ReactNode,
   forwardRef,
+  useEffect,
   useState,
 } from "react";
 import { cx } from "class-variance-authority";
@@ -21,6 +22,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       name,
       type = "text",
       label,
+      value,
       onChange,
       className,
       placeholder,
@@ -38,6 +40,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const [showPassword, setShowPassword] = useState(false);
     const [counterValue, setCounterValue] = useState(0);
 
+    // useEffect(() => {
+    //   setCounterValue(value);
+    // }, [value]);
+
     const togglePasswordVisibility = () => {
       setShowPassword(!showPassword);
     };
@@ -47,13 +53,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
     const handleIncrement = () => {
       setCounterValue((prev) => prev + 1);
-      onChange?.({ target: { value: String(counterValue + 1) } } as any);
+      onChange?.(String(counterValue + 1) as any);
     };
 
     const handleDecrement = () => {
       setCounterValue((prev) => {
         const newVal = Math.max(0, prev - 1);
-        onChange?.({ target: { value: String(newVal) } } as any);
+        onChange?.(String(newVal) as any);
         return newVal;
       });
     };

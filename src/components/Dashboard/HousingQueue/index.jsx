@@ -47,16 +47,12 @@ export const HousingQueue = () => {
             </h5>
             <div className={clsx(styles.housingQueueGrid, "d-grid mt-4")}>
               {isLoader ? (
-                <div className="row">
-                  <div className="col-12 col-md-6 col-xxl-4">
-                    <Card
-                      className="h-100"
-                      contentClassName="h-100 d-flex flex-column justify-content-between"
-                    >
-                      <FLSkeleton isCard />
-                    </Card>
-                  </div>
-                </div>
+                <Card
+                  className="h-100"
+                  contentClassName="h-100 d-flex flex-column justify-content-between"
+                >
+                  <FLSkeleton isCard />
+                </Card>
               ) : (
                 queuesData?.queue?.rows?.list?.length > 0 &&
                 queuesData?.queue?.rows?.list?.map((queue) => (
