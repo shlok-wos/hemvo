@@ -61,21 +61,28 @@ export const HousingQueue = () => {
                     contentClassName="h-100 d-flex flex-column justify-content-between"
                   >
                     <div>
-                      <div
-                        className={cx(
-                          styles.logoWrapper,
-                          "d-flex justify-content-between"
-                        )}
-                      >
-                        <div className={cx("w-100 ratio")}>
-                          <img
-                            src={
-                              queuesData?.queue?.rows?.mediaUrl + queue?.image
-                            }
-                            alt="Queue Image"
-                            className="object-fit-contain"
-                          />
+                      <div className="d-flex justify-content-between">
+                        <div
+                          className={cx(
+                            styles.logoWrapper,
+                            "d-flex justify-content-between flex-shrink-0 w-100"
+                          )}
+                        >
+                          <div className={cx("w-100 ratio")}>
+                            <img
+                              src={
+                                queuesData?.queue?.rows?.mediaUrl + queue?.image
+                              }
+                              alt="Queue Image"
+                              className="object-fit-cover"
+                            />
+                          </div>
                         </div>
+                        {queue?.rank && (
+                          <span className="text-g1 text-lg fw-medium">
+                            Köplats {queue?.rank}
+                          </span>
+                        )}
                       </div>
 
                       <h4 className="mt-3">{queue.title}</h4>
@@ -106,7 +113,7 @@ export const HousingQueue = () => {
                         open={isJoinModal}
                         title={selectedQueue?.joined ? "Gå ur kö" : "Gå med"}
                         size="small"
-                        showClose={false}
+                        showClose={true}
                         closeOnOverlayClick={false}
                         trigger={
                           <Button

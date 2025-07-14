@@ -7,7 +7,7 @@
 }
 
 .blogImage {
-  width: 100%;
+  max-width: 100%;
   aspect-ratio: 19/6;
   object-fit: cover;
   object-position: center;

@@ -2,37 +2,47 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./Table.module.css";
-import DataTable from "react-data-table-component";
-
-import { ReactNode } from "react";
-import { TableProps as DataTableProps, TableColumn } from "react-data-table-component";
+import DataTable, { createTheme } from "react-data-table-component";
+import { TableColumn } from "react-data-table-component";
 
 type TableProps<T> = {
   rowData: T[];
   columns: TableColumn<T>[];
+  parentClassName?: string;
+  className?: string;
 };
 
-export const Table = <T extends object>({ rowData, columns }: TableProps<T>) => {
+createTheme('solarized', {
+  background: {
+    default: 'white',
+  },
+  context: {
+    background: 'white',
+    text: 'red',
+  },
+  action: {
+    button: 'rgba(0,0,0,.54)',
+    hover: 'rgba(0,0,0,.08)',
+    disabled: 'rgba(0,0,0,.12)',
+  },
+}, 'light');
+
+export const Table = <T extends object>({
+  rowData,
+  columns,
+  parentClassName,
+  className,
+}: TableProps<T>) => {
   return (
-    <div className={clsx(styles.customTableContainer)}>
+    <div className={clsx(styles.customTableContainer, parentClassName)}>
       <DataTable
+        className={className}
         columns={columns}
         data={rowData}
         highlightOnHover
         striped
-        customStyles={{
-          headRow: {
-            style: {
-              backgroundColor: "#f5f5f5",
-              fontWeight: 500,
-            },
-          },
-          rows: {
-            style: {
-              borderBottom: "1px solid #e0e0e0",
-            },
-          },
-        }}
+        theme="solarized"
+        fixedHeader
       />
     </div>
   );

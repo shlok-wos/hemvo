@@ -585,3 +585,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+.text-limit p:nth-child(n + 3) {
+  display: none;
+}

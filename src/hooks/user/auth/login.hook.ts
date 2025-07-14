@@ -41,7 +41,7 @@ export const useUserLoginHook = () => {
         setCookie("authToken", loggedInUser?.data?.token);
 
         setAuthHeader(loggedInUser?.data?.token);
-        router.push("/dashboard");
+        router.push("/dashboard/how-work");
       } else {
         toast.error(loggedInUser?.message);
       }

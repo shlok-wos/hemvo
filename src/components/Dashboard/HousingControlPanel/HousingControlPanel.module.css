@@ -1,69 +1,69 @@
-.queueCardStatusGrid{
-    grid-template-columns: repeat(4,1fr);
+.queueCardStatusGrid {
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 16px;
 }
 
-.queueCardStatus{
+.queueCardStatus {
     padding: 20px;
 }
 
-.cardIconWrapper{
-    --circle-sizing:60px;
+.cardIconWrapper {
+    --circle-sizing: 60px;
     width: var(--circle-sizing);
     height: var(--circle-sizing);
     border-radius: 100px;
 }
 
-.cardIcon{
-    --icon-sizing:24px;
+.cardIcon {
+    --icon-sizing: 24px;
     width: var(--icon-sizing);
     height: var(--icon-sizing);
 }
 
-.cardIcon svg{
+.cardIcon svg {
     width: inherit;
     height: inherit;
     object-fit: contain;
 }
 
-.visaLink{
+.visaLink {
     transition: 0.35s;
     color: var(--clr-theme);
 }
 
-.bgGreen{
+.bgGreen {
     background-color: #d1fbe5;
 }
 
-.iconGreen{
-    color:#21a567;
+.iconGreen {
+    color: #21a567;
 }
 
-.bgLightYellow{
-    background-color:#fef3c8;
+.bgLightYellow {
+    background-color: #fef3c8;
 }
 
-.iconLightYellow{
-    color:#d97606;
+.iconLightYellow {
+    color: #d97606;
 }
 
-.iconBlue{
-    color:#3235ff;
+.iconBlue {
+    color: #3235ff;
 }
 
-.bgBlue{
-    background-color:#d4e6ff;
+.bgBlue {
+    background-color: #d4e6ff;
 }
 
-.iconRed{
+.iconRed {
     color: #d92820;
 }
 
-.bgRed{
+.bgRed {
     background-color: #fee2e2;
 }
 
-.contentImgWrapper{
+.contentImgWrapper {
     padding: 8px;
     max-width: 100px;
     border: 1px solid #0000002e;
@@ -71,16 +71,55 @@
     --bs-aspect-ratio: 70%;
 }
 
-.kommunBadge{
+.kommunBadge {
     padding: 4px 8px;
     border: solid 1px var(--gray);
     border-radius: 12px;
 }
 
-.statusBadge{
+.statusBadge {
     background-color: #d1fbe5;
     color: #35745a;
     padding: 4px 8px;
     border-radius: 12px;
 }
 
+.copyToClipboardBadge {
+    padding: 4px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 3px;
+}
+
+.controlPanelTable :global .kkoiZw{
+    max-height: 450px;
+}
+
+/* RESPONSIVE STARTS */
+@media(max-width:1279px) {
+    .queueCardStatusGrid{
+        grid-gap: 12px;
+    }
+    .queueCardStatus {
+        padding: 16px;
+    }
+
+    .cardIconWrapper {
+        --circle-sizing: 40px;
+    }
+
+    .cardIcon {
+        --icon-sizing: 18px;
+    }
+}
+
+@media(max-width:575px){
+    .queueCardStatusGrid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:575px){
+    .controlInput{
+        width: 100%;
+    }
+}
+/* RESPONSIVE ENDS */

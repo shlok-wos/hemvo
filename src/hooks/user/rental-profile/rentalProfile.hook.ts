@@ -17,12 +17,16 @@ export const useRentalProfileHook = () => {
     cityId: "",
     isFirstHand: false,
     isSubContract: false,
-    minRooms: 0,
-    maxRooms: 0,
-    minSize: 0,
-    maxSize: 0,
-    minrent: 0,
-    maxrent: 0,
+    minRooms: 1,
+    maxRooms: 4,
+    minSize: 10,
+    maxSize: 60,
+    minrent: 1000,
+    maxrent: 2000,
+    guardianChildrenCount: 0,
+    accomodationType: "",
+    incomeAmount: 0,
+    typeOfIncome: "",
   };
   const [rentalProfileData, setRentalProfileData] = useState<RentalProfileType>(
     defaultRoomValue as RentalProfileType
@@ -66,23 +70,22 @@ export const useRentalProfileHook = () => {
 
       if (rentalProfileDetailsResp?.success && rentalProfileDetailsResp?.data) {
         const {
-          personal_prefrence,
           city_id,
           is_first_hand,
           is_sub_contract,
-          noOfRooms,
-          size,
-          rent,
           minRoom,
           maxRoom,
           minSize,
           maxSize,
           minRent,
           maxRent,
+          accomodation_type,
+          guardian_children_count,
+          income_amount,
+          type_of_income,
         } = rentalProfileDetailsResp?.data;
 
         const roomValue: any = {
-          personalPrefrence: personal_prefrence,
           cityId: city_id,
           isFirstHand: is_first_hand,
           isSubContract: is_sub_contract,
@@ -92,6 +95,10 @@ export const useRentalProfileHook = () => {
           maxSize: maxSize,
           minrent: minRent,
           maxrent: maxRent,
+          guardianChildrenCount: guardian_children_count,
+          accomodationType: accomodation_type,
+          incomeAmount: income_amount,
+          typeOfIncome: type_of_income,
         };
 
         if (rentalProfileDetailsResp?.data?.id) {
@@ -111,8 +118,13 @@ export const useRentalProfileHook = () => {
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
 
-    // const errors = validateUserInquiryOnChange(name, value, errorMessage);
-    // setErrorMessage(errors);
+    const errors = validateOnChangeRentalProfile(
+      name,
+      value,
+      errorMessage,
+      rentalProfileData
+    );
+    setErrorMessage(errors);
     setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
   };
 
@@ -125,13 +137,19 @@ export const useRentalProfileHook = () => {
   };
 
   const handleOnChangeSelect = (value: any, name: string) => {
-    const errors = validateOnChangeRentalProfile(name, value, errorMessage);
+    const errors = validateOnChangeRentalProfile(
+      name,
+      value,
+      errorMessage,
+      rentalProfileData
+    );
     setErrorMessage(errors);
     setRentalProfileData((prevData) => ({
       ...prevData,
       [name]: name === "cityId" ? value.id : value,
     }));
   };
+
   const handleOnChangeTextArea = (event: any) => {
     const { name, value } = event?.target;
     setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
@@ -166,15 +184,15 @@ export const useRentalProfileHook = () => {
   return {
     isLoader,
     cities,
+    errorMessage,
     rentalProfileData,
     isSuccessModalOpen,
-    errorMessage,
+    onSaveRentalData,
+    handleInputChange,
     handleConfirmModal,
     handleOnchangeRange,
     handleOnchangeSwitch,
     handleOnChangeSelect,
-    onSaveRentalData,
-    handleInputChange,
     handleOnChangeTextArea,
   };
 };

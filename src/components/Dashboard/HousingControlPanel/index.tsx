@@ -3,47 +3,92 @@ import { useState } from "react";
 import { Card } from "@/components/Card";
 import styles from "./HousingControlPanel.module.css";
 import clsx from "clsx";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight, Clipboard } from "@phosphor-icons/react";
 import { houseControlPanel } from "@/Const/data";
 import { Table } from "@/components/Table";
 import { Input, Select } from "@/components/Form";
 
 export const HousingControlPanel = () => {
-  const rowData = [
-    {
-      make: {
-        name: "Ekerö Bostäder",
-        link: "Ekerobostader.se",
-        imgSrc:
-          "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
-      },
-      model: "Ekerö",
-      status: "Aktiv",
-      kötId: "49 dagar",
+ const rowData = [
+  {
+    make: {
+      name: "Ekerö Bostäder",
+      link: "Ekerobostader.se",
+      imgSrc:
+        "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
     },
-    {
-      make: {
-        name: "Tyresö bostäder",
-        link: "Tyresobostader.se",
-        imgSrc:
-          "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
-      },
-      model: "Tyresö",
-      status: "Aktiv",
-      kötId: "33 dagar",
+    model: "Ekerö",
+    status: "Aktiv",
+    kötId: "49 dagar",
+  },
+  {
+    make: {
+      name: "Tyresö bostäder",
+      link: "Tyresobostader.se",
+      imgSrc:
+        "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
     },
-    {
-      make: {
-        name: "Telge Bostäder",
-        link: "Telge.se",
-        imgSrc:
-          "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
-      },
-      model: "Södertälje",
-      status: "Aktiv",
-      kötId: "33 dagar",
+    model: "Tyresö",
+    status: "Aktiv",
+    kötId: "33 dagar",
+  },
+  {
+    make: {
+      name: "Telge Bostäder",
+      link: "Telge.se",
+      imgSrc:
+        "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
     },
-  ];
+    model: "Södertälje",
+    status: "Aktiv",
+    kötId: "33 dagar",
+  },
+  {
+    make: {
+      name: "Nynäshamnsbostäder",
+      link: "Nynasbo.se",
+      imgSrc:
+        "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
+    },
+    model: "Nynäshamn",
+    status: "Aktiv",
+    kötId: "28 dagar",
+  },
+  {
+    make: {
+      name: "Heimstaden",
+      link: "Heimstaden.com/se",
+      imgSrc:
+        "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
+    },
+    model: "Stockholm",
+    status: "Aktiv",
+    kötId: "41 dagar",
+  },
+  {
+    make: {
+      name: "Botkyrkabyggen",
+      link: "Botkyrkabyggen.se",
+      imgSrc:
+        "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
+    },
+    model: "Botkyrka",
+    status: "Aktiv",
+    kötId: "37 dagar",
+  },
+  {
+    make: {
+      name: "Stockholmshem",
+      link: "Stockholmshem.se",
+      imgSrc:
+        "https://alpha.whiteorangesoftware.com:9001/public/uploads/blogs/87c100ca-c07c-4409-b4ea-170359f8a5b7.jpeg",
+    },
+    model: "Stockholm",
+    status: "Aktiv",
+    kötId: "56 dagar",
+  },
+];
+
 
   const columns = [
     {
@@ -95,7 +140,19 @@ export const HousingControlPanel = () => {
     {
       name: "Lösenord",
       width: "180px",
-      cell: () => <span className="text-base">Kopiera</span>,
+      cell: () => (
+        <div
+          className={clsx(
+            styles.copyToClipboardBadge,
+            "d-flex align-items-center gap-2 cursor-pointer"
+          )}
+        >
+          <span className="d-flex align-items-center justify-content-center">
+            <Clipboard size={18} />
+          </span>
+          <span className="text-base">Kopiera</span>
+        </div>
+      ),
     },
     {
       name: "Hantera kön",
@@ -157,25 +214,25 @@ export const HousingControlPanel = () => {
           </Card>
         ))}
       </div>
-      <div className="d-flex align-items-center justify-content-between mt-3">
-        <div className="d-flex align-items-center gap-2">
+      <div className="d-flex align-items-start align-items-sm-center justify-content-between mt-3 gap-2 gap-sm-0 flex-column flex-sm-row">
+        <div className="d-flex align-items-center gap-2 flex-wrap flex-sm-nowrap">
           <Select
             placeholder="Kötyp"
             options={[
               {
                 id: "1",
-                value: "Hello",
-                label: "",
+                value: "Business",
+                label: "Näringsinkomst",
               },
               {
                 id: "2",
-                value: "Hello2",
-                label: "",
+                value: "Passive",
+                label: "Passiv inkomst",
               },
               {
                 id: "3",
-                value: "Hello3",
-                label: "",
+                value: "Rental",
+                label: "Hyresinkomst",
               },
             ]}
           />
@@ -184,18 +241,18 @@ export const HousingControlPanel = () => {
             options={[
               {
                 id: "1",
-                value: "Hello",
-                label: "",
+                value: "Waiting",
+                label: "Väntar",
               },
               {
                 id: "2",
-                value: "Hello2",
-                label: "",
+                value: "InProgress",
+                label: "Pågår",
               },
               {
                 id: "3",
-                value: "Hello3",
-                label: "",
+                value: "Completed",
+                label: "Avslutad",
               },
             ]}
           />
@@ -203,9 +260,10 @@ export const HousingControlPanel = () => {
         <Input
           type="search"
           placeholder="Sök efter kö-namn, stad eller nyckelord"
+          parentClassName={clsx(styles.controlInput)}
         />
       </div>
-      <Card className="mt-4">
+      <Card className={clsx(styles.controlPanelTable,"mt-4")}>
         <Table rowData={rowData} columns={columns} />
       </Card>
     </div>

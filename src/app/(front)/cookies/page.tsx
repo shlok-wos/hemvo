@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import styles from "../page.module.css";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "Cookies | Hemvo",
@@ -17,130 +18,131 @@ export default function Cookies() {
           <div className={styles.fmtContent}>
             <ol className="ps-0">
               <li>
-                <strong>1. Introduktion</strong>
+                <strong>1. Inledning</strong>
                 <p>
-                  Hemvo (”vi”, ”oss”, ”vår”) använder cookies på vår
-                  webbplats www.Hemvo.se (”Webbplatsen”). Enligt lagen om
-                  elektronisk kommunikation är vi skyldiga att informera dig om
-                  användningen av cookies, deras syften och ge dig möjlighet att
-                  samtycka till deras lagring på din enhet.
+                  Denna cookiepolicy beskriver hur Hemvo AB (”Hemvo”, ”vi”,
+                  ”oss” eller ”vår”) använder cookies och liknande teknologier
+                  på vår webbplats{" "}
+                  <a href="www.hemvo.se" target="_blank">
+                    www.hemvo.se
+                  </a>{" "}
+                  (”Webbplatsen”). Syftet är att klargöra vilka typer av cookies
+                  som används, för vilka ändamål, och hur du som användare kan
+                  kontrollera dessa inställningar. Policyn är utformad i
+                  enlighet med lagen (2003:389) om elektronisk kommunikation och
+                  Dataskyddsförordningen (GDPR).
                 </p>
               </li>
 
               <li>
                 <strong>2. Vad är cookies?</strong>
                 <p>
-                  Cookies är små textfiler som lagras på din dator eller enhet
-                  av din webbläsare när du besöker en webbplats. Dessa filer
-                  möjliggör att Webbplatsen kan komma ihåg dina val och
-                  inställningar under dina besök.
+                  Cookies är små textfiler som lagras på din enhet (dator,
+                  surfplatta eller mobiltelefon) när du besöker en webbplats. De
+                  möjliggör teknisk funktionalitet och förbättrad
+                  användarupplevelse genom att minnas dina preferenser, samla in
+                  statistik och möjliggöra personaliserad kommunikation.
+                </p>
+                <p>Cookies kan vara:</p>
+                <ol className={clsx(styles.listStyleDisc)}>
+                  <li>
+                    Sessionsbaserade cookies – raderas när du stänger din
+                    webbläsare.
+                  </li>
+                  <li>
+                    Varaktiga cookies – sparas under en viss tid eller tills du
+                    själv raderar dem.
+                  </li>
+                </ol>
+              </li>
+
+              <li>
+                <strong>3. Vilka cookies vi använder och varför</strong>
+                <p>Vi använder cookies för följande syften:</p>
+                <ol className={clsx(styles.listStyleDisc)}>
+                  <li>
+                    <strong>Funktionalitet:</strong> Säkerställa grundläggande
+                    funktioner på webbplatsen.
+                  </li>
+                  <li>
+                    <strong>Analys och prestanda:</strong> Förstå
+                    besöksbeteenden och förbättra navigering och laddningstider.
+                  </li>
+                  <li>
+                    <strong>Personalisering:</strong> Anpassa upplevelsen efter
+                    tidigare val eller beteende.
+                  </li>
+                  <li>
+                    <strong>Marknadsföring:</strong> Visa relevanta annonser och
+                    mäta kampanjresultat, både på vår webbplats och externa
+                    kanaler.
+                  </li>
+                </ol>
+              </li>
+
+              <li>
+                <strong>4. Förstaparts- och tredjepartscookies</strong>
+                <p>
+                  <strong>Förstapartscookies</strong> sätts av vår webbplats och
+                  används för funktioner och preferenser.
+                </p>
+                <p>
+                  <strong>Tredjepartscookies</strong> sätts av externa aktörer
+                  vi samarbetar med, exempelvis för analys och annonsering.
+                  Dessa kan samla in data om ditt beteende och kombinera det med
+                  annan information för riktad annonsering.
+                </p>
+                <p>
+                  Vi vidtar nödvändiga avtalstekniska och organisatoriska
+                  åtgärder för att säkerställa att dessa aktörer hanterar
+                  informationen enligt gällande dataskyddslagstiftning.
                 </p>
               </li>
 
               <li>
-                <strong>3. Vilka cookies används?</strong>
-                <p>På Hemvo webbplats används två typer av cookies:</p>
+                <strong>5. Hantering och samtycke</strong>
                 <p>
-                  Varaktiga cookies: Dessa cookies lagras på din enhet under en
-                  specifik tidsperiod och kan återanvändas vid framtida besök.
+                  Vid första besöket på vår webbplats informeras du om
+                  användningen av cookies och ges möjlighet att ge eller neka
+                  samtycke till icke-nödvändiga cookies.
                 </p>
                 <p>
-                  Sessions-cookies: Dessa cookies är tillfälliga och raderas när
-                  du stänger webbläsaren.
-                </p>
-              </li>
-
-              <li>
-                <strong>4. Varför använder vi cookies?</strong>
-                <p>Vi använder cookies för följande ändamål:</p>
-                <p>
-                  Webbanalys: För att samla in data om hur besökare interagerar
-                  med Webbplatsen och för att förbättra dess prestanda.
+                  Du kan även när som helst ändra dina inställningar i
+                  webbläsarens cookieinställningar eller via vår cookiehanterare
+                  (om tillgänglig).
                 </p>
                 <p>
-                  Annonsering: För att anpassa vår annonsering baserat på ditt
-                  surfbeteende och för att säkerställa att relevanta annonser
-                  visas för dig.
-                </p>
-                <p>
-                  Förbättra kundupplevelsen: För att skapa personliga
-                  erbjudanden, komma ihåg vad som finns i din kundvagn och
-                  möjliggöra olika tjänster och funktioner som förbättrar din
-                  upplevelse på Webbplatsen.
+                  Observera att vissa funktioner på Webbplatsen kan påverkas om
+                  du blockerar vissa typer av cookies.
                 </p>
               </li>
 
               <li>
-                <strong>5. Förstapartscookies och tredjepartscookies</strong>
+                <strong>6. Lagringstid</strong>
                 <p>
-                  Förstapartscookies: Dessa cookies sätts av vår webbplats
-                  (Hemvo.se) och används för att hantera funktioner och
-                  samla in statistik om vårt innehåll.
-                </p>
-
-                <p>
-                  Tredjepartscookies: Vi samarbetar med olika aktörer som kan
-                  sätta sina egna cookies på vår webbplats. Information som
-                  samlas in från dessa cookies kan delas med oss, men kan också
-                  användas för andra syften av respektive aktör. Dessa cookies
-                  inkluderar:
-                </p>
-
-                <p>
-                  Google Analytics: Vi använder detta verktyg för att analysera
-                  besöksdata på vår webbplats. Vi har avtal med Google som
-                  säkerställer att ingen identifierbar information delas.
-                </p>
-
-                <p>
-                  Facebook: För att förbättra vår annonsering använder vi
-                  Facebooks pixelkod som samlar data om användarnas
-                  interaktioner på Webbplatsen. Detta hjälper oss att visa mer
-                  riktade annonser på Facebook.
+                  Lagringstiden varierar beroende på cookietyp och syfte.
+                  Sessionscookies raderas när webbläsaren stängs, medan
+                  varaktiga cookies kan lagras i allt från några minuter till
+                  flera år.
                 </p>
               </li>
 
               <li>
-                <strong>6. Hantering av cookies</strong>
+                <strong>7. Ändringar i cookiepolicyn</strong>
                 <p>
-                  Du kan välja att acceptera eller neka cookies. Om du inte vill
-                  att cookies ska lagras på din enhet kan du justera
-                  inställningarna i din webbläsare. Observera att avvisande av
-                  cookies kan begränsa din användarupplevelse och vissa
-                  funktioner på Webbplatsen kanske inte fungerar som avsett.
-                </p>
-                <p>
-                  För att tacka nej till tredjepartscookies kan du besöka
-                  följande sidor:
-                </p>
-                <p>Google Analytics: Google privacy opt-out</p>
-                <p>Facebook: Anpassa dina annonser</p>
-              </li>
-
-              <li>
-                <strong>7. Ändringar i vår cookiepolicy</strong>
-                <p>
-                  Vi kan komma att uppdatera denna cookiepolicy och kommer att
-                  publicera den uppdaterade versionen här. Vi rekommenderar att
-                  du regelbundet kontrollerar denna policy för att hålla dig
-                  informerad om hur vi använder cookies.
+                  Hemvo förbehåller sig rätten att uppdatera denna cookiepolicy.
+                  Ändringar träder i kraft vid publicering på Webbplatsen. Vi
+                  rekommenderar att du regelbundet granskar policyn.
                 </p>
               </li>
 
               <li>
                 <strong>8. Kontaktinformation</strong>
                 <p>
-                  Om du har frågor eller funderingar gällande denna
-                  cookiepolicy, vänligen kontakta oss på
-                  <a href="mailTo:info@Hemvo.se"> info@Hemvo.se</a> .
-                </p>
-              </li>
-
-              <li>
-                <strong>9. Mer information</strong>
-                <p>
-                  För mer information om cookies och dina rättigheter kan du
-                  besöka Post- och telestyrelsens webbplats: www.pts.se.
+                  Om du har frågor, synpunkter eller vill utöva dina rättigheter
+                  enligt dataskyddslagstiftningen är du välkommen att kontakta
+                  oss:
+                  <a href="mailto:info@hemvo.se">info@hemvo.se</a>
                 </p>
               </li>
             </ol>

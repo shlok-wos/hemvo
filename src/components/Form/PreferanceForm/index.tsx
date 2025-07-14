@@ -113,7 +113,7 @@ export const PreferanceForm = ({
         <div className="col-md-6">
           <Input
             id="minSize"
-            label="Min Storlek"
+            label="Min Storlek (kvm)"
             name="minSize"
             placeholder="Ange ditt förnamn"
             counter={true}
@@ -127,7 +127,7 @@ export const PreferanceForm = ({
           <Input
             id="maxSize"
             name="maxSize"
-            label="Max Storlek"
+            label="Max Storlek (kvm)"
             placeholder="Ange ditt efternamn"
             counter={true}
             className="text-center text-black"
@@ -142,7 +142,7 @@ export const PreferanceForm = ({
         <div className="col-md-6">
           <Input
             id="minrent"
-            label="Min Hyra"
+            label="Min Hyra (KR)"
             name="minrent"
             placeholder="Ange ditt förnamn"
             counter={true}
@@ -156,7 +156,7 @@ export const PreferanceForm = ({
           <Input
             id="maxrent"
             name="maxrent"
-            label="Max Hyra"
+            label="Max Hyra (KR)"
             placeholder="Ange ditt efternamn"
             counter={true}
             className="text-center text-black"

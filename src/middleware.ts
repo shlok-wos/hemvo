@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 // const fetchUserDetails = async (token: string) => {
 //   const userDetailsResp = await fetch(
@@ -24,17 +24,18 @@ const unAuthUserRoutes = [
   "/rent-out",
   "/contact",
   "/plans",
-  "/subscription"
+  "/subscription",
 ];
 
 const userAuthRoutes = [
   "/dashboard",
+  "/dashboard/how-work",
   "/dashboard/rental-profile",
   "/dashboard/blogspot",
   // "/dashboard/blogspot/[post]",
   "/dashboard/subscription",
   "/dashboard/settings",
-  "/dashboard/faq"
+  "/dashboard/faq",
 ];
 
 export const middleware = async (request: NextRequest) => {
@@ -48,30 +49,29 @@ export const middleware = async (request: NextRequest) => {
   //   } catch (error) {
   //     console.log({ error });
   //   }
-  // }  
+  // }
   const activePath = request?.nextUrl?.pathname;
   if (
     !isUserAuthenticated &&
-    (
-      // userAuthRoutes.some(route => activePath.startsWith(route)) &&
-      userAuthRoutes.includes(activePath) ||
-      activePath.includes("/dashboard/blogspot/")
-    )
+    // userAuthRoutes.some(route => activePath.startsWith(route)) &&
+    (userAuthRoutes.includes(activePath) ||
+      activePath.includes("/dashboard/blogspot/"))
   ) {
     // return NextResponse.redirect(new URL("/login", request.url));
-    return NextResponse.redirect(new URL("/login"+ request?.nextUrl.search, request.url));
-
+    return NextResponse.redirect(
+      new URL("/login" + request?.nextUrl.search, request.url)
+    );
   }
 
   if (
     isUserAuthenticated &&
-    (!userAuthRoutes.some(route => activePath.startsWith(route)) &&
-      !activePath.includes("/dashboard/blogspot/"))
+    !userAuthRoutes.some((route) => activePath.startsWith(route)) &&
+    !activePath.includes("/dashboard/blogspot/")
   ) {
     return NextResponse.redirect(new URL("/dashboard/how-work", request.url));
   }
   return NextResponse.next();
-}
+};
 
 export const config = {
   matcher: [
@@ -94,6 +94,6 @@ export const config = {
     "/dashboard/blogspot/:path*",
     "/dashboard/subscription",
     "/dashboard/settings",
-    "/dashboard/faq"
+    "/dashboard/faq",
   ],
-}
+};

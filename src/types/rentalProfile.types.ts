@@ -1,6 +1,5 @@
 export type RentalProfileType = {
   rentalId?: number | string;
-  personalPrefrence: string;
   cityId: string;
   isFirstHand: boolean;
   isSubContract: boolean;
@@ -10,6 +9,10 @@ export type RentalProfileType = {
   maxSize?: number;
   minrent?: number;
   maxrent?: number;
+  guardianChildrenCount: number;
+  accomodationType: string;
+  incomeAmount: number;
+  typeOfIncome: string;
   // noOfRooms: [number, number];
   // size: [number, number];
   // rent: [number, number];

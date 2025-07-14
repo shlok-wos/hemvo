@@ -38,11 +38,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     const [showPassword, setShowPassword] = useState(false);
-    const [counterValue, setCounterValue] = useState(0);
+    const [counterValue, setCounterValue] = useState<number | undefined>(
+      undefined
+    );
 
-    // useEffect(() => {
-    //   setCounterValue(value);
-    // }, [value]);
+    useEffect(() => {
+      setCounterValue(typeof value === "number" ? value : Number(value) || 0);
+    }, [value]);
 
     const togglePasswordVisibility = () => {
       setShowPassword(!showPassword);
@@ -51,14 +53,30 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputType =
       type === "password" ? (showPassword ? "text" : "password") : type;
 
+    const valueModifiedHandler = () => {
+      let modifiedValue = 0;
+      if (
+        name === "minRooms" ||
+        name === "maxRooms" ||
+        name === "guardianChildrenCount"
+      ) {
+        modifiedValue = 1;
+      } else if (name === "minSize" || name === "maxSize") {
+        modifiedValue = 10;
+      } else if (name === "minrent" || name === "maxrent") {
+        modifiedValue = 1000;
+      }
+      return modifiedValue;
+    };
+
     const handleIncrement = () => {
-      setCounterValue((prev) => prev + 1);
-      onChange?.(String(counterValue + 1) as any);
+      setCounterValue((prev) => (prev || 0) + valueModifiedHandler());
+      onChange?.(String((counterValue || 0) + valueModifiedHandler()) as any);
     };
 
     const handleDecrement = () => {
       setCounterValue((prev) => {
-        const newVal = Math.max(0, prev - 1);
+        const newVal = Math.max(0, (prev || 0) - valueModifiedHandler());
         onChange?.(String(newVal) as any);
         return newVal;
       });
@@ -88,7 +106,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               type="button"
               onClick={counter ? handleDecrement : undefined}
               className={cx(iconClass, iconClassCommon, "me-2")}
-              disabled={counter && counterValue <= 0}
+              disabled={
+                counter && (counterValue || 0) <= valueModifiedHandler()
+              }
             >
               {counter ? <Minus weight="regular" size={22} /> : icon}
             </button>
@@ -102,7 +122,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             onChange={onChange}
             placeholder={placeholder}
             ref={ref}
-            value={counter ? counterValue : undefined}
+            value={counter ? counterValue : value}
             readOnly={counter}
             {...rest}
           />
