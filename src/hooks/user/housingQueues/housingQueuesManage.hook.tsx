@@ -175,7 +175,7 @@ export const useHousingQueueManageHook = () => {
     {
       id: 5,
       icon: <UserList size={18} />,
-      label: "Landlords",
+      label: "Hyresvärdar",
       count: housingControlData?.landlords,
       bgColor: "bgPurple",
       iconColor: "iconPurple",
