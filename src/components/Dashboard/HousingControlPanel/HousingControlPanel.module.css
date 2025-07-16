@@ -63,6 +63,15 @@
     background-color: #fee2e2;
 }
 
+
+.bgPurple {
+    background-color: #e9d5ff;
+}
+
+.iconPurple {
+    color:#a954f8;
+}
+
 .contentImgWrapper {
     padding: 8px;
     max-width: 100px;

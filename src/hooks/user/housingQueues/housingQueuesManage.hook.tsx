@@ -13,6 +13,7 @@ import {
 import {
   ArrowsClockwise,
   Database,
+  UserList,
   WarningDiamond,
 } from "@phosphor-icons/react";
 import clsx from "clsx";
@@ -173,11 +174,11 @@ export const useHousingQueueManageHook = () => {
     },
     {
       id: 5,
-      icon: <WarningDiamond size={18} />,
+      icon: <UserList size={18} />,
       label: "Landlords",
       count: housingControlData?.landlords,
-      bgColor: "bgRed",
-      iconColor: "iconRed",
+      bgColor: "bgPurple",
+      iconColor: "iconPurple",
     },
   ];
 

@@ -64,6 +64,11 @@ export const Table = <T extends object>({
         onChangeRowsPerPage={handlePerRowsChange}
         onChangePage={handlePageChange}
         paginationPerPage={pageSize}
+        noDataComponent={
+          <div className="text-gray-500 py-6 text-center">
+            Vänligen anmäl dig till bostadskö
+          </div>
+        }
       />
     </div>
   );
