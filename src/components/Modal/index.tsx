@@ -33,7 +33,11 @@ export const Modal: React.FC<ModalProps> = ({
               !closeOnOverlayClick && e.preventDefault();
             }}
           >
-            {title && <Dialog.Title className={cx(styles.title, "text-xl")}>{title}</Dialog.Title>}
+            {title && (
+              <Dialog.Title className={cx(styles.title, "text-xl")}>
+                {title}
+              </Dialog.Title>
+            )}
 
             {showClose && (
               <Dialog.Close className={styles.close}>

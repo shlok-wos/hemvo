@@ -32,7 +32,6 @@ export const useRentalProfileHook = () => {
     defaultRoomValue as RentalProfileType
   );
   const [cities, setcities] = useState<any>([]);
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<{ [key: string]: string }>(
     {} as { [key: string]: string }
   );
@@ -128,10 +127,6 @@ export const useRentalProfileHook = () => {
     setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleOnchangeRange = (value: [number, number], name: string) => {
-    setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
   const handleOnchangeSwitch = (value: Boolean, name: string) => {
     setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
   };
@@ -150,15 +145,6 @@ export const useRentalProfileHook = () => {
     }));
   };
 
-  const handleOnChangeTextArea = (event: any) => {
-    const { name, value } = event?.target;
-    setRentalProfileData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleConfirmModal = () => {
-    setIsSuccessModalOpen(!isSuccessModalOpen);
-  };
-
   const onSaveRentalData = async () => {
     try {
       const errors = validateOnSaveRentalProfile(rentalProfileData);
@@ -170,7 +156,6 @@ export const useRentalProfileHook = () => {
         rentalProfileData
       );
       if (createRentalProfileResp.success) {
-        handleConfirmModal();
         toast?.success(createRentalProfileResp?.message);
       } else {
         toast.error(createRentalProfileResp.message);
@@ -186,13 +171,9 @@ export const useRentalProfileHook = () => {
     cities,
     errorMessage,
     rentalProfileData,
-    isSuccessModalOpen,
     onSaveRentalData,
     handleInputChange,
-    handleConfirmModal,
-    handleOnchangeRange,
     handleOnchangeSwitch,
     handleOnChangeSelect,
-    handleOnChangeTextArea,
   };
 };

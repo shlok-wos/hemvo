@@ -48,7 +48,7 @@ export const Subscription = () => {
   useEffect(() => {
     // Check if the query parameter 'payment=success' exists in the URL
     const urlParams = new URLSearchParams(window.location.search);
-    console.log({ urlParams });
+    // console.log({ urlParams });
 
     if (urlParams.get("payment") === "success") {
       window.ADDREVENUE.sendEvent("purchase");
@@ -74,7 +74,7 @@ export const Subscription = () => {
         }}
       />
       <Loader show={isLoader} />
-      <Card contentClassName="d-flex align-items-center justify-content-between">
+      <Card className="mb-3" contentClassName="d-flex align-items-center justify-content-between">
         <h2 className="text-2xl fw-bold">Medlemskap</h2>
       </Card>
       {!isLoader && planDetails?.hasOwnProperty("is_active") && (

@@ -53,7 +53,7 @@ export default function CityDetail() {
                       </span>
                     </>
                   }
-                  parentClassName="mb-2 mb-xl-3"
+                  parentClassName="mb-3 mb-md-0"
                   iconClassCommon="email-ico-translateY"
                   value={paginationData?.search}
                   onChange={handleInputChange}
@@ -103,7 +103,7 @@ export default function CityDetail() {
                     key={item?.id}
                     className={clsx(
                       styles.citydetailCard,
-                      "card space-xs-p d-flex flex-column gap-2xs radius-xs"
+                      "card space-xs-p d-flex flex-column gap-2xs radius-xs justify-content-between"
                     )}
                   >
                     <div className={clsx(styles.queueImg, "ratio ratio-1x1")}>

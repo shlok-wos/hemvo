@@ -18,6 +18,7 @@ type FLSkeletonProps = {
   heightThree?: number | string;
   isChart?: boolean;
   isCard?: boolean;
+  isCardCompact?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const FLSkeleton: React.FC<FLSkeletonProps> = ({
@@ -35,6 +36,7 @@ export const FLSkeleton: React.FC<FLSkeletonProps> = ({
   heightThree,
   isChart,
   isCard,
+  isCardCompact = true,
   ...rest
 }) => {
   return (
@@ -64,14 +66,17 @@ export const FLSkeleton: React.FC<FLSkeletonProps> = ({
             <Skeleton count={2} height={12} />
           </p>
 
-          <div className="mb-3">
-            <Skeleton width={80} height={12} />
-          </div>
-
-          <div className="d-flex gap-3">
-            <Skeleton height={34} width={100} borderRadius={12} />
-            <Skeleton height={34} width={100} borderRadius={12} />
-          </div>
+          {isCardCompact && (
+            <>
+              <div className="mb-3">
+                <Skeleton width={80} height={12} />
+              </div>
+              <div className="d-flex gap-3">
+                <Skeleton height={34} width={100} borderRadius={12} />
+                <Skeleton height={34} width={100} borderRadius={12} />
+              </div>
+            </>
+          )}
         </div>
       ) : (
         <Skeleton

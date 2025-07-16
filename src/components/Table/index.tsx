@@ -10,28 +10,42 @@ type TableProps<T> = {
   columns: TableColumn<T>[];
   parentClassName?: string;
   className?: string;
+  loading?: boolean;
+  totalRows?: number;
+  handlePerRowsChange?: (perPage: number, page: number) => void; // Corrected signature
+  handlePageChange?: (page: number) => void;
+  pageSize?: number;
 };
 
-createTheme('solarized', {
-  background: {
-    default: 'white',
+createTheme(
+  "solarized",
+  {
+    background: {
+      default: "white",
+    },
+    context: {
+      background: "white",
+      text: "red",
+    },
+    action: {
+      button: "rgba(0,0,0,.54)",
+      hover: "rgba(0,0,0,.08)",
+      disabled: "rgba(0,0,0,.12)",
+    },
   },
-  context: {
-    background: 'white',
-    text: 'red',
-  },
-  action: {
-    button: 'rgba(0,0,0,.54)',
-    hover: 'rgba(0,0,0,.08)',
-    disabled: 'rgba(0,0,0,.12)',
-  },
-}, 'light');
+  "light"
+);
 
 export const Table = <T extends object>({
   rowData,
   columns,
   parentClassName,
   className,
+  loading,
+  totalRows,
+  handlePerRowsChange,
+  handlePageChange,
+  pageSize,
 }: TableProps<T>) => {
   return (
     <div className={clsx(styles.customTableContainer, parentClassName)}>
@@ -43,6 +57,13 @@ export const Table = <T extends object>({
         striped
         theme="solarized"
         fixedHeader
+        pagination
+        paginationServer
+        progressPending={loading}
+        paginationTotalRows={totalRows}
+        onChangeRowsPerPage={handlePerRowsChange}
+        onChangePage={handlePageChange}
+        paginationPerPage={pageSize}
       />
     </div>
   );

@@ -1,5 +1,5 @@
 .queueCardStatusGrid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 16px;
 }
 
@@ -84,6 +84,13 @@
     border-radius: 12px;
 }
 
+.inactiveStatusBadge {
+    background-color: #e6583f;
+    color: #f7f2f1;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
 .copyToClipboardBadge {
     padding: 4px 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 3px;
@@ -111,15 +118,24 @@
     }
 }
 
-@media(max-width:575px){
+@media(max-width:991px){
     .queueCardStatusGrid{
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(4,1fr);
     }
 }
 
 @media(max-width:575px){
+    .queueCardStatusGrid{
+        grid-template-columns: repeat(2,1fr);
+    }
     .controlInput{
         width: 100%;
+    }
+}
+
+@media(max-width:480px){
+    .queueCardStatusGrid{
+        grid-template-columns: repeat(1,1fr);
     }
 }
 /* RESPONSIVE ENDS */

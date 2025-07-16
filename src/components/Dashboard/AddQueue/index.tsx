@@ -14,14 +14,10 @@ export const AddQueue = () => {
     isLoader,
     errorMessage,
     rentalProfileData,
-    isSuccessModalOpen,
     onSaveRentalData,
     handleInputChange,
-    handleConfirmModal,
-    handleOnchangeRange,
     handleOnchangeSwitch,
     handleOnChangeSelect,
-    handleOnChangeTextArea,
   } = useRentalProfileHook();
 
   const addQueueData = useMemo(() => {
@@ -80,26 +76,28 @@ export const AddQueue = () => {
       >
         <h2 className="text-2xl fw-bold">Bostadsprofil</h2>
       </Card>
-      {addQueueData.map((item, index) => {
-        return (
-          <>
-            <Card
-              key={index}
-              collapsCard
-              title={
-                <AddQueueTitle
-                  stepNo={item.stepNo}
-                  title={item.title}
-                  text={item.text}
-                />
-              }
-              className=""
-            >
-              <div className="space-xs-mt">{item.data}</div>
-            </Card>
-          </>
-        );
-      })}
+      <div className="d-flex flex-column gap-2">
+        {addQueueData.map((item, index) => {
+          return (
+            <>
+              <Card
+                key={index}
+                collapsCard
+                title={
+                  <AddQueueTitle
+                    stepNo={item.stepNo}
+                    title={item.title}
+                    text={item.text}
+                  />
+                }
+                className=""
+              >
+                <div className="space-xs-mt">{item.data}</div>
+              </Card>
+            </>
+          );
+        })}
+      </div>
       <div className="d-flex justify-content-center  space-xs-mb">
         <Button className="mt-4" onClick={onSaveRentalData}>
           fortsätta

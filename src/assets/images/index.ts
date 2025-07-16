@@ -77,3 +77,6 @@ export { default as cityThree } from "./covers/city3.jpg";
 export { default as cityFour } from "./covers/city4.jpg";
 
 export { default as swedenMap } from "./covers/sweden-provinces-and-capital-map.jpg"
+export { default as mapIllustration} from "./icons/map-illustration.svg"
+export { default as calendarIllustration} from "./icons/calendar-illustration.svg"
+export { default as queueIllustration} from "./icons/queue-illustration.svg"

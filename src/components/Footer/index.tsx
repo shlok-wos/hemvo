@@ -20,7 +20,7 @@ export const Footer: React.FC<any> = () => {
           <div className="w-100">
             <h4 className="text-lg mb-4 text-white">Produkt</h4>
 
-            <div>
+              <div>
               <Link
                 href={"/"}
                 className="d-flex text-gray fw-medium text-decoration-none text-md mb-3 link"
@@ -35,7 +35,7 @@ export const Footer: React.FC<any> = () => {
               </Link>
               <Link
                 href={"/"}
-                className="d-flex text-gray fw-medium text-decoration-none text-md mb-3 link"
+                className="d-flex text-gray fw-medium text-decoration-none text-md link"
               >
                 Hyra ut en lägenhet
               </Link>
@@ -65,7 +65,7 @@ export const Footer: React.FC<any> = () => {
               </Link>
               <Link
                 href={"/contact"}
-                className="d-flex text-gray fw-medium text-decoration-none text-md mb-3 link"
+                className="d-flex text-gray fw-medium text-decoration-none text-md link"
               >
                 Kontakt
               </Link>
@@ -77,7 +77,7 @@ export const Footer: React.FC<any> = () => {
             <div>
               <Link
                 href={"/#assistance"}
-                className="d-flex text-gray fw-medium text-decoration-none text-md mb-3 link"
+                className="d-flex text-gray fw-medium text-decoration-none text-md link"
               >
                 Hyreshjälpen
               </Link>
@@ -101,7 +101,7 @@ export const Footer: React.FC<any> = () => {
               </Link>
               <Link
                 href={"/cookies"}
-                className="d-flex text-gray fw-medium text-decoration-none text-md mb-3 link"
+                className="d-flex text-gray fw-medium text-decoration-none text-md link"
               >
                 Cookies
               </Link>
@@ -140,7 +140,7 @@ export const Footer: React.FC<any> = () => {
               <Link
                 href={"https://x.com/FlatQuestSE"}
                 target="_blank"
-                className="d-flex align-items-center text-gray fw-medium text-decoration-none text-md mb-3 link"
+                className="d-flex align-items-center text-gray fw-medium text-decoration-none text-md link"
               >
                 <XLogo
                   color="currentcolor"

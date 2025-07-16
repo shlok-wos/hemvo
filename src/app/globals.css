@@ -589,3 +589,7 @@ body {
 .text-limit p:nth-child(n + 3) {
   display: none;
 }
+
+.modal-cover-img{
+  max-width: 250px;
+}

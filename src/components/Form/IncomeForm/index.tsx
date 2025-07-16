@@ -1,8 +1,6 @@
 import { LineVertical } from "@phosphor-icons/react";
 import { Input } from "../Input";
 import { Select, SelectOption } from "../Select";
-import { CustomCheckbox } from "../CheckBox";
-import { useState } from "react";
 
 export const IncomeForm = ({
   errorMessage,
@@ -15,22 +13,21 @@ export const IncomeForm = ({
   handleOnChangeSelect: any;
   handleInputChange: any;
 }) => {
-  const [isChecked, setIsChecked] = useState(false);
   const optionList = [
     {
       id: "1",
       value: "Business",
-      label: "Business Income",
+      label: "Affärsinkomst",
     },
     {
       id: "2",
       value: "Passive",
-      label: "Passive Income",
+      label: "Passiv inkomst",
     },
     {
       id: "3",
       value: "Rental",
-      label: "Rental Income",
+      label: "Hyresintäkter",
     },
   ];
 

@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             onClick={() => setSidebarOpen(false)}
           ></div>
         )}
-        <header className="d-lg-none ">
+        <header className="d-lg-none mb-3 mb-lg-0">
           <Card
             className="p-3"
             contentClassName="d-flex align-items-center  justify-content-between gap-4"

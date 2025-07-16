@@ -4,6 +4,10 @@
   gap: var(--spacing);
 }
 
+.sideCardWrapper{
+  grid-template-columns: repeat(3,1fr);
+}
+
 .chartSideCardContent,
 .queueCardWrapper {
   row-gap: var(--spacing);
@@ -58,3 +62,22 @@
 .queueCardWrapper {
   min-height: 250px;
 }
+
+.housingPointIcon{
+  max-width: 140px;
+}
+
+
+/* RESPONSIVE STARTS */
+@media(max-width:767px){
+  .sideCardWrapper{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .sideCardWrapper{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+/* RESPONSIVE ENDS */
