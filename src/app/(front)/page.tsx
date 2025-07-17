@@ -74,6 +74,7 @@ export default function Home() {
             }
             isShowBtn={false}
             heroLabel={homeHeroLabelData}
+            reviewListData={reviewList}
           />
         </div>
       </section>

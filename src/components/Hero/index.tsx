@@ -7,8 +7,8 @@ import { FC, ReactNode } from "react";
 import styles from "./Hero.module.css";
 import { Icons } from "@/Const/Icons";
 import Link from "next/link";
-import { RotatingRings } from "../RotatingRings";
 import { heroRting } from "@/Const/data";
+import { reviewTypes } from "@/types/review.types";
 interface labelProps {
   labelTitle: string;
 }
@@ -17,12 +17,14 @@ interface heroProps {
   description: string;
   isShowBtn: boolean;
   heroLabel: labelProps[];
+  reviewListData: reviewTypes;
 }
 export const Hero: FC<heroProps> = ({
   title,
   description,
   isShowBtn,
   heroLabel,
+  reviewListData,
 }) => {
   return (
     <>
@@ -59,7 +61,10 @@ export const Hero: FC<heroProps> = ({
                 <span key={item.id}>{item.icon}</span>
               ))}
             </div>
-            <p className="text-base fw-medium">TrustScore 4.6 1 060 omdömen</p>
+            <p className="text-base fw-medium">
+              TrustScore {reviewListData?.averageRating} /{" "}
+              {reviewListData?.totalItems} omdömen
+            </p>
           </div>
           {isShowBtn && (
             <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
