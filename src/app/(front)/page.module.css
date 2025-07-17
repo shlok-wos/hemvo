@@ -162,6 +162,7 @@
   border-radius: 50%;
   min-width: 40px;
   aspect-ratio: 1/1;
+  flex-shrink: 0;
 }
 
 .queueImg {

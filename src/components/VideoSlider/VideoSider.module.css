@@ -31,10 +31,10 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 .navBtnPrev {
-  margin-left: calc((var(--btn-size) + 10px) * -1);
+  left: calc((var(--btn-size) + 10px) * -1);
 }
 .navBtnNext {
-  margin-right: calc((var(--btn-size) + 10px) * -1);
+  right: calc((var(--btn-size) + 10px) * -1);
 }
 .navBtn:hover {
   background-color: var(--clr-theme);
@@ -95,10 +95,10 @@
     z-index: 2;
   }
   .navBtnPrev {
-    margin-left: calc((var(--btn-size) / 2) * -1);
+    left: 0;
   }
   .navBtnNext {
-    margin-right: calc((var(--btn-size) / 2) * -1);
+    right: 0;
   }
 }
 @media (max-width: 767px) {

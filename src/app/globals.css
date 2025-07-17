@@ -568,12 +568,13 @@ body {
   --circle-sizing: 50px;
   width: var(--circle-sizing);
   height: var(--circle-sizing);
-  background-color: var(--bg-white-gray);
+  background-color: var(--clr-theme);
+  color: var(--white);
 }
 
 
 .how-hemvo-works-card {
-  background: var(--white);
+  background: var(--doctor-light);
   padding: 20px;
   border-radius: 8px;
 }

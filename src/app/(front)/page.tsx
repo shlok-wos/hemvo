@@ -234,18 +234,15 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className={cx(
-          styles.firstInSweden,
-          "bg-accent space-top-md space-bottom-md"
-        )}
+        className={cx(styles.firstInSweden, "space-bottom-md")}
       >
         <div className="container">
           <div className="row">
             {firstInSwedenContentData.map(
               (FISwedenItem: any, FISwedenIndex: number) => {
                 return (
-                  <div className="col-sm-6 col-lg-4 d-flex align-items-stretch mt-4 mt-lg-5">
-                    <div className="d-flex flex-column gap-3 align-items-center text-center how-hemvo-works-card">
+                  <div className="col-sm-6 col-lg-3 d-flex align-items-stretch mt-lg-5">
+                    <div className="d-flex flex-column gap-3 align-items-center text-center how-hemvo-works-card w-100">
                       <h4 className="mb-0 text-xl fw-bold numerical-circle d-flex align-items-center justify-content-center rounded-circle bg-danger">
                         {FISwedenIndex + 1}
                       </h4>

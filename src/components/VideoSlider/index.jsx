@@ -12,6 +12,7 @@ import {
   CaretRight,
   Play,
 } from "@phosphor-icons/react";
+import clsx from "clsx";
 
 const VideoCard = ({ video, index }) => {
   const videoRef = React.useRef();
@@ -92,12 +93,9 @@ export const VideoSlider = ({
       className={`${styles.videoSliderWrapper} bg-accent space-top-md space-bottom-md`}
     >
       <div className="container">
-        <div className={styles.videoSliderInner}>
-          <div
-            className={`${styles.navBtnWrapper} d-flex w-full justify-content-between gap-2 mb-3`}
-          >
+        <div className={clsx(styles.videoSliderInner,"position-relative")}>
             <button
-              className={`${styles.navBtn} ${styles.navBtnPrev} video-prev`}
+              className={`${styles.navBtn} ${styles.navBtnPrev} video-prev position-absolute top-50 translate-middle-y z-3`}
               aria-label="Previous videos"
             >
               <ArrowLeft
@@ -107,7 +105,7 @@ export const VideoSlider = ({
               />
             </button>
             <button
-              className={`${styles.navBtn} ${styles.navBtnNext} video-next`}
+              className={`${styles.navBtn} ${styles.navBtnNext} video-next position-absolute top-50 translate-middle-y z-3`}
               aria-label="Next videos"
             >
               <ArrowRight
@@ -116,7 +114,7 @@ export const VideoSlider = ({
                 style={{ minHeight: "20px", minWidth: "20px" }}
               />
             </button>
-          </div>
+          
 
           <Swiper
             modules={[Navigation]}
