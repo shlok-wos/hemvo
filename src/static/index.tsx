@@ -378,16 +378,20 @@ export const blogPosts = [
 ];
 export const firstInSwedenContentData = [
   {
-    title: "Smart robot",
-    description: `Med kraften från vår bostadsrobot och erfarenheten i vårt team söker vi bostäder åt dig dygnet runt, helt utifrån din unika hyresprofil. Tillsammans maximerar vi dina chanser till ett förstahandskontrakt.`,
+    title: "Skapa konto",
+    description: `Att skapa ett konto är både enkelt och gratis`,
   },
   {
-    title: "Pengarna-tillbaka-garanti",
-    description: `Lägenheter erbjuds den medlem som först tackar ja till visningen. Om vi inte hittar någon bostad som matchar din profil, gäller vår pengarna-tillbaka-garanti.`,
+    title: "Skapa en bostadprofil",
+    description: `Fyll i dina uppgifter och önskemål om lägenhet så söker våra medarbetare bostäder åt dig.`,
   },
   {
-    title: "BankID",
-    description: `Signera hyresavtalet tryggt och säkert med BankID för en enkel och smidig avslutning av din hyresprocess.`,
+    title: "Aktivera ditt konto",
+    description: `När ditt konto aktiveras och medlemskapet startar börjar våra kollegor omedelbart kontakta hyresvärdar utifrån dina kriterier. Du tilldelas dina startpoäng och kan nu gå med i våra bostadsköer`,
+  },
+  {
+    title: "Löpande underhåll",
+    description: `Hos Hemvo tjänar du bostadspoäng varje dag. Systemet uppdateras löpande så att du alltid ser din aktuella plats i bostadsköerna och hur många hyresvärdar vi kontaktar åt dig varje dag.`,
   },
 ];
 export const appInfoCardData = [
@@ -459,13 +463,13 @@ export const planData = [
 ];
 export const homeHeroLabelData = [
   {
-    labelTitle: "Kostnadsfritt",
+    labelTitle: "Bostadsköer",
   },
   {
-    labelTitle: "50.000+ hyresgäster",
+    labelTitle: "Eget team",
   },
   {
-    labelTitle: "Maximera dina intäkter",
+    labelTitle: "Förstahandskontrakt",
   },
 ];
 export const rentOutHeroLabelData = [

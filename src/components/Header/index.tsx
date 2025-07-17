@@ -78,6 +78,15 @@ export const Header: React.FC<any> = () => {
                 Köer
               </Link>
               <Link
+                href={"/faq"}
+                className={cx("link p-2 text-decoration-none fw-bold", {
+                  "link-highlight": pathname === "/faq",
+                })}
+                onClick={() => setShow(false)}
+              >
+                Vanliga frågor
+              </Link>
+              <Link
                 href={"/"}
                 className={cx("link p-2 text-decoration-none fw-bold", {
                   "link-highlight": pathname === "/family-account",
@@ -158,8 +167,8 @@ export const Header: React.FC<any> = () => {
         )}
       >
         <p className="text-md fw-medium text-center p-2">
-          Still dina barni bostadsköra! Kat dina nära och kära med ett par
-          klick. Nu finns familjekonton på dibr. Läs mer{" "}
+          Anlita ett team som söker din lägenhet från 25 kr samtidigt som du får
+          tillgång till våra bostadsköer.
         </p>
       </div>
     </>

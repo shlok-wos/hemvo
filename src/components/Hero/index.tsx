@@ -53,9 +53,7 @@ export const Hero: FC<heroProps> = ({
               "space-2xs-p bg-white radius-xs d-flex flex-column gap-3xs"
             )}
           >
-            <Link href={""}>
-              <span className="">{Icons.trustPilot}</span>
-            </Link>
+            <span className="text-xl fw-bold">Omdömen</span>
             <div className="d-flex gap-3xs">
               {heroRting.map((item) => (
                 <span key={item.id}>{item.icon}</span>

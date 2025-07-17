@@ -2,7 +2,6 @@
 import { Accordion } from "@/components";
 import { faqPageAccordionData } from "@/static";
 import clsx from "clsx";
-
 import styles from "../page.module.css";
 import { Icons } from "@/Const/Icons";
 import Link from "next/link";
@@ -12,7 +11,7 @@ export default function faq() {
     <>
       <section id="faq" className="bg-white space-top-md ">
         <div className="container">
-          <div className="d-flex justify-content-start flex-column gap-2xs">
+          {/* <div className="d-flex justify-content-start flex-column gap-2xs">
             <div className="d-flex gap-4 align-items-center">
               {" "}
               <Link
@@ -39,13 +38,17 @@ export default function faq() {
               Information om familjekonto
             </p>
             <p className="text-md fw-medium text-gray">13 artiklar</p>
-          </div>
+          </div> */}
           <div
             className={clsx(
               styles.faqPageQuestions,
               "space-bottom-md radius-sm "
             )}
           >
+            <h2 className="text-3xl fw-bold text-center">Vanliga frågor</h2>
+
+            {/* <p className="text-md fw-medium text-gray">Vanliga frågor</p> */}
+
             <Accordion
               data={faqPageAccordionData}
               className={clsx(styles.accoroadionItems, " space-top-sm")}
@@ -53,7 +56,7 @@ export default function faq() {
             />
           </div>
         </div>
-        <div
+        {/* <div
           className={clsx(
             styles.bottomMoreInfo,
             "text-center space-lg-py px-2 position-relative "
@@ -69,7 +72,7 @@ export default function faq() {
               hemvo123@gmail.com
             </Link>
           </p>
-        </div>
+        </div> */}
       </section>
     </>
   );

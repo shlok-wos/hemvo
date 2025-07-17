@@ -68,13 +68,9 @@ export default function Home() {
       >
         <div className="container">
           <Hero
-            title={
-              <>
-                Först i kön, först till <br /> hemmet
-              </>
-            }
+            title={<>Bostadsköer och sökhjälp i samma tjänst</>}
             description={
-              "dioz är första tjänsten som sköter ditt bostadsköande åt dig. Här kan du ställa dig i ko med några klick och slappna av medan vi håller varje köplats säker genom regelbundna kö-uppdateringar."
+              "Vi söker lägenheter åt dig utifrån din bostadsprofil. Tillsammans med våra medarbetare och vårt nätverk matchar vi dig med rätt hyresvärd, samtidigt som du får tillgång till våra bostadsköer i Sveriges mest populära områden."
             }
             isShowBtn={false}
             heroLabel={homeHeroLabelData}
@@ -105,13 +101,24 @@ export default function Home() {
                 "d-flex justify-content-center align-items-center "
               )}
             >
-              {Icons.Home}
+              <img
+                src={"home-img.png"}
+                alt="Bostadsköer"
+                height={50}
+                width={50}
+              />
             </span>
             <div className="">
-              <h3 className="text-xl fw-bold mb-2">Hemvo.se</h3>
+              <h3 className="text-xl fw-bold mb-2">
+                {" "}
+                <h3 className="text-xl fw-bold mb-2">
+                  {" "}
+                  <h3 className="text-xl fw-bold mb-2">Bostadsköer</h3>
+                </h3>
+              </h3>
               <p className="text-gray text-base">
-                Jag har inte kunnat hitta någon information om en webbplats med
-                domänen "hemvo.se".
+                Ställ dig i Hemvos bostadsköer i Sveriges populäraste städer och
+                kom närmare ditt nya hem snabbare.
               </p>
             </div>
           </div>
@@ -123,13 +130,21 @@ export default function Home() {
                 "d-flex justify-content-center align-items-center "
               )}
             >
-              {Icons.userReview}
+              <img
+                src={"girl-with-laptop.png"}
+                alt="Bostadsköer"
+                height={50}
+                width={50}
+              />
             </span>
             <div className="">
-              <h3 className="text-xl fw-bold mb-2">User reviews</h3>
+              <h3 className="text-xl fw-bold mb-2">
+                Ditt team i bostadsjakten
+              </h3>
               <p className="text-gray text-base">
-                Om du har ytterligare information eller kan specificera vad du
-                söker, hjälper jag dig gärna vidare.
+                Våra medarbetare blir ditt team i din bostadsjakt. Vi söker
+                bostäder både automatiskt och manuellt utifrån din
+                bostadsprofil.
               </p>
             </div>
           </div>
@@ -141,13 +156,19 @@ export default function Home() {
                 "d-flex justify-content-center align-items-center "
               )}
             >
-              {Icons.Home}
+              <img
+                src={"emoji-with-tongue-out.png"}
+                alt="Bostadsköer"
+                height={50}
+                width={50}
+              />
             </span>
             <div className="">
-              <h3 className="text-xl fw-bold mb-2">Hemvo.se</h3>
+              <h3 className="text-xl fw-bold mb-2">Pris & medlemskap</h3>
               <p className="text-gray text-base">
-                Jag har inte kunnat hitta någon information om en webbplats med
-                domänen "hemvo.se".
+                Från 25 kr i månaden söker vi bostäder åt dig, samtidigt som du
+                samlar bostadspoäng utifrån ditt medlemskap, fler poäng ger dig
+                större chans till ditt nästa hem.
               </p>
             </div>
           </div>
@@ -195,11 +216,9 @@ export default function Home() {
       >
         <div className="container">
           <div className="text-center mb-3 mb-md-5">
-            <h2 className="text-3xl mb-2 mb-xxl-3">
-              Priser för dig som vill hitta en bostad.
-            </h2>
+            <h2 className="text-3xl mb-2 mb-xxl-3">Priser som tar dig hem.</h2>
             <p className="text-md text-gray">
-              Enkel prissättning för dig som letar efter ett hem.
+              Priser för ett eget team och tillgång till bostadsköer
             </p>
           </div>
           {planList.length > 0 && !isLoader && (
@@ -220,30 +239,6 @@ export default function Home() {
         )}
       >
         <div className="container">
-          {/* <div className="d-flex flex-column gap-3 align-items-center text-center">
-            <h4 className="mb-0 text-xl fw-bold numerical-circle d-flex align-items-center justify-content-center rounded-circle bg-danger">
-              1
-            </h4>
-            <h4 className="text-xl fw-bold">test</h4>
-            <p className="text-base text-gray">
-              Med kraften från vår bostadsrobot och erfarenheten i vårt team
-              söker vi bostäder åt dig dygnet runt, helt utifrån din unika
-              hyresprofil. Tillsammans maximerar vi dina chanser till ett
-              förstahandskontrakt.
-            </p>
-          </div> */}
-          <h2 className="text-3xl mb-3 mb-md-4">Så funkar Hemvo?</h2>
-          <div className={cx(styles.firstInSwedenContent)}>
-            <p className="text-md lh-base text-gray">
-              <strong>Vi letar aktivt bostäder åt dig</strong>– och kontaktar
-              hyresvärdar baserat på din profil.
-            </p>
-            <p className="text-md lh-base text-gray">
-              <strong>Du får en plats i vår interna bostadskö</strong> - där
-              bostäder matchas med aktiva medlemmar.
-            </p>
-          </div>
-
           <div className="row">
             {firstInSwedenContentData.map(
               (FISwedenItem: any, FISwedenIndex: number) => {
@@ -363,12 +358,12 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="space-top-lg space-bottom-lg">
+      {/* <section className="space-top-lg space-bottom-lg">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-4">
               <h2 className="text-3xl fw-bold mb-2 mb-xxl-3">
-                Inga köer. Bara hem.
+                Inga köer. Bara hem.ddd
               </h2>
               <p className="text-md text-gray">
                 Bli medlem och kom ett steg närmare ditt hem.
@@ -386,7 +381,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <section id="faq" className=" space-top-md space-bottom-md">
         <div className="container">
           <h2 className="text-3xl fw-bold mb-2 mb-xxl-3">Frågor och svar </h2>
