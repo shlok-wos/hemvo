@@ -1,4 +1,5 @@
 "use client";
+import { HemvoColored } from "@/assets/images";
 import { Button, Input, RotatingRings } from "@/components";
 import { useUserLoginHook } from "@/hooks/user/auth/login.hook";
 import { ArrowRight, Envelope, Password } from "@phosphor-icons/react/dist/ssr";
@@ -27,6 +28,9 @@ export const LoginForm = () => {
     useUserLoginHook();
   return (
     <div>
+      <div className="mb-2">
+        <img className="auth-logo ratio" src={HemvoColored.src} alt={"logo"} />
+      </div>
       <div className="text-start space-2xs-mb space-2xs-pb">
         <h1 className=" fw-bolder text-5xl space-2xs-mb ">Logga in</h1>
         <p className="text-md text-gray fw-medium">

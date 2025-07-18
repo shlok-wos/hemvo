@@ -11,6 +11,7 @@ export { default as howWork } from "./covers/how-to-work.png";
 
 export { default as Hemvo } from "./icons/Hemvo.svg";
 export { default as HemvoColored } from "./icons/logo-theme.svg";
+export { default as HemvoLogo} from "./icons/hemvo-logo.png"
 export { default as AuthBanner } from "./covers/couple-looking-at-phone.png";
 export { default as HemvoCircle } from "./covers/Hemvo-circle.png";
 export { default as HowCanWeHelpTab1 } from "./covers/how-can-we-help-t1.jpg";

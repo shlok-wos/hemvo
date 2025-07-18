@@ -1,4 +1,5 @@
 "use client";
+import { HemvoColored } from "@/assets/images";
 import { Button, Input } from "@/components";
 import { useUserCreateAccountHook } from "@/hooks/user/auth/createAccount.hook";
 import {
@@ -14,6 +15,9 @@ export const CreateAccountForm = () => {
     useUserCreateAccountHook();
   return (
     <div>
+      <div className="mb-2">
+        <img className="auth-logo ratio" src={HemvoColored.src} alt={"logo"} />
+      </div>
       <h1 className="fw-bolder text-5xl space-2xs-mb">Skapa ett konto</h1>
       <form>
         <div className="row gy-2">

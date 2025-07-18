@@ -594,3 +594,8 @@ body {
 .modal-cover-img{
   max-width: 250px;
 }
+
+.auth-logo{
+  max-width: 180px;
+  --bs-aspect-ratio:42%;
+}

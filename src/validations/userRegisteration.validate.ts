@@ -87,9 +87,9 @@ export const validateOnSubmitUserRegistration = (authData: any = {}) => {
   }
 
   if (
-    password.trim() === null ||
-    password.trim() === "" ||
-    password === undefined
+    password === undefined ||
+    password?.trim() === null ||
+    password?.trim() === ""
   ) {
     errors.password = "Detta fält är obligatoriskt";
   } else if (!passwordRegex.test(password)) {
