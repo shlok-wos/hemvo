@@ -51,6 +51,7 @@ export const useResetPasswordHook = () => {
   };
 
   return {
+    router,
     resetPasswordData,
     errorMessage,
     handleInputChange,

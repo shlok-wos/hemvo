@@ -1,5 +1,5 @@
 "use client";
-import { LivingRoom } from "@/assets/images";
+import { HemvoColored, LivingRoom } from "@/assets/images";
 import { Button, Input } from "@/components";
 import { ArrowRight, Envelope } from "@phosphor-icons/react/dist/ssr";
 import { cx } from "class-variance-authority";
@@ -7,10 +7,20 @@ import { useResetPasswordHook } from "@/hooks/user/auth/resetPassword.hook";
 import styles from "../Auth/Auth.module.css";
 
 export const ResetPasswordForm = () => {
-  const { resetPasswordData, errorMessage, handleInputChange, onVerifyEmail } =
+  
+  const {router, resetPasswordData, errorMessage, handleInputChange, onVerifyEmail } =
     useResetPasswordHook();
+    
   return (
     <div>
+       <div className="mb-3">
+        <img
+          className="auth-logo ratio cursor-pointer"
+          src={HemvoColored.src}
+          alt={"logo"}
+          onClick={() => router.push("/")}
+        />
+      </div>
       <div className="text-start mb-4">
         <h1 className="fw-bolder text-5xl space-2xs-mb">Återställ lösenord</h1>
         <p className="text-gray">
@@ -48,6 +58,7 @@ export const ResetPasswordForm = () => {
         >
           Skicka länk
         </Button>
+        <small className="mt-3 text-center text-gray d-block">Har du redan ett konto?<a class="link fw-semibold" href="/login"> Logga in</a></small>
       </form>
     </div>
   );

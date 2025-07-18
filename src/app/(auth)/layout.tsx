@@ -44,7 +44,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               {!pathsNoBanner.includes(pathname) && (
                 <Link
                   href={"/"}
-                  className={cx(styles.authLogo, "d-block mb-3 mb-xl-4")}
+                  className={cx(styles.authLogo, "d-block mb-3 mb-xl-4 d-none")}
                 >
                   <img
                     src={Hemvo.src}
