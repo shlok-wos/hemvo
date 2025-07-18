@@ -58,7 +58,7 @@ export const ResetPasswordForm = () => {
         >
           Skicka länk
         </Button>
-        <small className="mt-3 text-center text-gray d-block">Har du redan ett konto?<a class="link fw-semibold" href="/login"> Logga in</a></small>
+        <small className="mt-3 text-center text-gray d-block">Har du redan ett konto?<a className="link fw-semibold" href="/login"> Logga in</a></small>
       </form>
     </div>
   );
