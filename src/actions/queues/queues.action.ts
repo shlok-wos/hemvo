@@ -77,12 +77,13 @@ export const doFetchAreas = async (): Promise<any> => {
 
 export const doFetchBlogsList = async (
   currentPage: number = 1,
-  pageSize: number = 6
+  pageSize: number = 6,
+  isHome = true
 ) => {
   try {
     const response = await axiosApi({
       method: "get",
-      url: `v1/blog/list?currentPage=${currentPage}&pageSize=${pageSize}`,
+      url: `v1/blog/list?currentPage=${currentPage}&pageSize=${pageSize}&isHome=${isHome}`,
     });
     return response;
   } catch (error: any) {
