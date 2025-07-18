@@ -11,12 +11,17 @@ import {
 import Link from "next/link";
 
 export const CreateAccountForm = () => {
-  const { authData, errorMessage, handleInputChange, onSubmit } =
+  const { router, authData, errorMessage, handleInputChange, onSubmit } =
     useUserCreateAccountHook();
   return (
     <div>
       <div className="mb-2">
-        <img className="auth-logo ratio" src={HemvoColored.src} alt={"logo"} />
+        <img
+          className="auth-logo ratio cursor-pointer"
+          src={HemvoColored.src}
+          alt={"logo"}
+          onClick={() => router.push("/")}
+        />
       </div>
       <h1 className="fw-bolder text-5xl space-2xs-mb">Skapa ett konto</h1>
       <form>

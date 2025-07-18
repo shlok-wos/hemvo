@@ -71,9 +71,10 @@ export const useUserCreateAccountHook = () => {
   };
 
   return {
+    router,
     authData,
     errorMessage,
-    handleInputChange,
     onSubmit,
+    handleInputChange,
   };
 };

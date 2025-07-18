@@ -6,18 +6,32 @@ import {
   validateOnSubmitUserLogin,
   validateOnUserLogin,
 } from "@/validations/userLogin.validate";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { setCookie } from "cookies-next";
 
 export const useUserLoginHook = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const [userData, setUserData] = useState<UserLoginType>({} as UserLoginType);
   const [errorMessage, setErrorMessage] = useState<UserLoginErrorType>(
     {} as UserLoginErrorType
   );
+
+  const token = searchParams?.get("token");
+  const sessionId = searchParams?.get("session_id");
+
+  useEffect(() => {
+    if (token) {
+      setCookie("_token", token);
+      setCookie("authToken", token);
+      router.push(
+        `/dashboard/subscription?token=${token}&session_id=${sessionId}`
+      );
+    }
+  }, [token]);
 
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
@@ -51,6 +65,7 @@ export const useUserLoginHook = () => {
   };
 
   return {
+    router,
     userData,
     errorMessage,
     handleInputChange,

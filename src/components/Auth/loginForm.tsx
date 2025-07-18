@@ -1,35 +1,23 @@
 "use client";
 import { HemvoColored } from "@/assets/images";
-import { Button, Input, RotatingRings } from "@/components";
+import { Button, Input } from "@/components";
 import { useUserLoginHook } from "@/hooks/user/auth/login.hook";
 import { ArrowRight, Envelope, Password } from "@phosphor-icons/react/dist/ssr";
-import { setCookie } from "cookies-next";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 export const LoginForm = () => {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  const token = searchParams?.get("token");
-  const sessionId = searchParams?.get("session_id");
-
-  useEffect(() => {
-    if (token) {
-      setCookie("_token", token);
-      setCookie("authToken", token);
-      router.push(`/dashboard/subscription?token=${token}&session_id=${sessionId}`);
-    }
-  }, [token]);
-
-  const { userData, errorMessage, handleInputChange, onSubmitLogin } =
+  const { router, userData, errorMessage, handleInputChange, onSubmitLogin } =
     useUserLoginHook();
+
   return (
     <div>
       <div className="mb-2">
-        <img className="auth-logo ratio" src={HemvoColored.src} alt={"logo"} />
+        <img
+          className="auth-logo ratio cursor-pointer"
+          src={HemvoColored.src}
+          alt={"logo"}
+          onClick={() => router.push("/")}
+        />
       </div>
       <div className="text-start space-2xs-mb space-2xs-pb">
         <h1 className=" fw-bolder text-5xl space-2xs-mb ">Logga in</h1>
